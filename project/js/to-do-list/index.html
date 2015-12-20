@@ -3,12 +3,72 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="css/typo.css"/>
+    <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/todo.css"/>
 </head>
 <body>
-
+<div class="main">
+    <div class="h1 title">我的任务列表</div>
+    <div class="press-in">
+        <input type="text" placeholder="增加我的任务"/>
+    </div>
+    <div class="resolve">
+        <input id="isResolve" type="checkbox"/>
+        <label for="isResolve">标记所有为已解决</label>
+    </div>
+    <div class="task-list js-task-list">
+        <div class="task-item js-task-item cf">
+            <div class="fl">
+                <input type="checkbox" id="1"/>
+                <label for="1">1</label>
+            </div>
+            <div class="fr">
+                <span class="addTime">2015-05-29 11:19:15</span>
+                <a href="javascript:void(0);" class="remove js-remove">&times;</a>
+            </div>
+        </div>
+        <div class="task-item js-task-item cf">
+            <div class="fl">
+                <input type="checkbox" id="2"/>
+                <label for="2">2</label>
+            </div>
+            <div class="fr">
+                <span class="addTime">2015-05-29 11:19:15</span>
+                <a href="javascript:void(0);" class="remove js-remove">&times;</a>
+            </div>
+        </div>
+    </div>
+    <div class="task-count">
+        <ul>
+            <li>
+                <label>未完成:</label>
+                <span class="count js-unfinish">2</span>
+            </li>
+            <li>
+                <label>已完成：</label>
+                <span class="count js-finish">3</span>
+            </li>
+            <li>
+                <label>总数：</label>
+                <span class="count js-total">5</span>
+            </li>
+        </ul>
+    </div>
+</div>
 <script src="js/jquery-2.1.1.js"></script>
 <script src="js/todo.js"></script>
+
+<script type="text/html" id="taskItemTemplate">
+    <div class="task-item js-task-item cf">
+        <div class="fl">
+            <input type="checkbox" id="<%=id%>"/>
+            <label for="<%=id%>"><%=value%></label>
+        </div>
+        <div class="fr">
+            <span class="addTime"><%=addTime%></span>
+            <a href="javascript:void(0);" class="remove js-remove">&times;</a>
+        </div>
+    </div>
+</script>
 </body>
 </html>

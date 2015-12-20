@@ -1,0 +1,61 @@
+.main {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.title {
+    margin-bottom: 10px;
+}
+
+.press-in input {
+    width: 478px;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    margin-bottom: 10px;
+}
+
+.press-in input:focus {
+    outline: none;
+}
+
+.resolve {
+    margin-bottom: 30px;
+}
+
+.task-list {
+    margin-bottom: 10px;
+}
+
+.task-item {
+    margin-bottom: 15px;
+    border-bottom: solid 1px #cfcfcf;
+}
+
+.addTime {
+    padding-right: 5px;
+}
+
+.remove {
+    padding-right: 5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.remove:hover {
+    text-decoration: none;
+}
+
+.task-count ul li {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.count {
+    display: inline-block;
+    background-color: #cccccc;
+    text-align: center;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
