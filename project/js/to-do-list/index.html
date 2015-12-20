@@ -10,65 +10,71 @@
 <div class="main">
     <div class="h1 title">我的任务列表</div>
     <div class="press-in">
-        <input type="text" placeholder="增加我的任务"/>
+        <input type="text" placeholder="增加我的任务" class="js-add"/>
     </div>
-    <div class="resolve">
-        <input id="isResolve" type="checkbox"/>
-        <label for="isResolve">标记所有为已解决</label>
+    <div class="all-resolve">
+        <input id="allResolve" type="checkbox"/>
+        <label for="allResolve">标记所有为已解决</label>
     </div>
     <div class="task-list js-task-list">
-        <div class="task-item js-task-item cf">
-            <div class="fl">
-                <input type="checkbox" id="1"/>
-                <label for="1">1</label>
-            </div>
-            <div class="fr">
-                <span class="addTime">2015-05-29 11:19:15</span>
-                <a href="javascript:void(0);" class="remove js-remove">&times;</a>
-            </div>
-        </div>
-        <div class="task-item js-task-item cf">
-            <div class="fl">
-                <input type="checkbox" id="2"/>
-                <label for="2">2</label>
-            </div>
-            <div class="fr">
-                <span class="addTime">2015-05-29 11:19:15</span>
-                <a href="javascript:void(0);" class="remove js-remove">&times;</a>
-            </div>
-        </div>
+
     </div>
     <div class="task-count">
         <ul>
             <li>
                 <label>未完成:</label>
-                <span class="count js-unfinish">2</span>
+                <span class="count js-unfinish"></span>
             </li>
             <li>
                 <label>已完成：</label>
-                <span class="count js-finish">3</span>
+                <span class="count js-finish"></span>
             </li>
             <li>
                 <label>总数：</label>
-                <span class="count js-total">5</span>
+                <span class="count js-total"></span>
             </li>
         </ul>
     </div>
 </div>
 <script src="js/jquery-2.1.1.js"></script>
+<script src="js/underscore-min.js"></script>
+<script src="js/moment.min.js"></script>
 <script src="js/todo.js"></script>
-
 <script type="text/html" id="taskItemTemplate">
-    <div class="task-item js-task-item cf">
+    <%
+    for(var i =0; i < tasks.length; i++) {
+    var task = tasks[i];
+    %>
+    <div data-index="" class="task-item js-task-item cf">
         <div class="fl">
-            <input type="checkbox" id="<%=id%>"/>
-            <label for="<%=id%>"><%=value%></label>
+            <%
+            if(task.isFinish) {
+            %>
+            <input type="checkbox" checked class="js-resolve"  id="<%=task.id%>"/>
+            <label for="<%=task.id%>" class="js-content finish"><%=task.value%></label>
+            <%
+            } else {
+            %>
+            <input type="checkbox" class="js-resolve"  id="<%=task.id%>"/>
+            <label for="<%=task.id%>" class="js-content"><%=task.value%></label>
+            <%
+            }
+            %>
+
         </div>
         <div class="fr">
-            <span class="addTime"><%=addTime%></span>
+            <span class="addTime"><%=task.addTime%></span>
             <a href="javascript:void(0);" class="remove js-remove">&times;</a>
         </div>
     </div>
+    <%
+    }
+    %>
+</script>
+<script type="text/javascript">
+    $(function () {
+        $.toDoList();
+    });
 </script>
 </body>
 </html>

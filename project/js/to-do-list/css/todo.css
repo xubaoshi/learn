@@ -18,8 +18,12 @@
     outline: none;
 }
 
-.resolve {
+.all-resolve {
     margin-bottom: 30px;
+}
+
+.finish {
+    text-decoration: line-through;
 }
 
 .task-list {
