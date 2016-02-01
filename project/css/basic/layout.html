@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>双飞翼布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header, .footer {
+            width: 100%;
+            height: 50px;
+            background-color: #666;
+            text-align: center;
+        }
+
+        .content {
+            height: 200px;
+            background-color: #1abc9c;
+            overflow: hidden;
+            /*padding-left: 200px;*/
+            /*padding-right: 200px;*/
+        }
+
+        .main {
+            background-color: #54b154;
+            width: 100%;
+            float: left;
+        }
+        .inner{
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+        .left {
+            background-color: #ffedce;
+            /*height: 100px;*/
+            margin-bottom: -9999px;
+            padding-bottom: 9999px;
+            width: 200px;
+            float: left;
+            margin-left: -100%;
+            /*圣杯布局*/
+            /*position: relative;*/
+            /*left: -200px;*/
+        }
+
+        .right {
+            background-color: #c7254e;
+            /*height: 100px;*/
+            margin-bottom: -9999px;
+            padding-bottom: 9999px;
+            width: 200px;
+            float: right;
+            margin-left: -200px;
+            /*圣杯布局*/
+            /*position: relative;*/
+            /*right: -200px;*/
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    header
+</div>
+<div class="content">
+    <div class="main">
+        <div class="inner">
+            main
+            <p>我是中间p</p>
+            <p>我是中间p</p>
+            <p>我是中间p</p>
+            <p>我是中间p</p>
+            <p>我是中间p</p>
+            <p>我是中间p</p>
+            <p>我是中间p</p>
+        </div>
+    </div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+</div>
+<div class="footer">
+    footer
+</div>
+</body>
+</html>

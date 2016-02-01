@@ -1,0 +1,267 @@
+.header {
+    width: 990px;
+    margin: 0 auto;
+    min-width: 990px;
+}
+
+.header-bar {
+    float: left;
+    padding: 22px 0 17px;
+}
+
+.header-login {
+    float: right;
+    padding: 38px 0 0;
+    line-height: 16px;
+    height: 16px;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.mic-pic {
+    display: inline-block;
+    width: 189px;
+    height: 40px;
+    border-right: solid 1px #cccccc;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.nav {
+    height: 40px;
+    background-color: #0199e1;
+    min-width: 990px;
+}
+
+.banner {
+    min-width: 990px;
+    width: 100%;
+    height: 250px;
+    background: url("../img/banner.jpg") no-repeat;
+}
+
+.content {
+    width: 990px;
+    margin: 0 auto;
+    min-width: 990px;
+}
+
+.footer {
+    height: 90px;
+    background-color: #f2f2f2;
+    min-width: 990px;
+}
+
+.com-profile {
+    width: 600px;
+    float: left;
+}
+
+.com-profile p {
+    font: 14px/24px Arial;
+}
+
+.com-pic {
+    width: 390px;
+    float: right;
+}
+
+.part-title {
+    padding-top: 40px;
+}
+
+.com-img {
+    padding-top: 78px;
+    padding-left: 47px;
+    width: 270px;
+    height: 186px;
+}
+
+.header-info {
+    display: inline-block;
+    color: #7d7d7d;
+    margin-right: 10px;
+}
+
+.header-phone {
+    display: inline-block;
+    height: 16px;
+    font: 14px/16px Arial;
+    color: #999999;
+    padding-left: 35px;
+    background: url("../img/icon.png") no-repeat;
+    margin-right: 10px;
+}
+
+.header-phone-icon {
+    background-position: 0 0;
+}
+
+.header-mail {
+    display: inline-block;
+    height: 16px;
+    font: 14px/16px Arial;
+    padding-left: 35px;
+    background: url("../img/icon.png") no-repeat;
+}
+
+.header-mail-icon {
+    background-position: 0 -24px;
+}
+
+.header-mail {
+    color: #529ac5;
+
+}
+
+.nav-content {
+    width: 990px;
+    margin: 0 auto;
+}
+
+.nav-list {
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 40px;
+}
+
+.list-item {
+    display: list-item;
+    float: left;
+    width: 120px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.list-item a {
+    display: block;
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.list-item:hover {
+    background-color: #0571b2;
+}
+
+.selected {
+    background-color: #0571b2;
+}
+
+.mic-info {
+    width: 990px;
+    margin: 0 auto 35px;
+    background: #f2f2f2;
+    padding-bottom: 25px;
+}
+
+.mic-info-title {
+    padding: 29px 0 19px 404px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sub-info-pic {
+    float: left;
+}
+
+.sub-info-desc {
+    float: right;
+    font: 14px/24px Arial;
+    width: 553px;
+    padding-right: 34px;
+}
+
+.sub-info-desc p {
+    margin: 0;
+}
+
+.sub-pic-mic {
+    width: 300px;
+    height: 65px;
+    background: url("../img/sub-mic.png") no-repeat;
+    margin-left: 34px;
+    margin-bottom: 31px;
+}
+
+.sub-pic-service {
+    width: 300px;
+    height: 65px;
+    background: url("../img/sub-service.png") no-repeat;
+    margin-left: 34px;
+}
+
+.partner h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.partner p {
+    font: 14px/24px Arial;
+    margin: 0 0 50px;
+}
+
+.partner-list {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 40px;
+}
+
+.partner-list-item {
+    float: left;
+    margin-left: 10px;
+    padding-top: 100px;
+}
+
+.partner-list-item h3 {
+    color: #666666;
+    font: bold 16px/24px Arial;
+
+}
+
+.partner-list-item p {
+    color: #a9a9a9;
+    font: 12px/20px Arial;
+}
+
+.pt-zx {
+    width: 204px;
+    height: 79px;
+    /*border: solid 1px #cfcfcf;*/
+    background: url("../img/partner-zx.jpg") no-repeat;
+}
+
+.pt-ck {
+    width: 325px;
+    height: 79px;
+    /*border: solid 1px #cfcfcf;*/
+    background: url("../img/partner-ck.jpg") no-repeat;
+}
+
+.pt-rs {
+    width: 230px;
+    height: 79px;
+    /*border: solid 1px #cfcfcf;*/
+    background: url("../img/partner-rs.jpg") no-repeat;
+}
+
+.pt-zg {
+    width: 182px;
+    height: 79px;
+    /*border: solid 1px #cfcfcf;*/
+    background: url("../img/partner-zg.jpg") no-repeat;
+}
+
+.copyRight p {
+    text-align: center;
+    margin: 0;
+    font: 12px/18px Arial;
+    color: #888888;
+}
+
+.copyRight {
+    padding-top: 30px;
+}

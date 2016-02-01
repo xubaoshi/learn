@@ -1,0 +1,131 @@
+.header {
+    width: 990px;
+    height: 79px;
+    margin: 0 auto;
+    min-width: 990px;
+}
+
+.logo {
+    float: left;
+    padding: 20px 0 17px;
+}
+
+.func {
+    float: right;
+    padding: 38px 0 0;
+}
+
+.mic {
+    background: url("../img/mic-pic.jpg") no-repeat;
+    width: 189px;
+    height: 40px;
+    display: inline-block;
+    border-right: solid 1px #cccccc;
+    padding-right: 10px;
+    margin-right: 10px;
+    text-indent: -9999px;
+}
+
+.fie {
+    background: url("../img/service-pic.jpg");
+    width: 172px;
+    height: 40px;
+    display: inline-block;
+    text-indent: -9999px;
+}
+
+.lang-choice {
+    display: inline-block;
+    color: #999999;
+}
+
+.header-phone {
+    display: inline-block;
+    height: 16px;
+    font: 14px/16px Arial;
+    color: #999999;
+    padding-left: 35px;
+    background: url("../img/icon.png") no-repeat;
+    margin-right: 10px;
+}
+
+.header-phone-icon {
+    background-position: 0 0;
+}
+
+.header-mail {
+    display: inline-block;
+    height: 16px;
+    font: 14px/16px Arial;
+    padding-left: 35px;
+    background: url("../img/icon.png") no-repeat;
+}
+
+.header-mail-icon {
+    background-position: 0 -24px;
+}
+
+.nav {
+    width: 100%;
+    min-width: 990px;
+    height: 40px;
+    background-color: #0199e1;
+    overflow: hidden;
+}
+
+.nav-class {
+    width: 990px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.list-item {
+    line-height: 40px;
+    float: left;
+    width: 120px;
+    text-align: center;
+}
+
+.list-item:hover {
+    background-color: #0571b2;
+}
+
+.nav-class li a {
+    display: block;
+    font-size: 14px;
+    font-family: Arial;
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-class li a span {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.banner {
+    background: url("../img/home-banner.jpg") no-repeat center;
+    width: 100%;
+    height: 751px;
+    min-width: 990px;
+}
+
+.footer {
+    height: 90px;
+}
+
+.copyRight {
+    padding-top: 30px;
+}
+
+.copyRight p {
+    text-align: center;
+    margin: 0;
+    font: 12px/18px Arial;
+    color: #999999;
+}
+.selected {
+    background-color: #0571b2;
+}

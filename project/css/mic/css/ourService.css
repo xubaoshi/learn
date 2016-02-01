@@ -1,0 +1,292 @@
+.header {
+    height: 80px;
+    width: 990px;
+    margin: 0 auto;
+    min-width: 990px;
+}
+
+.logo {
+    float: left;
+    padding: 20px 0 17px;
+}
+
+.mic {
+    background: url("../img/mic-pic.jpg") no-repeat;
+    width: 189px;
+    height: 40px;
+    display: inline-block;
+    border-right: solid 1px #cccccc;
+    padding-right: 10px;
+    margin-right: 10px;
+    text-indent: -9999px;
+}
+
+.fie {
+    background: url("../img/service-pic.jpg") no-repeat;
+    width: 172px;
+    height: 40px;
+    display: inline-block;
+    text-indent: -9999px;
+
+}
+
+.func {
+    float: right;
+    padding: 38px 0 0;
+}
+
+.func span a {
+    text-decoration: none;
+}
+
+.lang-choice {
+    display: inline-block;
+    color: #999999;
+    margin-right: 10px;
+}
+
+.icon {
+    background: url("../img/icon.png") no-repeat;
+    display: inline-block;
+    color: #999999;
+    font: 14px/16px Arial;
+    padding-left: 35px;
+    margin-right: 10px;
+}
+
+.phone-icon {
+    background-position: 0 0;
+}
+
+.email-icon {
+    background-position: 0 -24px;
+    color: #529ac5;
+}
+
+.nav {
+    width: 100%;
+    min-height: 40px;
+    min-width: 990px;
+    background-color: #0199e1;
+}
+
+.nav-class {
+    height: 40px;
+    width: 990px;
+    margin: 0 auto;
+}
+
+.list-item {
+    float: left;
+    width: 120px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.list-item:hover {
+    background-color: #0571b2;
+}
+
+.list-item a {
+    display: block;
+    font-size: 14px;
+    font-family: Arial, serif;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.banner {
+    background: url("../img/service-banner.jpg") no-repeat center;
+    min-width: 990px;
+    height: 251px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.content {
+    min-width: 990px;
+    width: 990px;
+    margin: 0 auto;
+}
+
+.tab-wrap {
+    width: 100%;
+    min-height: 30px;
+    margin-bottom: 40px;
+}
+
+.tab-list {
+    height: 30px;
+    line-height: 30px;
+}
+
+.tab-item {
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    margin-right: 6px;
+    border: solid 1px #cfcfcf;
+    float: left;
+    background-color: #f2f2f2;
+    padding: 0 25px;
+}
+
+.tab-selected {
+    border-bottom: 0;
+    border-top:solid #93d052 3px ;
+    border-right: solid 1px #f2f2f2;
+    border-left: solid 1px #f2f2f2;
+    color: #0199e1;
+}
+
+.tab-info-list {
+    padding: 0 25px;
+    border-bottom: solid 1px #f2f2f2;
+    margin-bottom: 40px;
+}
+
+.tab-info-list p {
+    margin: 0;
+    font: 14px/24px Arial;
+    color: #666666;
+    margin-bottom: 35px;
+}
+
+.intro-title {
+    font: 24px/24px Arial;
+    color: #555555;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.info-images {
+    margin-bottom: 40px;
+}
+
+.info-image-item {
+    width: 222px;
+    height: 141px;
+    margin-right: 13px;
+    float: left;
+}
+
+.info-image-item span {
+    display: block;
+    padding: 150px 4px;
+    font: 14px/18px Arial;
+    color: #78828c;
+}
+
+.info-image1 {
+    background: url("../img/service-intro-image1.jpg") no-repeat;
+    border-radius: 3px;
+}
+
+.info-image2 {
+    background: url("../img/service-intro-image2.jpg") no-repeat;
+    border-radius: 3px;
+}
+
+.info-image3 {
+    background: url("../img/service-intro-image3.jpg") no-repeat;
+    border-radius: 3px;
+}
+
+.info-image4 {
+    background: url("../img/service-intro-image4.jpg") no-repeat;
+    border-radius: 3px;
+}
+
+.process-list {
+    width: 100%;
+    padding: 0 25px;
+    margin-bottom: 79px;
+}
+
+.process-list-info {
+    min-height: 104px;
+    height: 104px;
+}
+
+.circle-info {
+    float: left;
+    width: 104px;
+    height: 104px;
+    background-color: #b2bcc6;
+    display: table;
+    border-radius: 50%;
+}
+
+.circle-info span {
+    display: table-cell;
+    color: #ffffff;
+    font: 14px/19px Arial;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.right-info {
+    float: left;
+    width: 34px;
+    height: 104px;
+    display: table;
+}
+
+.right-info span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 34px;
+    height: 104px;
+}
+
+.right-info-icon {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    background: url("../img/service-icon.png") no-repeat;
+}
+
+.right-icon {
+    background-position: 0 0;
+}
+
+.learn-more {
+    min-height: 50px;
+    height: 50px;
+    text-align: center;
+    margin-bottom: 190px;
+}
+
+.btn-learn {
+    display: inline-block;
+    height: 50px;
+    width: 258px;
+    background-color: #6cc86a;
+    font: 24px/54px Arial;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 0;
+}
+
+.footer {
+    min-width: 990px;
+    height: 90px;
+    background-color: #f2f2f2;
+}
+
+.copyRight {
+    padding: 30px 0 0;
+    text-align: center;
+    font: 12px/18px Arial;
+    color: #888888;
+}
+
+.copyRight p {
+    margin: 0;
+}
