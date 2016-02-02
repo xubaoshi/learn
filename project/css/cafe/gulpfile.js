@@ -6,7 +6,7 @@ var sass = require('gulp-ruby-sass');
 var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', function () {
-    return sass('src/scss/*.scss',{sourcemap:true})
+    return sass('src/scss/**/*.scss',{sourcemap:true})
         .on('error', sass.logError)
         // For inline sourcemaps
         .pipe(sourcemaps.write())
