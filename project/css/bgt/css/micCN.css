@@ -30,6 +30,10 @@
 
 .floor-bd {
     border-bottom: solid 1px #c2c2c2;
+    border-left: solid 1px #c2c2c2;
+    border-right: solid 1px #c2c2c2;
+    width: 1190px;
+    height: 285px;
 }
 
 .floor-hd em {
@@ -102,5 +106,30 @@
 }
 
 .floor-right {
-    float: right;
+    float: left;
+    padding: 15px 24px;
+}
+
+.right-wrap {
+    background-color: #003300;
+    height: 255px;
+    width: 437px;
+}
+
+.right-img {
+    padding-left: 24px;
+    margin-bottom: 24px;
+}
+
+.rec-pro {
+    float: left;
+}
+
+.rec-pro ul {
+   list-style: none;
+}
+
+.rec-pro li {
+    float: left;
+    margin-left: 5px;
 }
