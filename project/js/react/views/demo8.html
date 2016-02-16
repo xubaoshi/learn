@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo8</title>
+</head>
+<body>
+<div id="example"></div>
+<script src="../public/js/react.js"></script>
+<script src="../public/js/react-dom.js"></script>
+<script src="../public/js/browser.min.js"></script>
+<script type="text/babel">
+    var LikeButton = React.createClass({
+        getInitialState: function () {
+            return {liked: false}
+        },
+        handleClick: function (event) {
+            this.setState({liked: !this.state.liked});
+        },
+        render: function () {
+            var text = this.state.liked ? 'like' : 'haven\'t liked';
+            return (
+                <p onClick={this.handleClick}>
+                    You {text} this .Click to toggle.
+                </p>
+            );
+        }
+    });
+    ReactDOM.render(
+       <LikeButton/>,
+        document.getElementById("example")
+    )
+</script>
+</body>
+</html>
