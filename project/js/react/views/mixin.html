@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="example"></div>
+<script src="../public/js/react.js"></script>
+<script src="../public/js/jquery.min.js"></script>
+<script src="../public/js/react-dom.js"></script>
+<script src="../public/js/browser.min.js"></script>
+<script type="text/babel">
+
+    // without mixin
+    //    var Timer = React.createClass({
+    //        getInitialState: function () {
+    //            return {secondsElapsed: 0}
+    //        },
+    //        tick: function () {
+    //            this.setState({secondsElapsed: this.state.secondsElapsed + 1})
+    //        },
+    //        componentDidMount: function () {
+    //            this.interval = setInterval(this.tick,1000);
+    //        },
+    //        componentWillUnmount: function () {
+    //            clearInterval(this.interval);
+    //        },
+    //        render: function () {
+    //            return (
+    //               <div>seconds Elapsed:{this.state.secondsElapsed}</div>
+    //            )
+    //        }
+    //    })
+
+    // mixin
+//    var IntervalMixIn = function (interval) {
+//        return {
+//            componentDidMount: function () {
+//                this._interval = setInterval(this.tick, interval);
+//            },
+//            componentWillUnmount: function () {
+//                clearInterval(this._interval);
+//            }
+//        }
+//    }
+//    var Timer = React.createClass({
+//        mixins: [IntervalMixIn(1000)],
+//        getInitialState: function () {
+//            return {secondsElapsed: 0}
+//        },
+//        tick: function () {
+//            this.setState({secondsElapsed: this.state.secondsElapsed + 1})
+//        },
+//        render: function () {
+//            return (
+//                <div>seconds Elapsed:{this.state.secondsElapsed}</div>
+//            )
+//        }
+//    })
+//    ReactDOM.render(
+//        < Timer / >,
+//        document.getElementById("example")
+//    )
+
+    // mixin better method
+    var IntervalMixin = {
+        setInterval:function(callback,interval){
+            var token = setInterval(callback,interval);
+            this._intervals.push(token);
+            return token;
+        },
+        componentDidMount:function(){
+            this._intervals = [];
+        },
+        componentWillUnmount:function(){
+            this._intervals.map(clearInterval);
+        }
+    }
+
+    var Since2014 = React.createClass({
+        mixins:[IntervalMixin],
+        componentDidMount:function(){
+            this.setInterval(this.forceUpdate.bind(this),1000);
+        },
+        render:function(){
+            var form = Number(new Date(2014,0,1));
+            var to = Date.now();
+            return (
+                <div>{Math.round((to-form)/1000)}</div>
+            );
+        }
+    })
+
+    ReactDOM.render(
+        <Since2014/>,
+        document.getElementById("example")
+    );
+
+</script>
+</body>
+</html>
