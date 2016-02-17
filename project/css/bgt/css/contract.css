@@ -1,0 +1,47 @@
+@import url(base.css);
+
+.header {
+    height: 70px;
+    background-color: #f25630;
+    min-width: 1280px;
+    position: relative;
+}
+
+.side-wrap {
+    top: 70px;
+    width: 188px;
+    height: 100px;
+    overflow: auto;
+    position: absolute;
+    border-right: solid 1px #c2c2c2;
+    background-color: #fafafa;
+}
+
+.menu-list {
+
+}
+
+.menu {
+
+}
+
+.menu-hd {
+
+}
+
+.menu-bd {
+
+}
+
+.main-wrap {
+    top: 70px;
+    left: 189px;
+    overflow: auto;
+    position: absolute;
+    background-color: #fafafa;
+    height: 100px;
+}
+
+.main {
+    width: 920px;
+}
