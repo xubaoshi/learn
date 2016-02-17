@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="../public/js/react.js"></script>
+<script src="../public/js/react-dom.js"></script>
+<script src="../public/js/browser.min.js"></script>
+<script type="text/babel">
+    // 1.componentDidMount状态下 操作DOM
+    var DoodleArea = React.createClass({
+        render:function(){
+            // 组件还未加载，这将会引起异常
+//            this.getDOMNode();
+            return <canvas ref="mainCanvas">
+        },
+        componentDidMount:function(){
+            // 生效
+            var canvasNode = this.refs.mainCanvas.getDOMNode();
+        }
+    })
+    // 2.事件处理器在组件挂载后 可以操作DOM
+    var RichText = React.createClass({
+        render:function(){
+            return <div ref="editableDiv" contentEditable="true"
+                    onKeyDown={this.handleKeyDown}></div>
+        },
+        handleKeyDown:function(){
+            var editor = this.refs.editableDiv.getDOMNode();
+            var html = editor.innerHTML;
+        }
+    })
+
+    // ps:refs及getDOMNode很强大，但使用它会成为React在性能优化上的障碍，
+    // 并会增加应用的复杂性，谨慎考虑使用
+
+
+</script>
+</body>
+</html>
