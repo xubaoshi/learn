@@ -1,7 +1,39 @@
-@import url(base/_normalize.scss);
-@import url(base/_rule.scss);
-@import url(base/_reset.scss);
+@import "base/_normalize.scss";
+@import "base/_rule.scss";
+@import "base/_reset.scss";
 
 @function c($n) {
 	@return #{$n/60}rem;
 }
+
+.container {
+	width: 100%;
+	max-width: 1080px;
+	margin: 0 auto;
+	height: 200px;
+}
+
+.cart-list {
+	padding: c(53) c(58) 0;
+}
+
+.cart {
+	margin-bottom: c(58);
+	position: relative;
+	list-style: none;
+	min-height: c(387);
+	border-radius: c(15);
+	background-color: #eee;
+
+}
+
+.cart img {
+	width: 100%;
+	vertical-align: top;
+}
+
+
+
+
+
+
