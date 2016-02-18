@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>arrow</title>
+    <style type="text/css">
+        /*三角形实现原理*/
+        #demo {
+            width: 0;
+            height: 0;
+            border: 50px solid;
+            border-color: blue red yellow green;
+        }
+
+        /*梯形*/
+        #demo1 {
+            border: 10px solid #000;
+            border-left-color: #f00;
+            width: 10px;
+            height: 10px;
+        }
+
+        /*当元素高宽为0，且其他边为透明色时可以形成一个三角形*/
+        #demo2 {
+            border: 10px solid transparent;
+            border-left-color: #f00;
+            width: 0;
+            height: 0;
+
+        }
+
+        /*调整三角形角度*/
+        #demo3 {
+            border: 10px solid transparent;
+            border-left: 20px solid #f00;
+            width: 0;
+            height: 0;
+        }
+
+        /*通过伪类元素实现三角形*/
+        #demo4 {
+            position: relative;
+        }
+
+        #demo4:after {
+            position: absolute;
+            border: 10px solid transparent;
+            border-left-color: #f00;
+            width: 0;
+            height: 0;
+            content: " ";
+        }
+
+        /*通过伪元素实现箭头线*/
+        #demo5 {
+            position: relative;
+            display: inline-block;
+        }
+
+        #demo5:after, #demo5:before {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: solid 10px transparent;
+            border-left: 10px solid #fff;
+            top: 0;
+            right: -20px;
+            content: ' ';
+        }
+
+        #demo5:before {
+            border-left-color: #f00;
+            right: -21px;
+        }
+
+        /*三角线分割的Tab页*/
+        #demo6 {
+            font: 12px/1.5 Arial;
+            height: 24px;
+            line-height: 24px;
+        }
+
+        /*#demo6 ul {*/
+        /*clear: left;*/
+        /*}*/
+
+        #demo6 li {
+            display: inline-block;
+            position: relative;
+            float: left;
+            list-style: none;
+            border-top: 1px solid #c2c2c2;
+            border-bottom: 1px solid #c2c2c2;
+            padding-left: 12px;
+            cursor: pointer;
+        }
+
+        #demo6 li:after, #demo6 li:before {
+            border: 12px solid transparent;
+            border-left: 10px solid #fff;
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 0;
+            right: -21px;
+            content: " ";
+        }
+
+        #demo6 li:before {
+            border-left-color: #c2c2c2;
+            right: -22px;
+        }
+
+        /*三角形与矩形组成的选择框*/
+        #demo7 {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: #c2c2c2;
+            border: 2px solid #666;
+            position: relative;
+        }
+
+        #demo7:after, #demo7:before {
+            border: solid transparent;
+            content: " ";
+            width: 0;
+            height: 0;
+            top: 0;
+            left: 100%;
+            position: absolute;
+        }
+
+        #demo7:after {
+            border-width: 9px;
+            border-left-color: #c2c2c2;
+            top: 13px;
+        }
+
+        #demo7:before {
+            border-width: 12px;
+            border-left-color: #666;
+            top: 10px;
+        }
+
+        /*#demo7:after {*/
+        /*border: 10px solid transparent;*/
+        /*border-left-color: #c2c2c2;*/
+        /*width: 0;*/
+        /*height: 0;*/
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*right: -18px;*/
+        /*content: " ";*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div id="demo"></div>
+<hr/>
+<div id="demo1"></div>
+<hr/>
+<div id="demo2"></div>
+<hr/>
+<div id="demo3"></div>
+<hr/>
+<div id="demo4">伪类元素</div>
+<hr/>
+<div id="demo5">通过伪元素实现箭头线</div>
+<hr/>
+<div id="demo6">
+    <ul>
+        <li>Tab1</li>
+        <li>Tab2</li>
+        <li>Tab3</li>
+    </ul>
+</div>
+<hr/>
+<div id="demo7"></div>
+</body>
+</html>
