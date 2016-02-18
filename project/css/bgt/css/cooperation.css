@@ -1,0 +1,84 @@
+@import url(base.css);
+@import url(cooperation-icon.css);
+
+body {
+	font: 12px/1.5 Arial, 'microsoft yahei';
+	color: #666666;
+}
+
+.mr10 {
+	margin-right: 10px;
+}
+
+.header {
+	height: 32px;
+	line-height: 32px;
+	background-color: #f7f7f7;
+	border-bottom: solid 1px #e3e3e3;
+}
+
+.header-main {
+	width: 1190px;
+	margin: 0 auto;
+}
+
+.header-left {
+	float: left;
+}
+
+.header-right {
+	float: right;
+}
+
+.header-left a {
+	padding: 0 9px;
+}
+
+.login {
+	border-right: solid 1px #cccccc;
+}
+
+.site-item {
+	height: 16px;
+	line-height: 16px;
+	padding: 0 9px;
+	position: relative;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.site-item a {
+	color: #666666;
+}
+
+.site-item span {
+	padding-right: 12px;
+}
+
+.site-item a:hover {
+	color: #e13335;
+}
+
+.item-bd {
+	border-right: solid 1px #cccccc;
+}
+
+.arrow-up {
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-bottom-color: #666666;
+	top: 4px;
+	right: 9px;
+	position: absolute;
+}
+
+.arrow-down {
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-top-color: #666666;
+	top: 4px;
+	right: 9px;
+	position: absolute;
+}
