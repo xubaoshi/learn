@@ -191,3 +191,124 @@ body {
 .bottom-now {
     background-color: #efeaea;
 }
+
+.pro-desc {
+    width: 1190px;
+    height: 607px;
+    margin: 0 auto;
+    border-bottom: 1px solid #cccccc;
+    position: relative;
+}
+
+.img-area {
+    width: 570px;
+    height: 607px;
+    float: left;
+}
+
+.desc-area {
+    width: 570px;
+    height: 607px;
+    position: absolute;
+    left: 620px;
+    float: left;
+}
+
+.img-area > div {
+    text-align: center;
+}
+
+.youcai-logo {
+    width: 570px;
+    height: 339px;
+    margin-bottom: 20px;
+}
+
+.mic-logo {
+    height: 32px;
+    padding-right: 20px;
+    border-right: 1px solid #cccccc;
+    display: inline-block;
+}
+
+.abiz-logo {
+    height: 32px;
+    padding-left: 20px;
+    display: inline-block;
+}
+
+.hightLight {
+    color: #eb7055;
+}
+
+.desc-area p {
+    font: 14px/24px Arial, 'Microsoft YaHei';
+    margin-bottom: 20px;
+}
+
+.desc-com {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    background-color: #f5f5f5;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+.desc-hd > .desc {
+    float: left;
+}
+
+.desc-hd > .fold {
+    float: right;
+    margin-right: 12px;
+    top: 5px;
+}
+
+.coop-reason {
+    width: 1190px;
+    padding-top: 65px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.coop-reason-tit {
+    padding: 0 12px;
+    top: -23px;
+    left: 510px;
+    font: 32px/41.2px Arial, "Microsoft YaHei";
+    color: #e64c2a;
+    background-color: #ffffff;
+    position: absolute;
+}
+
+.reason-list {
+    list-style: none;
+    height: 556px;
+}
+
+.reason-list li {
+    height: 556px;
+    width: 260px;
+    margin-right: 50px;
+    background-color: #f5f5f5;
+    float: left;
+    position: relative;
+}
+
+.advance {
+    width: 260px;
+    height: 250px;
+}
+
+.pro-advance {
+    width: 180px;
+    height: 180px;
+    margin: 35px 40px 0;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    background: url(../imgs/coop-reason.png) no-repeat;
+    background-position: 0 0;
+}
