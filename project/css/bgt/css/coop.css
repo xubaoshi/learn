@@ -302,7 +302,7 @@ body {
     height: 250px;
 }
 
-.pro-advance {
+.img-advance {
     width: 180px;
     height: 180px;
     margin: 35px 40px 0;
@@ -310,5 +310,52 @@ body {
     display: inline-block;
     overflow: hidden;
     background: url(../imgs/coop-reason.png) no-repeat;
+}
+
+.pro-advance {
     background-position: 0 0;
 }
+.service-advance {
+    background-position: -180px 0;
+}
+.mark-advance {
+    background-position: -360px 0;
+}
+.profit-advance {
+    background-position: -720px 0;
+}
+
+.reason-tit {
+    margin-bottom: 30px;
+    font: 18px/22px Arial, "Microsoft YaHei";
+    color: #e64c2a;
+    text-align: center;
+}
+
+.reason-content {
+    padding: 0 30px;
+    margin-bottom: 20px;
+    font: 14px/24px Arial, "Microsoft YaHei";
+}
+
+.tag {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+    bottom: 0;
+    position: absolute;
+}
+
+.pro-tag a {
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #FffFff;
+    padding: 0 8px;
+}
+
+.pro-tag {
+    background-color: #e64c2a;
+}
+
