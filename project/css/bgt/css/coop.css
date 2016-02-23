@@ -2,421 +2,505 @@
 @import url(coop-icon.css);
 
 body {
-	font: 12px/1.5 Arial, 'microsoft yahei';
+    font: 12px/1.5 Arial, 'microsoft yahei';
 }
 
 .mr10 {
-	margin-right: 10px;
+    margin-right: 10px;
 }
 
 .header {
-	background-color: #f7f7f7;
-	border-bottom: solid 1px #e3e3e3;
-	height: 32px;
+    background-color: #f7f7f7;
+    border-bottom: solid 1px #e3e3e3;
+    height: 32px;
 }
 
 .header-main {
-	width: 1190px;
-	height: 32px;
-	line-height: 32px;
-	vertical-align: middle;
-	margin: 0 auto;
+    width: 1190px;
+    height: 32px;
+    line-height: 32px;
+    vertical-align: middle;
+    margin: 0 auto;
 }
 
 .header-left {
-	float: left;
+    float: left;
 }
 
 .header-right {
-	float: right;
+    float: right;
 }
 
 .header-left a {
-	color: #0066cc;
-	padding: 0 10px 0 9px;
+    color: #0066cc;
+    padding: 0 10px 0 9px;
 }
 
 .header-left a:hover {
-	color: #cc220b;
+    color: #cc220b;
 }
 
 .login {
-	border-right: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
 }
 
 .site-item {
-	padding: 0 9px;
-	border-right: solid 1px #cccccc;
-	position: relative;
-	vertical-align: top;
+    padding: 0 9px;
+    border-right: solid 1px #cccccc;
+    position: relative;
+    vertical-align: top;
 }
 
 .site-item-last {
-	border: 0;
+    border: 0;
 }
 
 .site-item span {
-	padding-right: 12px;
+    padding-right: 12px;
 }
 
 .arrow-up {
-	border: 5px solid transparent;
-	border-top-color: #999999;
-	top: 4px;
-	right: 12px;
-	display: inline-block;
-	position: absolute;
+    border: 5px solid transparent;
+    border-top-color: #999999;
+    top: 4px;
+    right: 12px;
+    display: inline-block;
+    position: absolute;
 }
 
 .nav {
-	height: 207px;
-	background-color: #ffffff;
-	margin-bottom: 90px;
+    height: 207px;
+    background-color: #ffffff;
+    margin-bottom: 90px;
 }
 
 .nav-top {
-	height: 100px;
-	width: 1190px;
-	margin: 0 auto;
+    height: 100px;
+    width: 1190px;
+    margin: 0 auto;
 }
 
 .nav-top-left {
-	width: 230px;
-	float: left;
+    width: 230px;
+    float: left;
 }
 
 .nav-top-left h1 {
-	width: 231px;
-	height: 66px;
-	padding-top: 18px;
+    width: 231px;
+    height: 66px;
+    padding-top: 18px;
 }
 
 .nav-top-left h1 a {
-	width: 100%;
+    width: 100%;
 }
 
 .nav-top-right {
-	float: right;
-	font-size: 16px;
+    float: right;
+    font-size: 16px;
 }
 
 .top-list {
-	padding-top: 40px;
-	list-style: none;
+    padding-top: 40px;
+    list-style: none;
 }
 
 .nav-top-right li {
-	margin-right: 50px;
-	float: left;
+    margin-right: 50px;
+    float: left;
 }
 
 .top-list-item {
-	color: #7d7d7d;
-	padding: 4px 0;
+    color: #7d7d7d;
+    padding: 4px 0;
 }
 
 .top-list-item:hover,
 .top-now {
-	color: #bf3b18;
-	border-bottom: solid 2px #bf3b18;
+    color: #bf3b18;
+    border-bottom: solid 2px #bf3b18;
 }
 
 .nav-middle {
-	height: 46px;
-	line-height: 46px;
-	background-color: #da4120;
+    height: 46px;
+    line-height: 46px;
+    background-color: #da4120;
 }
 
 .nav-middle-main {
-	width: 1190px;
-	height: 46px;
-	line-height: 46px;
-	vertical-align: middle;
-	margin: 0 auto;
+    width: 1190px;
+    height: 46px;
+    line-height: 46px;
+    vertical-align: middle;
+    margin: 0 auto;
 }
 
 .mid-list {
-	list-style: none;
-	font-size: 16px;
+    list-style: none;
+    font-size: 16px;
 }
 
 .mid-list li {
-	float: left;
-	margin: 0 25px 0 30px;
+    float: left;
+    margin: 0 25px 0 30px;
 }
 
 .mid-list-item {
-	color: #ffd5cc;
+    color: #ffd5cc;
 }
 
 .mid-list-item:hover,
 .middle-now {
-	color: #fffa6f;
+    color: #fffa6f;
 }
 
 .nav-bottom {
-	height: 60px;
-	line-height: 60px;
-	background-color: #fafafa;
+    height: 60px;
+    line-height: 60px;
+    background-color: #fafafa;
 }
 
 .nav-bottom-main {
-	width: 1190px;
-	height: 60px;
-	line-height: 60px;
-	vertical-align: middle;
-	margin: 0 auto;
+    width: 1190px;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
+    margin: 0 auto;
 }
 
 .bottom-list {
-	list-style: none;
-	font-size: 16px;
-	font-weight: bold;
+    list-style: none;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .bottom-list li {
-	float: left;
+    float: left;
 }
 
 .bottom-list-item {
-	width: 380px;
-	height: 60px;
-	line-height: 60px;
-	color: #333333;
-	display: inline-block;
-	text-align: center;
+    width: 380px;
+    height: 60px;
+    line-height: 60px;
+    color: #333333;
+    display: inline-block;
+    text-align: center;
 }
 
 .bottom-list-item:hover,
 .bottom-now {
-	background-color: #efeaea;
+    background-color: #efeaea;
 }
 
 .pro-desc {
-	width: 1190px;
-	height: 607px;
-	margin: 0 auto;
-	border-bottom: 1px solid #cccccc;
-	position: relative;
+    width: 1190px;
+    height: 607px;
+    margin: 0 auto;
+    border-bottom: 1px solid #cccccc;
+    position: relative;
 }
 
 .img-area {
-	width: 570px;
-	height: 607px;
-	float: left;
+    width: 570px;
+    height: 607px;
+    float: left;
 }
 
 .desc-area {
-	width: 570px;
-	height: 607px;
-	position: absolute;
-	left: 620px;
-	float: left;
+    width: 570px;
+    height: 607px;
+    position: absolute;
+    left: 620px;
+    float: left;
 }
 
 .img-area > div {
-	text-align: center;
+    text-align: center;
 }
 
 .youcai-logo {
-	width: 570px;
-	height: 339px;
-	margin-bottom: 20px;
+    width: 570px;
+    height: 339px;
+    margin-bottom: 20px;
 }
 
 .mic-logo {
-	height: 32px;
-	padding-right: 20px;
-	border-right: 1px solid #cccccc;
-	display: inline-block;
+    height: 32px;
+    padding-right: 20px;
+    border-right: 1px solid #cccccc;
+    display: inline-block;
 }
 
 .abiz-logo {
-	height: 32px;
-	padding-left: 20px;
-	display: inline-block;
+    height: 32px;
+    padding-left: 20px;
+    display: inline-block;
 }
 
 .hightLight {
-	color: #eb7055;
+    color: #eb7055;
 }
 
 .desc-area p {
-	font: 14px/24px Arial, 'Microsoft YaHei';
-	margin-bottom: 20px;
+    font: 14px/24px Arial, 'Microsoft YaHei';
+    margin-bottom: 20px;
 }
 
 .desc-com {
-	height: 30px;
-	line-height: 30px;
-	padding-left: 20px;
-	background-color: #f5f5f5;
-	margin-bottom: 10px;
-	font-size: 14px;
-	font-family: "Microsoft YaHei";
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    background-color: #f5f5f5;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
 }
 
 .desc-hd > .desc {
-	float: left;
+    float: left;
 }
 
 .desc-hd > .fold {
-	float: right;
-	margin-right: 12px;
-	top: 5px;
+    float: right;
+    margin-right: 12px;
+    top: 5px;
 }
 
 .coop-reason {
-	width: 1190px;
-	padding-top: 65px;
-	margin: 0 auto 175px;
-	position: relative;
+    width: 1190px;
+    padding-top: 65px;
+    margin: 0 auto 175px;
+    position: relative;
+}
+
+.coop-reason:after {
+    width: 0;
+    height: 0;
+    border: 25px solid transparent;
+    border-top: 20px solid #FFFFFF;
+    display: inline-block;
+    content: '';
+    position: absolute;
+    left: 570px;
+    bottom: -220px;
 }
 
 .coop-reason-tit {
-	padding: 0 12px;
-	top: -23px;
-	left: 510px;
-	font: 32px/41.2px Arial, "Microsoft YaHei";
-	color: #e64c2a;
-	background-color: #ffffff;
-	position: absolute;
+    padding: 0 12px;
+    top: -23px;
+    left: 510px;
+    font: 32px/41.2px Arial, "Microsoft YaHei";
+    color: #e64c2a;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 50;
 }
 
 .reason-list {
-	list-style: none;
-	height: 556px;
+    list-style: none;
+    height: 556px;
 }
 
 .reason-list > li {
-	height: 556px;
-	width: 260px;
-	margin-right: 50px;
-	background-color: #f5f5f5;
-	float: left;
-	position: relative;
+    height: 556px;
+    width: 260px;
+    margin-right: 50px;
+    background-color: #f5f5f5;
+    float: left;
+    position: relative;
 }
 
 .reason-list .last-item {
-	margin-right: 0;
+    margin-right: 0;
 }
 
 .advance {
-	width: 260px;
-	height: 250px;
+    width: 260px;
+    height: 250px;
 }
 
 .img-advance {
-	width: 180px;
-	height: 180px;
-	margin: 35px 40px 0;
-	vertical-align: middle;
-	display: inline-block;
-	overflow: hidden;
-	background: url(../imgs/coop-reason.png) no-repeat;
+    width: 180px;
+    height: 180px;
+    margin: 35px 40px 0;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    background: url(../imgs/coop-reason.png) no-repeat;
 }
 
 .pro-advance {
-	background-position: 0 0;
+    background-position: 0 0;
 }
 
 .service-advance {
-	background-position: 0 -180px;
+    background-position: 0 -180px;
 }
 
 .mark-advance {
-	background-position: 0 -360px;
+    background-position: 0 -360px;
 }
 
 .profit-advance {
-	background-position: 0 -540px;
+    background-position: 0 -540px;
 }
 
 .reason-tit {
-	margin-bottom: 30px;
-	font: 18px/22px Arial, "Microsoft YaHei";
-	color: #e64c2a;
-	text-align: center;
+    margin-bottom: 30px;
+    font: 18px/22px Arial, "Microsoft YaHei";
+    color: #e64c2a;
+    text-align: center;
 }
 
 .reason-content {
-	padding: 0 30px;
-	margin-bottom: 20px;
-	font: 14px/24px Arial, "Microsoft YaHei";
+    padding: 0 30px;
+    margin-bottom: 20px;
+    font: 14px/24px Arial, "Microsoft YaHei";
 }
 
 .tag {
-	width: 100%;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-	display: inline-block;
-	bottom: 0;
-	position: absolute;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+    bottom: 0;
+    position: absolute;
 }
 
 .tag a {
-	font-size: 14px;
-	font-family: "Microsoft YaHei";
-	color: #FffFff;
-	padding: 0 8px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    color: #FffFff;
+    padding: 0 8px;
+    position: relative;
+}
+
+.tag a:before,.tag a:after {
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-left: 6px solid #fff;
+    top: 0;
+    content: " ";
+    position: absolute;
+}
+.tag a:before{
+    border-left-color: #FFFFFF;
+    right: -21px;
 }
 
 .pro-tag {
-	background-color: #e64c2a;
+    background-color: #e64c2a;
 }
 
 .service-mark-tag {
-	background-color: #f57b47;
+    background-color: #f57b47;
 }
 
 .profit-tag {
-	background-color: #e7e7e7;
+    background-color: #e7e7e7;
 }
 
 .profit-tag > a {
-	color: #333333;
+    color: #333333;
 }
 
 .contact {
-	height: 517px;
-	background-color: #f67c48;
-	border-top: solid 1px #f46a3a;
+    height: 517px;
+    background-color: #f67c48;
+    border-top: solid 1px #f46a3a;
 
 }
 
 .contact-area {
-	width: 1190px;
-	margin: 0 auto;
-	padding: 93px 120px 99px 0;
+    width: 1190px;
+    margin: 0 auto;
+    padding: 93px 0 99px 0;
 }
 
 .form-area {
-	float: left;
-	margin-right: 170px;
+    float: left;
+    margin-right: 170px;
 }
 
 .contract-way {
-	float: left;
+    float: left;
 }
 
 .contract-tit {
-	height: 20px;
+    height: 20px;
+    margin-bottom: 50px;
 }
 
 .contract-mes {
-	margin-right: 10px;
-	color: #FFFFFF;
-	font: 14px/22px Arial,"Microsoft YaHei";
-	font-weight: bold;
+    margin-right: 10px;
+    color: #FFFFFF;
+    font: 14px/22px Arial, "Microsoft YaHei";
+    font-weight: bold;
 }
 
 .contract-line {
-	width: 255px;
-	margin-bottom: 5px;
-	height: 1px;
-	background-color: #FFFFFF;
-	display: inline-block;
+    width: 255px;
+    margin-bottom: 5px;
+    height: 1px;
+    background-color: #FFFFFF;
+    display: inline-block;
+}
+
+.form-item {
+    height: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+    margin-bottom: 15px;
+}
+
+.form-tit {
+    width: 66px;
+    margin-right: 10px;
+    font: 14px/55px Arial, "Microsoft YaHei";
+    color: #FFFFFF;
+    display: inline-block;
+}
+
+.form-item > input {
+    width: 370px;
+    height: 23px;
+    padding: 5px;
+    background-color: #fa966e;
+    border: 1px solid #f06e32;
+}
+
+.form-item .required {
+    color: #fffa6f;
+}
+
+.btn-main {
+    width: 380px;
+    height: 35px;
+    background-color: #ffde25;
+    margin-top: 15px;
+    margin-left: 80px;
+    border: 1px solid #ffde25;
+    font: 18px/30px Arial, "Microsoft YaHei";
+    color: #f57b47;
+}
+
+.detail-item {
+    margin-bottom: 40px;
+    color: #FFFFFF;
+}
+
+.detail-tit {
+    height: 14px;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.detail-txt {
+    height: 32px;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 
