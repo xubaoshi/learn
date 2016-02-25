@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="../../public/js/react.js"></script>
+<script src="../../public/js/react-dom.js"></script>
+<script src="../../public/js/browser.min.js"></script>
+<script type="text/babel">
+    // 练习使用 （服务端渲染代码）
+    var UserName = React.createClass({
+        statics: {
+            getAsyncState: function (props, setState) {
+                User.findById(props.userId)
+                    .then(function(user){
+                        setState({user:user});
+                    })
+                    .catch(function(error){
+                        setState({error:error});
+                    })
+            }
+        },
+        // 客户端和服务端
+        componentWillMount:function(){
+            if(this.props.initialState){
+                this.setState(this.props.initialState);
+            }
+        },
+        // 仅客户端
+        componentDidMount:function(){
+            // 如果 props没有。则异步获取state
+            if(this.props.initialState){
+                this.updateAsyncState();
+            }
+
+            // 监听change事件
+            User.on('change',this.updateAsyncState);
+        },
+        // 仅客户端
+        componentWillUnmount:function(){
+            // 停止change事件
+            User.off('change',this.updateAsynState);
+        },
+        updateAsyncState:function(){
+            // 访问示例中的静态函数
+            this.constructor.getAsyncState(this.props,this.setState);
+        },
+        render:function(){
+            if(this.state.error){
+                return <div>{this.state.error.message}</div>
+            }
+            if(!this.state.user){
+                return <div>Loading...</div>
+            }
+            return <div>{this.state.user.username}</div>
+        }
+
+        // 在服务端渲染
+        var props = {
+            userId:123
+        };
+        UserName.getAsyncState(props,function(initialState){
+            props[initialState] = initialState;
+            var result = React.renderToString(UserName(props));
+        })
+
+    })
+</script>
+</body>
+</html>
