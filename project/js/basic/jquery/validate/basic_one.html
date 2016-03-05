@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>validate</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<form id="commentForm" class="col-md-4 col-md-offset-4" novalidate="novalidate">
+    <div class="form-group">
+        <label>UserName</label>
+        <input type="text" class="form-control" name="userName" placeholder="UserName">
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Password">
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#commentForm").validate({
+            rules: {
+                userName: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 10
+                },
+                password: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 16
+                }
+            }
+//            ,
+//            messages: {
+//                userName: {
+//                    required:"此项为必填项！",
+//                    minlength:"用户名最小为2位",
+//                    maxlength:"用户名最大为10位"
+//                },
+//                password: {
+//                    required:"此项为必填项！",
+//                    minlength:"用户名最小为2位",
+//                    maxlength:"用户名最大为16位"
+//                }
+//            }
+        });
+    });
+</script>
+</body>
+</html>
