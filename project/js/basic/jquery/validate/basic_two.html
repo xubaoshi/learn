@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>validate</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<form id="commentForm" class="col-md-4 col-md-offset-4" novalidate="novalidate">
+    <div class="form-group">
+        <label>UserName</label>
+        <input type="text" class="form-control" name="userName" placeholder="UserName">
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="password" class="form-control" name="password" placeholder="Password">
+    </div>
+    <!--<div class="form-group">-->
+    <!--<label>Confirm-Password</label>-->
+    <!--<input type="password" class="form-control" name="confirm-password" placeholder="Confirm-Password">-->
+    <!--</div>-->
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label>Url</label>
+        <input type="url" class="form-control" name="url" placeholder="Url">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="button" id="check" class="btn btn-default">Check</button>
+</form>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script type="text/javascript">
+    var validator;
+    $(function () {
+        validator = $("#commentForm").validate({
+//        $("#commentForm").validate({
+            rules: {
+                "userName": {
+                    required: true,
+                    rangelength: [2, 10],
+                    remote: "remote.json",
+                    max: 1000
+//                    remote: {
+//                        url: "remote.json",
+//                        type: "post",
+//                        dataType: "json",
+//                        data: {
+//                            time1:111,
+//                            test: function () {
+//                                return $("[name='email']").val();
+//                            }
+//                        }
+//
+//                    }
+                },
+                "password": {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 16
+                },
+                "email": {
+                    email: true
+                },
+                "url": {
+                    url: true
+                }
+//                ,
+//                "confirm-password": {
+//                    equalTo:"#password"
+//                }
+            }
+            ,
+            messages: {
+                "userName": {
+                    required: "此项为必填项！",
+                    rangelength: "用户名应该在{0}-{1}位",
+                    remote: "您输入的密码重复"
+                },
+                "password": {
+                    required: "此项为必填项！",
+                    minlength: "用户名最小为2位",
+                    maxlength: "用户名最大为16位"
+                },
+                "email": {
+                    email: "请输入正确的Email"
+                },
+                "url": {
+                    url: "请输入正确的Url"
+                }
+//                ,
+//                "confirm-password": {
+//                    equalTo:"两次密码输入不一致"
+//                }
+            }
+        });
+
+
+        // valid
+        (function(){
+            $("#check").click(function () {
+                // 表单校验
+                $("#commentForm").valid();
+                // 表单元素校验
+                $("[name='userName']").valid();
+            });
+        })();
+        // rules
+        (function () {
+            var $userName = $("[name='userName']");
+            // 1.rules()
+            console.log($userName.rules());
+            // 2.rules("add",rules)
+            $userName.rules("add", {
+                number: true
+            });
+            console.log($userName.rules());
+            // 3.rules("remove",rules)
+            $userName.rules("remove", "number")
+        })();
+
+        // validator
+        (function () {
+            console.log(validator.form());
+            console.log(validator.element("[name='userName']"));
+            console.log(validator.resetForm());
+            console.log(validator.showErrors({
+                userName:"你填错了,hoho"
+            }));
+            console.log(validator.numberOfInvalids());
+
+        })();
+    });
+
+</script>
+</body>
+</html>
