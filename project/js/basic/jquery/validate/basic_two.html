@@ -21,7 +21,7 @@
     <!--</div>-->
     <div class="form-group">
         <label>Email</label>
-        <input type="email" class="form-control" name="email" placeholder="Email">
+        <input type="email" class="form-control txt" name="email" placeholder="Email">
     </div>
     <div class="form-group">
         <label>Url</label>
@@ -99,37 +99,57 @@
 
 
         // valid
-        (function(){
-            $("#check").click(function () {
-                // 表单校验
-                $("#commentForm").valid();
-                // 表单元素校验
-                $("[name='userName']").valid();
-            });
+        (function () {
+//            $("#check").click(function () {
+//                // 表单校验
+//                $("#commentForm").valid();
+//                // 表单元素校验
+//                $("[name='userName']").valid();
+//            });
         })();
         // rules
         (function () {
-            var $userName = $("[name='userName']");
-            // 1.rules()
-            console.log($userName.rules());
-            // 2.rules("add",rules)
-            $userName.rules("add", {
-                number: true
-            });
-            console.log($userName.rules());
-            // 3.rules("remove",rules)
-            $userName.rules("remove", "number")
+//            var $userName = $("[name='userName']");
+//            // 1.rules()
+//            console.log($userName.rules());
+//            // 2.rules("add",rules)
+//            $userName.rules("add", {
+//                number: true
+//            });
+//            console.log($userName.rules());
+//            // 3.rules("remove",rules)
+//            $userName.rules("remove", "number")
         })();
 
         // validator
         (function () {
-            console.log(validator.form());
-            console.log(validator.element("[name='userName']"));
-            console.log(validator.resetForm());
-            console.log(validator.showErrors({
-                userName:"你填错了,hoho"
-            }));
-            console.log(validator.numberOfInvalids());
+//            console.log(validator.form());
+//            console.log(validator.element("[name='userName']"));
+//            console.log(validator.resetForm());
+//            console.log(validator.showErrors({
+//                userName: "你填错了,hoho"
+//            }));
+//            console.log(validator.numberOfInvalids());
+
+            // 静态方法
+            // format 格式化字符串
+//            var template = $.validator.format("{0}-{1}-{2}");
+//            template("a", "b", "c"); // a-b-c
+//            template("a", "b"); // a-b-{2}
+//            template(["a", "b", "c"]); // a-b-c
+//            template("a", ["b", "c"]); // a-b,c-{2}
+
+            // setDefaults
+//            $.validator.setDefaults({
+//                debug: true
+//            });
+
+            // addClassRules
+//            $.validator.addClassRules({
+//                txt:{
+//                    required:true
+//                }
+//            })
 
         })();
     });

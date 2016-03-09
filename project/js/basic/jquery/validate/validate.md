@@ -121,7 +121,7 @@ jQuery Validation插件jQuery最常见的插件之一。
         $userName.rules("remove",{
             number:true
         })
-**Validator对象:**<br>
+### Validator对象 ###
 **validate()：**方法返回的对象，Validator对象有很多有用的方法：<br>
 	
 	var validator = $("#commentForm").validate();
@@ -129,7 +129,41 @@ jQuery Validation插件jQuery最常见的插件之一。
 **Validator.element(element)：**验证某个元素是否有效 返回true/false<br>
 **Validator.resetForm()：**将表单恢复到验证前原来的状态<br>
 **Validator.showErrors(errors)：**针对某个元素显示特定的错误信息<br>
-**Validator.numberOfInvalids()：** 返回无效的表单元素数量
+**Validator.numberOfInvalids()：** 返回无效的表单元素数量<br><br>
+**Validator对象静态方法:**<br>
+**jQuery.validator.addMethod(name,method[,message]):** 增加自定义方法
+**jQuery.validator.format(template,argument,argumentN...):**格式化字符串，用参数代替模板中的{n}，主要用作验证规则的提示语。<br>
+**jQuery.validator.setDefaults(options):**修改插件默认配置 如：debug：true<br>
+**jQuery.validator.addClassRules(name,rules):**为某些名为name的class增加组合验证类型<br>
+### Validate方法配置项 ###
+**submitHandler：**通过验证后运行的函数，可以加上表单提交的方法<br>
+**invalidHandler：**无效表单提交后运行的函数<br>
+**ignore：** 对某些元素不进行验证<br>
+**rules:**定义校验规则<br>
+**messages:**定义提示信息<br>
+**groups:**对一组元素的验证，用一个错误提示，用errorPlacement控制把错误信息放在哪里<br>
+**onsubmit:**是否在提交时验证<br>
+**onfocusout:**是否在获取焦点时验证<br>
+**onkeyup:**是否在敲击键盘时验证<br>
+**onclick:**是否在鼠标点击时验证，一般用于checkbox或者radio<br>
+**focusInvalid：**提交表单后，未通过验证的表单（第一个或提交之前获得焦点的未通过验证的表单）是否会获得焦点<br>
+**focusCleanup:** 当未通过验证的元素获得焦点时，是否移除错误提示<br>
+**errorClass:**指定错误提示的css类名，可以自定义错误提示的样式<br>
+**validClass:**指定验证通过的css类名<br>
+**errorElement:**使用什么标签标记错误<br>
+**wrapper:**使用什么标签将errorElement包起来<br>
+**errorLabelContainer:**把错误信息统一放在一个容器里面<br>
+**errorContainer:** 显示或隐藏验证信息，可以自动实现有错误出现时把容器变为显示，无错误时隐藏<br>
+**showErrors:**可以显示总共有多少个未通过验证的元素<br>
+**errorPlacement:**自定义错误信息放到哪里<br>
+**success:**要验证的信息验证通过的动作<br>
+**highlight:**可以给未通过验证的元素添加效果<br>
+**unhighlight:**去除未通过验证的元素的效果，一般和highlight一起使用<br>
+
+### 选择器扩展 ###
+**:blank:** 选择所有值为空的元素 （trim除全角空格）
+**:filled:** 选择所有值不为空的元素 (trim后)
+**:unchecked:**选择所有没有被选中的元素 (checkbox radio)
 
 ## 自定义 ##
 ## 常见类型的验证代码 ##
