@@ -164,8 +164,8 @@ jQuery Validation插件jQuery最常见的插件之一。
 **:blank:** 选择所有值为空的元素 （trim除全角空格）
 **:filled:** 选择所有值不为空的元素 (trim后)
 **:unchecked:**选择所有没有被选中的元素 (checkbox radio)
-
 ## 自定义 ##
+
 ## 常见类型的验证代码 ##
 ### form表单添加novalidate ###
 ### validate debug属性 ###

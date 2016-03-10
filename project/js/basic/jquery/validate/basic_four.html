@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>validate</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<form id="commentForm" class="col-md-4 col-md-offset-4" novalidate="novalidate">
+    <div class="form-group">
+        <label>UserName</label>
+        <input type="text" class="form-control" name="userName" placeholder="UserName">
+    </div>
+    <div class="form-group">
+        <label>Post</label>
+        <input type="text" class="form-control" name="post" placeholder="post">
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#commentForm").validate({
+            rules: {
+                userName: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 10
+                },
+                post: {
+                    postcode:"中国"
+                }
+            }
+            ,
+            messages: {
+                userName: {
+                    required: "此项为必填项！",
+                    minlength: "用户名最小为2位",
+                    maxlength: "用户名最大为10位"
+                }
+            }
+        });
+
+//        $.validator.addMethod("postcode", function (value, element, params) {
+//            var postCode = /^[0-9]{6}$/;
+//            // this.optional(element) 不为空时触发验证方法
+//            return this.optional(element) || postCode.test(value)
+//        }, "请填写正确的编码");
+        $.validator.addMethod("postcode", function (value, element, params) {
+            var postCode = /^[0-9]{6}$/;
+            console.log(params);
+            // this.optional(element) 不为空时触发验证方法
+            return this.optional(element) || postCode.test(value)
+        }, $.validator.format("请填写正确的{0}编码"))
+    });
+</script>
+</body>
+</html>
