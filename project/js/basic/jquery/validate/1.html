@@ -25,8 +25,8 @@
         $("#commentForm").validate({
             rules: {
                 userName: {
-                    minlength: 2,
                     required: true,
+                    minlength: 2,
                     maxlength: 10
                 },
                 password: {
@@ -36,6 +36,7 @@
                 }
             }
             ,
+            // 没有配置校验信息，默认显示该校验规则的默认信息
             messages: {
                 userName: {
                     required:"此项为必填项！",

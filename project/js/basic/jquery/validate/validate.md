@@ -1,14 +1,16 @@
-# jQuery Validation #
-jQuery Validation插件jQuery最常见的插件之一。
-## 优点 ##
-1.可以减少服务器的压力</BR>
+# jQuery Validate #
+jQuery Validate 是jQuery最常见的插件之一。
+##表单校验优点 ##
+1.提升用户体验<br>
+2.缩短用户等待时间<br>
+3.可以减少服务器的压力
 
-2.缩短用户等待时间和提升用户体验
-## 基本用法 ##
-### 引入jQuery Validation###
+## 基本用法（1.html） ##
+### 引入jQuery Validate###
 	
 	<script src="jquery.js"></script>
 	<script src="jquery.validate.js"></script>
+	// 通过引入jquery.validate.js jQuery对象及原型被扩展了一些属性及方法。
 	
 	// html code
 	<form id="commentForm" class="col-md-4 col-md-offset-4" novalidate="novalidate">
@@ -54,16 +56,31 @@ jQuery Validation插件jQuery最常见的插件之一。
     });
 ####ps:####
 1. rules及messages 中的userName、password对应input表单的name属性</br>
-2. 如果messages属性没有配置错误提示信息，将使用默认的提示信息 
+2. 如果messages属性没有配置错误提示信息，将使用默认的提示信息 </br>
+3. validate()：是jQuery Validate插件的核心方法，定义了基本的校验规则和一些有用的配置项,参考上面代码</br>
+method：验证方法，指的是校验的逻辑。</br>
+eg：比如email方法，检查输入的文本是否符合email的规则；</br>
+rule：验证规则，指的是元素和验证方法的关联。</br>
+eg：比如页面存在一个name为email的文本框，需要带有email的验证方法；</br>
 
-### 基本API ###
-**method**：验证方法，指的是校验的逻辑。</br>
-**eg：**比如email方法，检查输入的文本是否符合email的规则；</br>
-**method**：验证规则，指的是元素和验证方法的关联。</br>
-**eg：**比如页面存在一个name为email的文本框，需要带有email的验证方法；</br>
-**validate()**：是Validation插件的核心方法，定义了基本的校验规则和一些有用的配置项,参考上面代码</br>
-**required:**</br>
-**remote:** <br>
+## 默认校验规则(2.html) ##
+**required:**必输字段</br>
+**minlength:** 输入长度最小是？的字符串(汉字算一个字符)</br> 
+**maxlength:** 输入长度最多是？的字符串(汉字算一个字符)</br>
+**rangelength:** 输入长度必须介于 ？ 和 ？ 之间的字符串")(汉字算一个字符)</br>
+**min:** 输入值不能小于？</br>
+**max:** 输入值不能大于？</br>
+**range:**  输入值必须介于 ？ 和 ？ 之间</br>
+**email:** 必须输入正确格式的电子邮件<br>
+**url:** 必须输入正确格式的网址<br>
+**date:** 必须输入正确格式的日期 使用 new Date() 进行时间转换 日期校验ie6出错,有效性较宽泛<br>
+**dateISO:**必须输入正确格式的日期(ISO)，例如：2009-06-23，1998/01/22 验证ISO格式，不验证有效性<br>
+**number:**  必须输入合法的数字(负数，小数)<br>
+**digits:** 必须输入整数<br>
+**url:**  必须输入正确格式的网址<br>
+**creditcard:** 必须输入合法的信用卡号<br>
+**equalTo:** 输入值必须和对应表单元素值相同<br>
+**remote:** 使用ajax方法验证输入值<br>
 1. ajax 方式进行验证<br>
 2. 返回：true：通过验证 false：没有通过验证<br>
 3. 默认发送get请求，可以通过type属性配置<br>
@@ -85,42 +102,32 @@ jQuery Validation插件jQuery最常见的插件之一。
 	    }
 	
 	}
-**minlength:** 字符数量的范围</br> 
-**maxlength:** 字符数量的范围</br>
-**rangelength:** 字符数量的范围</br>
-**minlength:** 值大小的范围</br>
-**maxlength:** 值大小的范围</br>
-**rangelength:** 值大小的范围</br>
-**email:** <br>
-**url:** <br>
-**date:** 将使用new Date()方法将传入参数进行转换如果转换失败提示报错,有效性较宽泛<br>
-**dateISO:**ISO标准格式日期校验<br>
-**number:** 数字<br>
-**digits:** 非负整数<br>
-**url:** <br>
-## API说明 ##
+
+## 常用方法(3.html) ##
 **valid:** 检查表单或表单元素是否有效，返回true/false<br>
 
 	// 表单校验
 	$("#commentForm").valid();
 	// 表单元素校验
 	$("[name='userName']").valid();
+
 **rules:**针对表单元素的方法<br>
 1. rules() 获取表单元素的校验规则<br>
 2. rules("add",rules) 向表单元素添加校验规则<br>
 3. rules("remove",rules) 删除表单元素校验规则<br>
 
-		// 1.rules()
-        console.log($userName.rules());
-        // 2.rules("add",rules)
-        $userName.rules("add",{
-           number:true
-        });
-        console.log($userName.rules());
-        // 3.rules("remove",rules)
-        $userName.rules("remove",{
-            number:true
-        })
+	// 1.rules()
+    console.log($userName.rules());
+    // 2.rules("add",rules)
+    $userName.rules("add",{
+       number:true
+    });
+    console.log($userName.rules());
+    // 3.rules("remove",rules)
+    $userName.rules("remove",{
+        number:true
+    })
+
 ### Validator对象 ###
 **validate()：**方法返回的对象，Validator对象有很多有用的方法：<br>
 	
@@ -130,12 +137,14 @@ jQuery Validation插件jQuery最常见的插件之一。
 **Validator.resetForm()：**将表单恢复到验证前原来的状态<br>
 **Validator.showErrors(errors)：**针对某个元素显示特定的错误信息<br>
 **Validator.numberOfInvalids()：** 返回无效的表单元素数量<br><br>
-**Validator对象静态方法:**<br>
+
+**jQuery.Validator对象 静态方法:**<br>
 **jQuery.validator.addMethod(name,method[,message]):** 增加自定义方法
 **jQuery.validator.format(template,argument,argumentN...):**格式化字符串，用参数代替模板中的{n}，主要用作验证规则的提示语。<br>
 **jQuery.validator.setDefaults(options):**修改插件默认配置 如：debug：true<br>
 **jQuery.validator.addClassRules(name,rules):**为某些名为name的class增加组合验证类型<br>
 ### Validate方法配置项 ###
+**debug：**表单不会提交，只进行检查，调试时十分方便<br>
 **submitHandler：**通过验证后运行的函数，可以加上表单提交的方法<br>
 **invalidHandler：**无效表单提交后运行的函数<br>
 **ignore：** 对某些元素不进行验证<br>

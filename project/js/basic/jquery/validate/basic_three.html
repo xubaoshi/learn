@@ -17,8 +17,8 @@
     </div>
 
     <button type="submit" class="btn btn-default">Submit</button>
-    <!--<div id="info"></div>-->
-    <!--<div id="info2">info2</div>-->
+    <div id="info"></div>
+    <!--<div id="info2">表单校验错误</div>-->
 </form>
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
@@ -104,10 +104,10 @@
             }
 
         });
-        $("#commentForm").on("invalid-form", function (event, validator) {
-            console.log(event);
-            console.log("错误数：" + validator.numberOfInvalids());
-        });
+//        $("#commentForm").on("invalid-form", function (event, validator) {
+//            console.log(event);
+//            console.log("错误数：" + validator.numberOfInvalids());
+//        });
     })
     ;
 </script>

@@ -1,0 +1,19 @@
+1.radio的required表示必须选中一个
+<input  type="radio" id="gender_male" value="m" name="gender" class="{required:true}" />
+<input  type="radio" id="gender_female" value="f" name="gender"/>
+
+2.checkbox的required表示必须选中
+<input type="checkbox" class="checkbox" id="agree" name="agree" class="{required:true}" />
+checkbox的minlength表示必须选中的最小个数,maxlength表示最大的选中个数,rangelength:[2,3]表 示选中个数区间
+
+<input type="checkbox" class="checkbox" id="spam_email" value="email" name="spam[]" class="{required:true, minlength:2}" />
+<input type="checkbox" class="checkbox" id="spam_phone" value="phone" name="spam[]" />
+<input type="checkbox" class="checkbox" id="spam_mail" value="mail" name="spam[]" />
+
+3.select的required表示选中的value不能为空
+<select id="jungle" name="jungle" title="Please select something!" class="{required:true}">
+    <option value=""></option>
+    <option value="1">Buga</option>
+    <option value="2">Baga</option>
+    <option value="3">Oi</option>
+</select>

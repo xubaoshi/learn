@@ -15,10 +15,6 @@
         <label>Password</label>
         <input type="password" id="password" class="form-control" name="password" placeholder="Password">
     </div>
-    <!--<div class="form-group">-->
-    <!--<label>Confirm-Password</label>-->
-    <!--<input type="password" class="form-control" name="confirm-password" placeholder="Confirm-Password">-->
-    <!--</div>-->
     <div class="form-group">
         <label>Email</label>
         <input type="email" class="form-control txt" name="email" placeholder="Email">
@@ -41,20 +37,6 @@
                 "userName": {
                     required: true,
                     rangelength: [3, 10]
-//                    ,remote: "remote.json"
-//                    ,min: 1000
-//                    ,remote: {
-//                        url: "remote.json",
-//                        type: "post",
-//                        dataType: "json",
-//                        data: {
-//                            time1:111,
-//                            email: function () {
-//                                return $("[name='email']").val();
-//                            }
-//                        }
-//
-//                    }
                 },
                 "password": {
                     required: true,
@@ -67,10 +49,6 @@
                 "url": {
                     url: true
                 }
-//                ,
-//                "confirm-password": {
-//                    equalTo:"#password"
-//                }
             }
             ,
             messages: {
@@ -90,35 +68,31 @@
                 "url": {
                     url: "请输入正确的Url"
                 }
-//                ,
-//                "confirm-password": {
-//                    equalTo:"两次密码输入不一致"
-//                }
             }
         });
 
 
         // valid
         (function () {
-//            $("#check").click(function () {
-//                // 表单校验
-//                $("#commentForm").valid();
-////                // 表单元素校验
-//                $("[name='userName']").valid();
-//            });
+            $("#check").click(function () {
+                // 表单校验
+                $("#commentForm").valid();
+//                // 表单元素校验
+                $("[name='userName']").valid();
+            });
         })();
         // rules
         (function () {
-//            var $userName = $("[name='userName']");
-//            // 1.rules()
-//            console.log($userName.rules());
-//            // 2.rules("add",rules)
-//            $userName.rules("add", {
-//                number: true
-//            });
-//            console.log($userName.rules());
-//            // 3.rules("remove",rules)
-//            $userName.rules("remove", "number")
+            var $userName = $("[name='userName']");
+            // 1.rules()
+            console.log($userName.rules());
+            // 2.rules("add",rules)
+            $userName.rules("add", {
+                number: true
+            });
+            console.log($userName.rules());
+            // 3.rules("remove",rules)
+            $userName.rules("remove", "number")
         })();
 
         // validator
@@ -127,7 +101,7 @@
 //            console.log(validator.element("[name='userName']"));
 //            console.log(validator.resetForm());
 //            console.log(validator.showErrors({
-//                userName: "你填错了,hoho"
+//                userName: "你填错了"
 //            }));
 //            console.log(validator.numberOfInvalids());
 
