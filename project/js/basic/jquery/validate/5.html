@@ -24,6 +24,7 @@
         <input type="url" class="form-control" name="url" placeholder="Url">
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
+    <button type="button" id="check" class="btn btn-default">Check</button>
 </form>
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
@@ -69,15 +70,31 @@
         });
 
 
-        // validator 方法
+        // $.validator 静态方法
         (function () {
-            console.log(validator.form());
-            console.log(validator.element("[name='userName']"));
-            console.log(validator.resetForm());
-            console.log(validator.showErrors({
-                userName: "你填错了"
-            }));
-            console.log(validator.numberOfInvalids());
+
+            // format 格式化字符串
+            var template = $.validator.format("{0}-{1}-{2}");
+            template("a", "b", "c"); // a-b-c
+            template("a", "b"); // a-b-{2}
+            template(["a", "b", "c"]); // a-b-c
+            template("a", ["b", "c"]); // a-b,c-{2}
+
+            // setDefaults
+            $.validator.setDefaults({
+                debug: true,
+                submitHandle:function(form){
+
+                }
+            });
+
+            // addClassRules
+            $.validator.addClassRules({
+                txt:{
+                    required:true
+                }
+            })
+
         })();
     });
 

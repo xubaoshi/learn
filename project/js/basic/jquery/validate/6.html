@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-<form id="commentForm" action="" class="col-md-4 col-md-offset-4" novalidate="novalidate">
+<form id="commentForm" class="col-md-4 col-md-offset-4" novalidate="novalidate">
     <div class="form-group">
         <label>UserName</label>
         <input type="text" class="form-control" name="userName" placeholder="UserName">
@@ -19,11 +19,8 @@
         <label>Email</label>
         <input type="email" class="form-control txt" name="email" placeholder="Email">
     </div>
-    <div class="form-group">
-        <label>Url</label>
-        <input type="url" class="form-control" name="url" placeholder="Url">
-    </div>
     <button type="submit" class="btn btn-default">Submit</button>
+    <button type="button" id="check" class="btn btn-default">Check</button>
 </form>
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
@@ -43,16 +40,14 @@
                 },
                 "email": {
                     email: true
-                },
-                "url": {
-                    url: true
                 }
             }
             ,
             messages: {
                 "userName": {
                     required: "此项为必填项！",
-                    rangelength: "用户名应该在{0}-{1}位"
+                    rangelength: "用户名应该在{0}-{1}位",
+                    remote: "您输入的密码重复"
                 },
                 "password": {
                     required: "此项为必填项！",
@@ -61,24 +56,34 @@
                 },
                 "email": {
                     email: "请输入正确的Email"
-                },
-                "url": {
-                    url: "请输入正确的Url"
                 }
             }
         });
 
 
-        // validator 方法
+        // valid
         (function () {
-            console.log(validator.form());
-            console.log(validator.element("[name='userName']"));
-            console.log(validator.resetForm());
-            console.log(validator.showErrors({
-                userName: "你填错了"
-            }));
-            console.log(validator.numberOfInvalids());
+            $("#check").click(function () {
+                // 表单校验
+                $("#commentForm").valid();
+//                // 表单元素校验
+                $("[name='userName']").valid();
+            });
         })();
+        // rules
+        (function () {
+            var $userName = $("[name='userName']");
+            // 1.rules()
+            console.log($userName.rules());
+            // 2.rules("add",rules)
+            $userName.rules("add", {
+                number: true
+            });
+            console.log($userName.rules());
+            // 3.rules("remove",rules)
+            $userName.rules("remove", "number")
+        })();
+
     });
 
 </script>

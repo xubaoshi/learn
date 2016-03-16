@@ -9,125 +9,107 @@
 <form id="commentForm" class="col-md-4 col-md-offset-4" novalidate="novalidate">
     <div class="form-group">
         <label>UserName</label>
-        <input type="text" class="form-control" name="userName" placeholder="UserName">
+        <input type="text" class="form-control" id="userName" name="userName" placeholder="UserName">
     </div>
     <div class="form-group">
         <label>Password</label>
-        <input type="password" id="password" class="form-control" name="password" placeholder="Password">
-    </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input type="email" class="form-control txt" name="email" placeholder="Email">
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
     </div>
     <div class="form-group">
         <label>Url</label>
         <input type="url" class="form-control" name="url" placeholder="Url">
     </div>
+
     <button type="submit" class="btn btn-default">Submit</button>
-    <button type="button" id="check" class="btn btn-default">Check</button>
+    <div id="info"></div>
+    <!--<div id="info2">表单校验错误</div>-->
 </form>
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
 <script type="text/javascript">
-    var validator;
     $(function () {
-        validator = $("#commentForm").validate({
-//        $("#commentForm").validate({
+        $("#commentForm").validate({
+            debug:true,
+            submitHandler: function (form) {
+                console.log($(form).serialize());
+//                form.submit()
+            },
+            invalidHandler:function(event,validator){
+                console.log(event);
+                console.log("错误数：" + validator.numberOfInvalids());
+            },
             rules: {
-                "userName": {
+                userName: {
                     required: true,
-                    rangelength: [3, 10]
+                    minlength: 2,
+                    maxlength: 10
                 },
-                "password": {
+                password: {
                     required: true,
                     minlength: 2,
                     maxlength: 16
-                },
-                "email": {
-                    email: true
                 },
                 "url": {
                     url: true
                 }
             }
-            ,
-            messages: {
-                "userName": {
+            , messages: {
+                userName: {
                     required: "此项为必填项！",
-                    rangelength: "用户名应该在{0}-{1}位",
-                    remote: "您输入的密码重复"
-                },
-                "password": {
+                    minlength: "用户名最小为2位",
+                    maxlength: "用户名最大为10位"
+                }
+                ,
+                password: {
                     required: "此项为必填项！",
                     minlength: "用户名最小为2位",
                     maxlength: "用户名最大为16位"
-                },
-                "email": {
-                    email: "请输入正确的Email"
                 },
                 "url": {
                     url: "请输入正确的Url"
                 }
             }
-        });
-
-
-        // valid
-        (function () {
-            $("#check").click(function () {
-                // 表单校验
-                $("#commentForm").valid();
-//                // 表单元素校验
-                $("[name='userName']").valid();
-            });
-        })();
-        // rules
-        (function () {
-            var $userName = $("[name='userName']");
-            // 1.rules()
-            console.log($userName.rules());
-            // 2.rules("add",rules)
-            $userName.rules("add", {
-                number: true
-            });
-            console.log($userName.rules());
-            // 3.rules("remove",rules)
-            $userName.rules("remove", "number")
-        })();
-
-        // validator
-        (function () {
-//            console.log(validator.form());
-//            console.log(validator.element("[name='userName']"));
-//            console.log(validator.resetForm());
-//            console.log(validator.showErrors({
-//                userName: "你填错了"
-//            }));
-//            console.log(validator.numberOfInvalids());
-
-            // 静态方法
-            // format 格式化字符串
-//            var template = $.validator.format("{0}-{1}-{2}");
-//            template("a", "b", "c"); // a-b-c
-//            template("a", "b"); // a-b-{2}
-//            template(["a", "b", "c"]); // a-b-c
-//            template("a", ["b", "c"]); // a-b,c-{2}
-
-            // setDefaults
-//            $.validator.setDefaults({
-//                debug: true
-//            });
-
-            // addClassRules
-//            $.validator.addClassRules({
-//                txt:{
-//                    required:true
+//            ,ignore:"#userName" // :hidden 默认值 #userName
+//            ,groups: {
+//                login: "userName password"
+//            }
+//            ,errorPlacement: function (error, element) {
+//                if(element.attr("name") == "userName" || element.attr("name") == "password"){
+//                    error.insertAfter($("#userName"));
+//                }else{
+//                    error.insertAfter(element);
 //                }
-//            })
+//            }
+//            ,onsubmit:true // true 为默认值
+//            ,focusInvalid:false
+//            ,focusCleanup:true
+//            ,errorClass:"wrong"  // 默认为error
+//            ,validClass:"right"  // 默认为valid
+//            ,errorContainer:"#info2"
+//            ,errorLabelContainer:"#info"
+//            ,errorElement:"li"
+//            ,wrapper:"ul"
+//            ,showErrors:function(errMap,errorList){
+//                console.log(errMap);
+//                console.log(errorList);
+//                this.defaultShowErrors();
+//            }
+            // 针对表单元素
+//            ,highlight:function(element,errorClass,validClass){
+//                $(element).addClass(errorClass).removeClass(validClass);
+//                $(element).fadeOut().fadeIn();
+//            }
+//            ,unhighlight:function(element,errorClass,validClass){
+//                $(element).addClass(validClass).removeClass(errorClass);
+//            }
 
-        })();
-    });
-
+        });
+//        $("#commentForm").on("invalid-form", function (event, validator) {
+//            console.log(event);
+//            console.log("错误数：" + validator.numberOfInvalids());
+//        });
+    })
+    ;
 </script>
 </body>
 </html>

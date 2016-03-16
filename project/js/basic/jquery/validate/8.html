@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>validate</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<form id="commentForm" class="col-md-4 col-md-offset-4" novalidate="novalidate">
+    <div class="form-group">
+        <label for="gender_male">male</label>
+        <input type="radio" id="gender_male" value="m" name="gender"/>
+        <label for="gender_female">female</label>
+        <input type="radio" id="gender_female" value="f" name="gender"/>
+    </div>
+    <hr/>
+    <div class="form-group">
+        <label>同意</label>
+        <input type="checkbox" class="checkbox" id="agree" name="agree"/>
+    </div>
+    <hr/>
+    <div class="form-group">
+        <label>联系方式</label>
+        <input type="checkbox" name="contact" id="spam_email" value="email"/>
+        <input type="checkbox" name="contact" id="spam_phone" value="phone"/>
+        <input type="checkbox" name="contact" id="spam_mail" value="mail"/>
+    </div>
+    <hr/>
+    <div class="form-group">
+        <label>方式</label>
+        <select id="jungle" name="jungle" title="Please select something!">
+            <option value=""></option>
+            <option value="1">Buga</option>
+            <option value="2">Baga</option>
+            <option value="3">Oi</option>
+        </select>
+    </div>
+    <hr/>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script type="text/javascript">
+    var validator;
+    $(function () {
+        // checkbox的minlength表示必须选中的最小个数,maxlength表示最大的选中个数,rangelength:[2,3]表 示选中个数区间
+        validator = $("#commentForm").validate({
+            rules: {
+                "gender": {
+                    required: true
+                },
+                "agree": {
+                    required: true
+                },
+                "contact": {
+                    required: true,
+                    minlength: 2
+                },
+                "jungle": {
+                    required: true
+                }
+            }
+            ,
+            messages: {
+                "gender": {
+                    required: "此项为必填项！"
+                },
+                "agree": {
+                    required: "此项为必填项！"
+                },
+                "contact": {
+                    required: "此项为必填项！",
+                    minlength: "联系方式至少选择两个"
+                },
+                "email": {
+                    required: "此项为必填项！"
+                }
+            }
+            , errorPlacement: function (error, element) {
+                if (element.attr("name") == "gender" || element.attr("name") == "contact") {
+                    error.appendTo(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
+            }
+        });
+
+    });
+
+</script>
+</body>
+</html>

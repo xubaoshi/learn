@@ -25,6 +25,7 @@ jQuery Validate 是jQuery最常见的插件之一。
     	<button type="submit" class="btn btn-default">Submit</button>
 	</form>
 
+	// dom加载完后执行
 	// js code
 	$(function () {
         $("#commentForm").validate({
@@ -63,7 +64,7 @@ eg：比如email方法，检查输入的文本是否符合email的规则；</br>
 rule：验证规则，指的是元素和验证方法的关联。</br>
 eg：比如页面存在一个name为email的文本框，需要带有email的验证方法；</br>
 
-## 默认校验规则(2.html) ##
+## 默认验证方法(2.html) ##
 **required:**必输字段</br>
 **minlength:** 输入长度最小是？的字符串(汉字算一个字符)</br> 
 **maxlength:** 输入长度最多是？的字符串(汉字算一个字符)</br>
@@ -73,13 +74,14 @@ eg：比如页面存在一个name为email的文本框，需要带有email的验�
 **range:**  输入值必须介于 ？ 和 ？ 之间</br>
 **email:** 必须输入正确格式的电子邮件<br>
 **url:** 必须输入正确格式的网址<br>
-**date:** 必须输入正确格式的日期 使用 new Date() 进行时间转换 日期校验ie6出错,有效性较宽泛<br>
+**date:** 必须输入正确格式的日期 使用 new Date()进行时间转换 日期校验ie6出错,有效性较宽泛<br>
 **dateISO:**必须输入正确格式的日期(ISO)，例如：2009-06-23，1998/01/22 验证ISO格式，不验证有效性<br>
 **number:**  必须输入合法的数字(负数，小数)<br>
 **digits:** 必须输入整数<br>
 **url:**  必须输入正确格式的网址<br>
 **creditcard:** 必须输入合法的信用卡号<br>
 **equalTo:** 输入值必须和对应表单元素值相同<br>
+**depends:** 所有的验证规则都有depends属性用于,规定该验证什么时候有效<br>
 **remote:** 使用ajax方法验证输入值<br>
 1. ajax 方式进行验证<br>
 2. 返回：true：通过验证 false：没有通过验证<br>
@@ -103,9 +105,9 @@ eg：比如页面存在一个name为email的文本框，需要带有email的验�
 	
 	}
 
-### Validate方法配置项(3.html) ###
-**debug：** 表单不会提交，只进行检查，调试时十分方便<br>
-**submitHandler：**通过验证后运行的函数，可以加上表单提交的方法<br>
+## Validate方法配置项(3.html) ##
+**debug：** 表单不会提交，只进行检查，用于调试<br>
+**submitHandler：**表单提交通过验证后运行的函数,函数内需执行表单提交的函数,否则表单不会提交。br>
 **invalidHandler：**无效表单提交后运行的函数<br>
 **ignore：** 对某些元素不进行验证<br>
 **rules:**定义校验规则<br>
@@ -125,12 +127,11 @@ eg：比如页面存在一个name为email的文本框，需要带有email的验�
 **errorContainer:** 显示或隐藏验证信息，可以自动实现有错误出现时把容器变为显示，无错误时隐藏<br>
 **showErrors:**可以显示总共有多少个未通过验证的元素<br>
 **errorPlacement:**自定义错误信息放到哪里<br>
-**success:**要验证的信息验证通过的动作<br>
-**highlight:**可以给未通过验证的元素添加效果<br>
+**highlight:**给未通过验证的元素添加效果<br>
 **unhighlight:**去除未通过验证的元素的效果，一般和highlight一起使用<br>
 
-### Validator对象(4.html) ###
-**validate()：**方法返回的对象，Validator对象有很多有用的方法：<br>
+## Validator对象(4.html) ##
+**validate()：**方法返回的对象，Validator对象的方法：<br>
 	
 	var validator = $("#commentForm").validate();
 **Validator.form()：**验证表单是否有效，返回true/false<br>
@@ -139,12 +140,13 @@ eg：比如页面存在一个name为email的文本框，需要带有email的验�
 **Validator.showErrors(errors)：**针对某个元素显示特定的错误信息<br>
 **Validator.numberOfInvalids()：** 返回无效的表单元素数量<br><br>
 
-**jQuery.Validator对象 静态方法:**<br>
+## jQuery.Validator对象(5.html) ##
 **jQuery.validator.addMethod(name,method[,message]):** 增加自定义方法
 **jQuery.validator.format(template,argument,argumentN...):**格式化字符串，用参数代替模板中的{n}，主要用作验证规则的提示语。<br>
 **jQuery.validator.setDefaults(options):**修改插件默认配置 如：debug：true<br>
 **jQuery.validator.addClassRules(name,rules):**为某些名为name的class增加组合验证类型<br>
-## 常用方法(5.html) ##
+
+## 常用方法(6.html) ##
 **valid:** 检查表单或表单元素是否有效，返回true/false<br>
 
 	// 表单校验
@@ -168,12 +170,13 @@ eg：比如页面存在一个name为email的文本框，需要带有email的验�
     $userName.rules("remove",{
         number:true
     })
-### 选择器扩展 ###
-**:blank:** 选择所有值为空的元素 （trim除全角空格）
-**:filled:** 选择所有值不为空的元素 (trim后)
-**:unchecked:**选择所有没有被选中的元素 (checkbox radio)
-## 自定义 ##
-
-## 常见类型的验证代码 ##
-### form表单添加novalidate ###
-### validate debug属性 ###
+## 自定义验证方法（7.html） ##
+**jQuery.validator.addMethod(name,method[,message]):** 增加自定义方法
+## 选择器的扩展与其他（8.html） ##
+**:blank:** 选择所有值为空的元素 （trim除全角空格）<br>
+**:filled:** 选择所有值不为空的元素 (trim后)<br>
+**:unchecked:**选择所有没有被选中的元素 (checkbox radio)<br>
+**radio：**radio的required表示必须选中一个 <br>
+**checkbox：**checkbox的required表示必须选中
+checkbox的minlength表示必须选中的最小个数,maxlength表示最大的选中个数,rangelength:[2,3]表 示选中个数区间 <br>
+**select：**select的required表示选中的value不能为空 <br>
