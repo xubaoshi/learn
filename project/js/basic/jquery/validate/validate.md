@@ -103,48 +103,8 @@ eg：比如页面存在一个name为email的文本框，需要带有email的验�
 	
 	}
 
-## 常用方法(3.html) ##
-**valid:** 检查表单或表单元素是否有效，返回true/false<br>
-
-	// 表单校验
-	$("#commentForm").valid();
-	// 表单元素校验
-	$("[name='userName']").valid();
-
-**rules:**针对表单元素的方法<br>
-1. rules() 获取表单元素的校验规则<br>
-2. rules("add",rules) 向表单元素添加校验规则<br>
-3. rules("remove",rules) 删除表单元素校验规则<br>
-
-	// 1.rules()
-    console.log($userName.rules());
-    // 2.rules("add",rules)
-    $userName.rules("add",{
-       number:true
-    });
-    console.log($userName.rules());
-    // 3.rules("remove",rules)
-    $userName.rules("remove",{
-        number:true
-    })
-
-### Validator对象 ###
-**validate()：**方法返回的对象，Validator对象有很多有用的方法：<br>
-	
-	var validator = $("#commentForm").validate();
-**Validator.form()：**验证表单是否有效，返回true/false<br>
-**Validator.element(element)：**验证某个元素是否有效 返回true/false<br>
-**Validator.resetForm()：**将表单恢复到验证前原来的状态<br>
-**Validator.showErrors(errors)：**针对某个元素显示特定的错误信息<br>
-**Validator.numberOfInvalids()：** 返回无效的表单元素数量<br><br>
-
-**jQuery.Validator对象 静态方法:**<br>
-**jQuery.validator.addMethod(name,method[,message]):** 增加自定义方法
-**jQuery.validator.format(template,argument,argumentN...):**格式化字符串，用参数代替模板中的{n}，主要用作验证规则的提示语。<br>
-**jQuery.validator.setDefaults(options):**修改插件默认配置 如：debug：true<br>
-**jQuery.validator.addClassRules(name,rules):**为某些名为name的class增加组合验证类型<br>
-### Validate方法配置项 ###
-**debug：**表单不会提交，只进行检查，调试时十分方便<br>
+### Validate方法配置项(3.html) ###
+**debug：** 表单不会提交，只进行检查，调试时十分方便<br>
 **submitHandler：**通过验证后运行的函数，可以加上表单提交的方法<br>
 **invalidHandler：**无效表单提交后运行的函数<br>
 **ignore：** 对某些元素不进行验证<br>
@@ -169,6 +129,45 @@ eg：比如页面存在一个name为email的文本框，需要带有email的验�
 **highlight:**可以给未通过验证的元素添加效果<br>
 **unhighlight:**去除未通过验证的元素的效果，一般和highlight一起使用<br>
 
+### Validator对象(4.html) ###
+**validate()：**方法返回的对象，Validator对象有很多有用的方法：<br>
+	
+	var validator = $("#commentForm").validate();
+**Validator.form()：**验证表单是否有效，返回true/false<br>
+**Validator.element(element)：**验证某个元素是否有效 返回true/false<br>
+**Validator.resetForm()：**将表单恢复到验证前原来的状态<br>
+**Validator.showErrors(errors)：**针对某个元素显示特定的错误信息<br>
+**Validator.numberOfInvalids()：** 返回无效的表单元素数量<br><br>
+
+**jQuery.Validator对象 静态方法:**<br>
+**jQuery.validator.addMethod(name,method[,message]):** 增加自定义方法
+**jQuery.validator.format(template,argument,argumentN...):**格式化字符串，用参数代替模板中的{n}，主要用作验证规则的提示语。<br>
+**jQuery.validator.setDefaults(options):**修改插件默认配置 如：debug：true<br>
+**jQuery.validator.addClassRules(name,rules):**为某些名为name的class增加组合验证类型<br>
+## 常用方法(5.html) ##
+**valid:** 检查表单或表单元素是否有效，返回true/false<br>
+
+	// 表单校验
+	$("#commentForm").valid();
+	// 表单元素校验
+	$("[name='userName']").valid();
+
+**rules:**针对表单元素的方法<br>
+1. rules() 获取表单元素的校验规则<br>
+2. rules("add",rules) 向表单元素添加校验规则<br>
+3. rules("remove",rules) 删除表单元素校验规则<br>
+
+	// 1.rules()
+    console.log($userName.rules());
+    // 2.rules("add",rules)
+    $userName.rules("add",{
+       number:true
+    });
+    console.log($userName.rules());
+    // 3.rules("remove",rules)
+    $userName.rules("remove",{
+        number:true
+    })
 ### 选择器扩展 ###
 **:blank:** 选择所有值为空的元素 （trim除全角空格）
 **:filled:** 选择所有值不为空的元素 (trim后)
