@@ -29,4 +29,5 @@ view的所有数据来源只应该从属性中传递过来,view的所有表现�
 view自己需要做的事根据交互触发不同的action。只关注ui层的交互，大大提高了view组件的复用性。
 ### 5.dispatcher是个单例 ###
 对单个引用而言dispatcher是单例的，最主要的是dispatcher是数据分发中心，所有数据都要流经dispatcher,dispatcher管理不同action与store之间的关系，所有的数据都要在dispatcher留下一笔，基于此我们可以做很多有趣的事情，各种debug工具、动作回滚、日志记录、甚至是权限拦截都可以的。
+![](http://i.imgur.com/6WPJS3E.jpg)
 
