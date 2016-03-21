@@ -1,3 +1,4 @@
 .idea/
 node_modules/
 project/js/react/flux/flux-example/
+project/js/react/flux/to-do-mvc/
