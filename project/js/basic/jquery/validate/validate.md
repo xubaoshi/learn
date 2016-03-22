@@ -56,22 +56,23 @@ jQuery Validate 是jQuery最常见的插件之一。
         });
     });
 ####ps:####
-1. rules及messages 中的userName、password对应input表单的name属性</br>
-2. 如果messages属性没有配置错误提示信息，将使用默认的提示信息 </br>
-3. validate()：是jQuery Validate插件的核心方法，定义了基本的校验规则和一些有用的配置项,参考上面代码</br>
-method：验证方法，指的是校验的逻辑。</br>
-eg：比如email方法，检查输入的文本是否符合email的规则；</br>
-rule：验证规则，指的是元素和验证方法的关联。</br>
-eg：比如页面存在一个name为email的文本框，需要带有email的验证方法；</br>
+1. rules及messages 中的userName、password对应input表单的name属性<br>
+2. 如果messages属性没有配置错误提示信息，将使用默认的提示信息 <br>
+3. validate()：是jQuery Validate插件的核心方法，定义了基本的校验规则和一些有用的配置项,参考上面代码<br>
+
+method：验证方法，指的是校验的逻辑。<br>
+eg：比如email方法，检查输入的文本是否符合email的规则；<br>
+rule：验证规则，指的是元素和验证方法的关联。<br>
+eg：比如页面存在一个name为email的文本框，需要带有email的验证方法；<br>
 
 ## 默认验证方法(2.html) ##
-**required:**必输字段</br>
-**minlength:** 输入长度最小是？的字符串(汉字算一个字符)</br> 
-**maxlength:** 输入长度最多是？的字符串(汉字算一个字符)</br>
-**rangelength:** 输入长度必须介于 ？ 和 ？ 之间的字符串")(汉字算一个字符)</br>
-**min:** 输入值不能小于？</br>
-**max:** 输入值不能大于？</br>
-**range:**  输入值必须介于 ？ 和 ？ 之间</br>
+**required:**必输字段<br>
+**minlength:** 输入长度最小是？的字符串(汉字算一个字符) <br> 
+**maxlength:** 输入长度最多是？的字符串(汉字算一个字符) <br>
+**rangelength:** 输入长度必须介于 ？ 和 ？ 之间的字符串")(汉字算一个字符) <br>
+**min:** 输入值不能小于？ <br>
+**max:** 输入值不能大于？ <br>
+**range:**  输入值必须介于 ？ 和 ？ 之间 <br>
 **email:** 必须输入正确格式的电子邮件<br>
 **url:** 必须输入正确格式的网址<br>
 **date:** 必须输入正确格式的日期 使用 new Date()进行时间转换 日期校验ie6出错,有效性较宽泛<br>
@@ -107,7 +108,7 @@ eg：比如页面存在一个name为email的文本框，需要带有email的验�
 
 ## Validate方法配置项(3.html) ##
 **debug：** 表单不会提交，只进行检查，用于调试<br>
-**submitHandler：**表单提交通过验证后运行的函数,函数内需执行表单提交的函数,否则表单不会提交。br>
+**submitHandler：**表单提交通过验证后运行的函数,函数内需执行表单提交的函数,否则表单不会提交。<br>
 **invalidHandler：**无效表单提交后运行的函数<br>
 **ignore：** 对某些元素不进行验证<br>
 **rules:**定义校验规则<br>
@@ -118,7 +119,7 @@ eg：比如页面存在一个name为email的文本框，需要带有email的验�
 **onkeyup:**是否在敲击键盘时验证<br>
 **onclick:**是否在鼠标点击时验证，一般用于checkbox或者radio<br>
 **focusInvalid：**提交表单后，未通过验证的表单（第一个或提交之前获得焦点的未通过验证的表单）是否会获得焦点<br>
-**focusCleanup:** 当未通过验证的元素获得焦点时，是否移除错误提示<br>
+**focusCleanup:** 当未通过验证的元素获得焦点时，是否移除错误提示</br>
 **errorClass:**指定错误提示的css类名，可以自定义错误提示的样式<br>
 **validClass:**指定验证通过的css类名<br>
 **errorElement:**使用什么标签标记错误<br>
