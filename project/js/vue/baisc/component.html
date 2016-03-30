@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>transition</title>
+</head>
+<body>
+<div id="example">
+    <my-component></my-component>
+</div>
+<script src="../public/js/vue.js"></script>
+<script type="text/javascript">
+    // js
+    var MyComponent = Vue.extend({
+        template:'<div>A custom component</div>'
+    });
+
+    Vue.component('my-component',MyComponent);
+
+    new Vue({
+        el:'#example'
+    })
+</script>
+</body>
+</html>
