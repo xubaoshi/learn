@@ -33,7 +33,7 @@
 
                     <template v-if="!task.isFinish">
                         <input type="checkbox" class="js-resolve"  id="{{$index}}"/>
-                        <label for="{{$index}}" class="js-content" v-show="editTask != task" @dblclick="editMode(task,$event)">{{task.value}}</label>
+                        <label  for="{{$index}}" class="js-content" v-show="editTask != task" @dblclick="editMode(task,$event)">{{task.value}}</label>
 
                         <input type="text"
                                v-model="task.value"
