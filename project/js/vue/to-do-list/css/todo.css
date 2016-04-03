@@ -1,4 +1,5 @@
 @import url("reset.css");
+
 .main {
     width: 500px;
     margin: 0 auto;
@@ -79,3 +80,5 @@
     height: 20px;
     border-radius: 4px;
 }
+
+[v-cloak] { display: none ;}

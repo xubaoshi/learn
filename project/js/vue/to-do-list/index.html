@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="./css/todo.css"/>
+    <style>
+
+    </style>
 </head>
 <body>
 <div class="main" id="app">
@@ -21,13 +24,13 @@
                 <div class="fl" >
                     <template v-if="task.isFinish">
                         <input type="checkbox" checked class="js-resolve"   id="{{$index}}"/>
-                        <label for="{{$index}}" class="js-content finish" v-show="editTask!= task" @dblclick="editMode">{{task.value}}</label>
+                        <label for="{{$index}}" class="js-content finish" v-show="editTask!= task" @dblclick="editMode(task,$event)" >{{task.value}}</label>
                         <input type="text"
                                v-model="task.value"
-                               v-todo-focus="editTask == task"
+                               v-todo-focus = "editTask == task"
                                v-show="editTask == task"
                                @blur="update(task,$event)"
-                               @enter="update(task,$event)"
+                               @keyup.13="update(task,$event)"
                                @keyup.esc="cancelEdit(task)"/>
                     </template>
 
@@ -37,10 +40,10 @@
 
                         <input type="text"
                                v-model="task.value"
-                               v-todo-focus="editTask == task"
+                               v-todo-focus = "editTask == task"
                                v-show="editTask == task"
                                @blur="update(task,$event)"
-                               @enter="update(task,$event)"
+                               @keyup.13="update(task,$event)"
                                @keyup.esc="cancelEdit(task)"/>
                     </template>
                 </div>
@@ -55,15 +58,15 @@
         <ul>
             <li>
                 <label>未完成:</label>
-                <span class="count js-unfinish">{{tasks.length}}</span>
+                <span class="count js-unfinish" v-cloak>{{tasks.length}}</span>
             </li>
             <li>
                 <label>已完成：</label>
-                <span class="count js-finish">{{tasks | finishState true}}</span>
+                <span class="count js-finish" v-cloak>{{tasks | finishState true}}</span>
             </li>
             <li>
                 <label>总数：</label>
-                <span class="count js-total">{{tasks | finishState false}}</span>
+                <span class="count js-total" v-cloak>{{tasks | finishState false}}</span>
             </li>
         </ul>
     </div>

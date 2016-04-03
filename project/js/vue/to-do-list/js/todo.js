@@ -75,7 +75,7 @@ var vm = new Vue({
             if (!task.value) {
                 this.tasks.$remove(task);
             } else {
-                this.showInput = false;
+                this.editTask = {};
             }
         },
         cancelEdit: function (task) {
@@ -83,12 +83,13 @@ var vm = new Vue({
         }
     },
     directives:{
-        'v-todo-focus':function(value){
+        'todo-focus':function(value){
             if(!value){
                 return
             }
             var el = this.el;
             Vue.nextTick(function(){
+                el.blur();
                 el.focus();
             })
         }
