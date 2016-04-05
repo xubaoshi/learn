@@ -1,13 +1,18 @@
 'use strict'
 
 import Vue from 'vue'
+import store from './vuex/store'
+import App from './components/app.vue'
 import Router from 'vue-router'
-
-import App from './App'
 import routerMap from './router'
+import { sync } from 'vuex-router-sync'
 
 Vue.use(Router)
-const router = new Router()
+var router = new Router()
 routerMap(router)
-router.start(App, 'app')
+sync(store, router)
+router.start(App,'app')
+
+
+
 

@@ -4,13 +4,11 @@
 'use strict'
 export default function (router) {
     router.map({
-        '/': { name: 'index',
-            component: require('./components/hello.vue')
+        '/': {
+            component: require('./components/todo/todo.vue')
         },
-        '/hi': { name: 'hi',
-            component: function (resolve) {
-                require(['./components/hi.vue'], resolve)
-            }
+        '/todo': {
+            component: require('./components/todo/todo.vue')
         }
     })
 }
