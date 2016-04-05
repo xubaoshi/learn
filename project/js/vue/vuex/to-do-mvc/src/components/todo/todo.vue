@@ -1,8 +1,8 @@
 <template>
-  <span>todo</span>
-  <todo-header></todo-header>
-  <todo-content></todo-content>
-  <todo-footer></todo-footer>
+<todo-header></todo-header>
+<todo-content></todo-content>
+<todo-footer></todo-footer>
+<a v-link="{path:'/'}">跳回秦帆</a>
 </template>
 
 <script>
