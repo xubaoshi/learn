@@ -1,17 +1,17 @@
 <template>
   <span>todo</span>
-  <todoHeader></todoHeader>
-  <todoContent></todoContent>
-  <todoFooter></todoFooter>
+  <todo-header></todo-header>
+  <todo-content></todo-content>
+  <todo-footer></todo-footer>
 </template>
 
 <script>
   import store from '../../vuex/store'
-  import todoHeader from './todoHeader'
-  import todoContent from './todoContent'
-  import todoFooter  from './todoFooter'
+  import todoHeader from './todoHeader.vue'
+  import todoContent from './todoContent.vue'
+  import todoFooter  from './todoFooter.vue'
   export default{
       store,
-      components:{toDoHeader,toDoContent,toDoFooter}
+      components:{todoHeader,todoContent,todoFooter}
   }
 </script>
