@@ -35,6 +35,14 @@ const mutations = {
     },
     DELETET(state,index){
       state.tasks.splice(index, 1);
+    },
+    SETF(state,index,type){
+      state.tasks[index].isFinish = type;
+    },
+    ALLR(state,index,type){
+      state.tasks.forEach(n){
+        n.isFinish = true;
+      }
     }
 }
 
