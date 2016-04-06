@@ -1,3 +1,3 @@
 <template>
-    <span><a v-link="{path:'/todo'}">秦帆</a></span>
+    <span><a v-link="{path:'/todo'}">todo</a></span>
 </template>

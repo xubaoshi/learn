@@ -2,7 +2,7 @@
 <todo-header></todo-header>
 <todo-content></todo-content>
 <todo-footer></todo-footer>
-<a v-link="{path:'/'}">跳回秦帆</a>
+<a v-link="{path:'/'}">跳回list</a>
 </template>
 
 <script>
