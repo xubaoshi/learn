@@ -1,8 +1,9 @@
 <template>
-<todo-header></todo-header>
-<todo-content></todo-content>
-<todo-footer></todo-footer>
-<a v-link="{path:'/'}">跳回list</a>
+    <div class="h1 title">我的任务列表</div>
+    <todo-header></todo-header>
+    <todo-content></todo-content>
+    <todo-footer></todo-footer>
+    <a class="back-list" v-link="{path:'/'}">back to SB-APPS</a>
 </template>
 
 <script>

@@ -1,7 +1,6 @@
 <template>
-    <div>this is content</div>
     <div class="all-resolve">
-        <input id="allResolve" type="checkbox" @change="allResolve" v-model="checked"/>
+        <input id="allResolve" type="checkbox" @click="allResolve" v-model="checked"/>
         <label for="allResolve">标记所有为已解决</label>
     </div>
     <div class="task-list js-task-list">

@@ -3,17 +3,15 @@
     <div class="fl">
       <template v-if="task.isFinish">
         <input type="checkbox" checked class="js-resolve" @click="setFinish(index,false)" id="{{index}}"/>
-        <label class="js-content finish" v-show="editTask!= task" @dblclick="editMode(task,$event)">{{task.value}}</label>
+        <label class="js-content finish" v-show="editTask!= task" v-touch:doubletap="editMode(task,$event)">{{task.value}}</label>
         <input type="text" v-model="task.value" v-show="editTask == task" @blur="update(task,$event)" @keyup.13="updateTask(task,$event)" @keyup.esc="cancelEdit(task)" v-todo-focus = "editTask == task"/>
       </template>
 
       <template v-if="!task.isFinish">
         <input type="checkbox" class="js-resolve" id="{{index}}" @click="setFinish(index,true)"/>
-        <label class="js-content" v-show="editTask != task" @dblclick="editMode(task,$event)">{{task.value}}</label>
-
+        <label class="js-content" v-show="editTask != task" v-touch:doubletap="editMode(task,$event)">{{task.value}}</label>
         <input type="text" v-model="task.value" v-show="editTask == task" @blur="update(task,$event)" @keyup.13="updateTask(task,$event)" @keyup.esc="cancelEdit(task)" v-todo-focus = "editTask == task"/>
       </template>
-      <!--v-todo-focus="editTask == task"-->
     </div>
     <div class="fr">
       <span class="addTime">{{task.addTime}}</span>
@@ -25,11 +23,11 @@
 <script>
 
   import{
-          edit,
-          update,
-          deleteT,
-          cancel,
-          setF
+        edit,
+        update,
+        deleteT,
+        cancel,
+        setF
   }from '../../vuex/actions'
   export default{
     props:{
