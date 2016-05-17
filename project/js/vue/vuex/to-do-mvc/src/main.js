@@ -15,7 +15,7 @@ VueTouch.registerCustomEvent('doubletap', {
     taps: 2
 })
 VueTouch.registerCustomEvent('tap', {
-    type: 'tap',
+    type: '',
     taps: 1
 })
 
