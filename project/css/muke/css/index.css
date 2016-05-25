@@ -1,0 +1,33 @@
+@import url('reset.css');
+@import url('icon.css');
+
+/*header start*/
+.header{
+	height:30px;
+	background-color:#f7f7f7;
+	z-index:1000;
+}
+.header-content{
+	width:1000px;
+	height:30px;
+	line-height:30px;
+	margin:0 auto;
+}
+.header-l{
+	/*height:20px;*/
+	/*line-height:30px;*/
+	float:left;
+}
+.header-r{
+	float:right;
+}
+.header-r a{
+	color:#666;
+	text-decoration:none;
+}
+.header-text{
+	color:#666;
+	font-size:12px;
+}
+.
+/*header end*/

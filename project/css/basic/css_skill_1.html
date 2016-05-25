@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css</title>
+	<style>
+		/*图像替代文本*/
+		h1{
+			width:100px;
+			height:50px;
+			text-indent:-9999px;
+			background:url(../bgt/imgs/bxg.png);
+		}
+		/*3D按钮*/
+		#button{
+			background-color:#888;
+			border:2px solid;
+			border-color:#999 #777 #777 #999;
+		}
+		/*font快捷写法*/
+		/*body{*/
+			/*font:font-style font-variant font-weight font-size line-height font-family;*/
+		/*}*/
+		body{
+			font-family:Arial,Helvetica,sans-serif;;
+			font-size:13px;
+			font-weight:normal;
+			font-variant:small-caps;
+			font-style:italic;
+			line-height:150%;
+		}
+		body{
+			font:italic small-caps normal 13px/150% Arial,Helvetica,sans-serif;
+		}
+
+	</style>
+</head>
+<body>
+<!--图像替代文本-->
+<h1>title</h1>
+<!--3D按钮-->
+<button id="button">3D按钮</button>
+</body>
+</html>

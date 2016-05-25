@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>z-index</title>
+	<style type="text/css">
+		/*z-index='auto'*/
+		/*层叠上下文 祖元素优先失效*/
+	</style>
+
+</head>
+<body>
+	<!--1-->
+
+	<!--由于祖元素优先,元素内部的z-index失效-->
+	<div class="div1" style="z-index:1">
+		<div style="width: 100px; height: 100px; z-index:2"></div>
+	</div>
+	<div class="div2" style="z-index:1">
+		<div style="width: 100px; height: 100px; z-index:1">
+
+		</div>
+	</div>
+
+	<!--2-->
+
+	<!--/*层叠上下文 祖元素优先失效 div1比div2优先级高*/-->
+	<div class="div1" style="z-index:auto">
+		<div style="width: 100px; height: 100px; z-index:2"></div>
+	</div>
+	<div class="div2" style="z-index:1">
+		<div style="width: 100px; height: 100px; z-index:1">
+
+		</div>
+	</div>
+
+	<!--3-->
+
+	<!--3.1层叠上下文-->
+	<!--根元素天生具有层叠上下文-->
+	<!--z-index值为数值的定位元素也具有层叠上下文-->
+	<!--其他属性-->
+	<!--3.2层叠水平-->
+	<!--层叠上下文中的每个元素都有层叠水平，z-index 只在定位元素上起作用-->
+	<!--后来居上 谁大谁上-->
+
+	<!--4-->
+	<!--层叠顺序(七层顺序)-->
+	<!-- 1.层叠上下文 background/border-->
+	<!-- 2.负 z-index-->
+	<!-- 3.block块状水平盒子-->
+	<!-- 4.float浮动盒子-->
+	<!-- 5.inline/inline-block水平盒子-->
+	<!-- 6.z-index:auto 或看成z-index:0-->
+	<!-- 7. 正index-->
+</body>
+</html>
