@@ -6,6 +6,7 @@
 	height:30px;
 	background-color:#f7f7f7;
 	z-index:1000;
+	min-width:1000px;
 }
 .header-content{
 	width:1000px;
@@ -29,5 +30,274 @@
 	color:#666;
 	font-size:12px;
 }
-.
 /*header end*/
+
+/*search start*/
+.search{
+	min-width:1000px;
+	height:88px;
+	background:#1d7ad9;
+}
+.search-content{
+	width:1000px;
+	height:88px;
+	margin:0 auto;
+}
+.searh-rect{
+	float:left;
+	width:100%;
+}
+.search-wrap{
+	margin-left:336px;
+	margin-right:225px;
+}
+.search-wrap button{
+	float:left;
+	width:70px;
+	height:36px;
+	margin-top:24px;
+	border:none;
+	font:14px;
+	font-size:14px;
+	background-color:#ff8c00;
+	color:#fff8f4;
+}
+.search-wrap input{
+	float:left;
+	width:360px;
+	height:36px;
+	margin-top:24px;
+	border:none;
+	text-indent:10px;
+}
+.logo-rect{
+	position:relative;
+	float:left;
+	width:336px;
+	margin-left:-100%;
+}
+.logo-rect img{
+	padding-top:11px;
+}
+.buy-rect{
+	float:left;
+	position:relative;
+	width:225px;
+	margin-left:-225px;
+	color:#fff8f4;
+	font-size:14px;
+}
+.buy-rect .buy-car{
+	float:left;
+	width:88px;
+	height:36px;
+	line-height:36px;
+	margin-top:24px;
+	border-right:1px solid #e27a00;
+	background-color:#ff8c00;
+}
+.buy-car i{
+	margin:0 5px 0 10px;
+}
+.buy-rect .buy-list{
+	float:left;
+	display:inline-block;
+	width:60px;
+	height:36px;
+	line-height:36px;
+	margin-top:24px;
+	border-left:1px solid #ff9c01;
+	background-color:#ff8c00;
+}
+.buy-text{
+	margin-left:19px;
+}
+/*search end*/
+
+/*menu start*/
+.menu{
+	height:29px;
+	background-color:#1369c0;
+	min-width:1000px;
+}
+.menu-content{
+	width:1000px;
+	height:29px;
+	margin:0 auto;
+}
+.menu-list{
+	list-style:none;
+}
+.menu-list li{
+	float:left;
+	width:100px;
+	height:29px;
+	line-height:29px;
+}
+.menu-list li:first-child{
+	width:190px;
+	text-align:center;
+	font-size:16px;
+	font-weight:bold;
+	color:#fff8f4;
+	text-decoration:none;
+}
+.menu-list a{
+	display:block;
+	text-align:center;
+	font-size:14px;
+	color:#fff8f4;
+	text-decoration:none;
+}
+.menu-list a:hover{
+	background-color:#4593fd;
+}
+/*menu end*/
+
+/*content start*/
+.content{
+	width:1000px;
+	margin:0 auto;
+}
+.focus{
+	height:325px;
+}
+.side-bar{
+	float:left;
+	width:190px;
+	background-color:#4593fd;
+}
+.bar-list{
+	list-style:none;
+}
+.bar-list li{
+	position:relative;
+	width:190px;
+	height:63px;
+	border-top:solid 1px #5aa1fe;
+	border-bottom:solid 1px #3487f2;
+}
+.bar-list li:first-child{
+	border-top:none;
+}
+.tit{
+	position:absolute;
+	top:14px;
+	font-size:14px;
+	color:#fff8f4;
+	margin-left:10px;
+}
+.sub-tit{
+	display:block;
+	font-size:12px;
+	color:#c2d9f8;
+}
+.tit-rec{
+	display:inline-block;
+	width:46px;
+	height:18px;
+	border:1px solid #106ac0;
+	border-radius:8px;
+	background-color:#106ac0;
+	font-size:12px;
+	color:#fff8f4;
+	text-align:center;
+}
+.bar-list i{
+	position:absolute;
+	right:13px;
+	top:16px;
+}
+.focus-content{
+	float:left;
+	width:810px;
+}
+.cate-head{
+	position:relative;
+	height:45px;
+	margin:15px 0;
+	line-height:45px;
+}
+.cate-head label{
+	float:left;
+	width:45px;
+	height:45px;
+	background:#f7f7f7;
+	background-color:#4bc7c7;
+	text-align:center;
+}
+.cate-head .title-inner{
+	float:left;
+	height:45px;
+	margin-left:14px;
+	font-size:24px;
+}
+.cate-head .more{
+	float:right;
+	margin-top:15px;
+	margin-right:14px;
+}
+.more,
+.more:hover{
+	font-weight:normal;
+	color:#000;
+	text-decoration:none;
+}
+.cate-l,
+.cate-r{
+	float:left;
+}
+.cate-l img{
+	vertical-align:top;
+}
+.cate-r ul{
+	list-style:none;
+}
+.cate-r li{
+	border-top:1px solid #e5e5e5;
+	border-right:1px solid #e5e5e5;
+	float:left;
+	width:199px;
+}
+.cate-1 li{
+	height:279px;
+}
+.cate-1 img{
+	margin-top:47px;
+	margin-bottom:20px;
+	margin:47px 0 20px 30px;
+}
+.cate-2 li{
+	height:116px;
+	border-bottom:3px solid #ff7201;
+}
+.cate-2 li .pro-img{
+	float: left;
+	width: 74px;
+	height: 90px;
+	margin-top: 18px;
+	margin-left: 20px;
+}
+.cate-2 li .price{
+	margin-top: 17px;
+	margin-right: 11px;
+}
+.pro-price{
+	text-align:center;
+}
+.pro-price h4{
+	font-size:16px;
+}
+.pro-price label{
+	font-size:14px;
+	color:#ff7300;
+}
+/*content end*/
+
+/*footer start*/
+.footer{
+	height:223px;
+	min-width:1000px;
+	background-color:#d4d4d4;
+}
+/*footer end*/

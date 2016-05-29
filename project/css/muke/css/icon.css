@@ -12,5 +12,26 @@
 .icon-buy{
 	width:23px;
 	height:21px;
-	background:-15px 0;
+	background-position:-15px 0;
 }
+.icon-detail{
+	width:12px;
+	height:12px;
+	background-position:0 -14px;
+}
+.icon-down{
+	width:11px;
+	height:7px;
+	background-position:0 -26px;
+}
+.icon-left{
+	width:5px;
+	height:8px;
+	background-position:0 -33px;
+}
+.icon-cate{
+	width:14px;
+	height:19px;
+	background-position:-38px 0;
+}
+
