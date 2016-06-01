@@ -8,7 +8,7 @@
 <body>
 	<div class="container">
 		<div class="header">
-			<div class="header-content cf">
+			<div class="content cf">
 				<div class="header-l">
 					<i class="icon icon-collect"></i>
 					<strong class="collect-text">收藏慕课</strong>
@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<div class="search">
-			<div class="search-content cf">
+			<div class="content cf">
 				<div class="searh-rect">
 					<div class="search-wrap">
 						<input type="text"/>
@@ -54,7 +54,7 @@
 			</div>
 		</div>
 		<div class="menu">
-			<div class="menu-content">
+			<div class="content">
 				<ul class="menu-list cf">
 					<li>
 						全部商品分类
@@ -71,58 +71,73 @@
 		</div>
 		<div class="content">
 			<div class="focus cf">
-				<div class="side-bar">
+				<div class="js-side side-bar">
 					<ul class="bar-list">
 						<li>
 							<span class="tit">
-								手机 数码
+								<a href="javascript:;">手机</a> <a href="javascript:;">数码</a>
 								<span class="tit-rec">
-									合约机
+									<a href="javascript:;">合约机</a>
 								</span>
 								<span class="sub-tit">
-									荣耀3X 单反 智能设备
+									<a href="javascript:;">荣耀3X</a>
+									<a href="javascript:;">单反</a>
+									<a href="javascript:;">智能设备</a>
 								</span>
 							</span>
 							<i class="icon icon-left"></i>
 						</li>
 						<li>
 							<span class="tit">
-								电脑 硬件外设
+								<a href="javascript:;">电脑</a>
+								<a href="javascript:;">硬件外设</a>
 								<span class="tit-rec">
-									装机宝
+									<a href="javascript:;">装机宝</a>
 								</span>
 								<span class="sub-tit">
-									笔记本 台式机 超极本 平板
+									<a href="javascript:;">笔记本</a>
+									<a href="javascript:;">台式机</a>
+									<a href="javascript:;">超极本</a>
+									<a href="javascript:;">平板</a>
 								</span>
 							</span>
 							<i class="icon icon-left"></i>
 						</li>
 						<li>
 							<span class="tit">
-								大家电
+								<a href="javascript:;">大家电</a>
 								<span class="sub-tit">
-									电视 空调 冰箱 洗衣机
+									<a href="javascript:;">电视</a>
+									<a href="javascript:;">空调</a>
+									<a href="javascript:;">冰箱</a>
+									<a href="javascript:;">洗衣机</a>
 								</span>
 							</span>
 							<i class="icon icon-left"></i>
 						</li>
 						<li>
 							<span class="tit">
-								厨房电器 生活电器
+								<a href="javascript:;">厨房电器</a>
+								<a href="javascript:;">生活电器</a>
 								<span class="sub-tit">
-									空气净化器 微波炉 取暖设备
+									<a href="javascript:;">空气净化器</a>
+									<a href="javascript:;">微波炉</a>
+									<a href="javascript:;">取暖设备</a>
 								</span>
 							</span>
 							<i class="icon icon-left"></i>
 						</li>
 						<li>
 							<span class="tit">
-								食品/饮料/生鲜
+								<a href="javascript:;">食品/饮料/生鲜</a>
 								<span class="tit-rec">
-									粮油
+									<a href="javascript:;">粮油</a>
 								</span>
 								<span class="sub-tit">
-									进口 方便面 零食 保健
+									<a href="javascript:;">进口</a>
+									<a href="javascript:;">方便面</a>
+									<a href="javascript:;">零食</a>
+									<a href="javascript:;">保健</a>
 								</span>
 							</span>
 							<i class="icon icon-left"></i>
@@ -225,5 +240,11 @@
 		</div>
 		<div class="footer"></div>
 	</div>
+	<script src="../../app/public/js/jquery-1.7.2.js"></script>
+	<script>
+		$('.js-side li').hover(function(){
+			$(this).toggleClass('item-hover');
+		})
+	</script>
 </body>
 </html>
