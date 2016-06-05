@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>basic</title>
+</head>
+<body>
+<div id="app">
+	<h1>Hello</h1>
+	<p>
+		<a v-link="{path='/foo'}">Go to foo</a>
+		<a v-link="{path='/bar'}">Go to bar</a>
+	</p>
+	<router-view></router-view>
+</div>
+<script>
+	var Foo = vue.extend({
+		template : '<p>This is foo!</p>'
+	});
+	var Bar = vue.extend({
+		template : '<p>This is bar</p>'
+	});
+
+	// 路由器需要一个根组件
+	var App = vue.extend({});
+
+	// 创建一个路由实例
+	var router = new VueRouter();
+
+	// 定义路由规则
+	// 每条路由规则都需要映射到一个组件，这里的组件可以是一个使用Vue.extend({}) 构造出来的
+	router.map({
+		'/foo' : {
+			coponent : Foo
+		},
+		'/bar' : {
+			component : Bar
+		}
+	})
+
+	// 路由器会创建一个App实例，并且挂载到选择符 #app匹配的元素上
+	router.start(App, '#app');
+</script>
+</body>
+</html>
