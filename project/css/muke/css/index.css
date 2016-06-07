@@ -173,7 +173,7 @@
 .item-hover .sub-tit > a{
 	color:#000;
 }
-.item-hover .icon-left{
+.item-hover .icon-item-left{
 	display:none;
 }
 .bar-list{
@@ -188,6 +188,9 @@
 }
 .bar-list li:first-child{
 	border-top:none;
+}
+.bar-list li:last-child{
+	border-bottom:none;
 }
 .tit{
 	position:absolute;
