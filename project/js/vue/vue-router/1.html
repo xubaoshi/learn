@@ -2,25 +2,25 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>basic</title>
+	<title>1.html</title>
 </head>
 <body>
 <div id="app">
-	<h1>Hello</h1>
+	<h1>Hello World!</h1>
 	<p>
-		<a v-link="{ path: '/foo' }">Go to Foo</a>
-		<a v-link="{ path: '/bar' }">Go to Bar</a>
+		<a v-link="{ path: '/home' }">首页</a>
+		<a v-link="{ path: '/mes' }">消息</a>
 	</p>
 	<router-view></router-view>
 </div>
 <script src="../public/js/vue.js"></script>
 <script src="../public/js/vue-router.js"></script>
 <script>
-	var Foo = Vue.extend({
-		template : '<p>This is foo!</p>'
+	var Home = Vue.extend({
+		template : '<div><p>这是首页!</p>'
 	});
-	var Bar = Vue.extend({
-		template : '<p>This is bar</p>'
+	var Mes = Vue.extend({
+		template : '<p>这是消息!</p>'
 	});
 
 	// 路由器需要一个根组件
@@ -32,11 +32,11 @@
 	// 定义路由规则
 	// 每条路由规则都需要映射到一个组件，这里的组件可以是一个使用Vue.extend({}) 构造出来的
 	router.map({
-		'/foo' : {
-			component : Foo
+		'/home' : {
+			component : Home
 		},
-		'/bar' : {
-			component : Bar
+		'/mes' : {
+			component : Mes
 		}
 	})
 

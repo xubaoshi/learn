@@ -2,9 +2,72 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>2.html</title>
+	<title>basic</title>
 </head>
 <body>
+<div id="app">
+	<h1>Hello World!</h1>
+	<p>
+		<a v-link="{ path: '/home' }">首页</a>
+		<a v-link="{ path: '/mes' }">消息</a>
+	</p>
+	<router-view></router-view>
+</div>
+<script src="../public/js/vue.js"></script>
+<script src="../public/js/vue-router.js"></script>
+<script>
+	var Home = Vue.extend({
+		template : '<div><p>这里是不变的!变的在下面！</p>'
+		+ '<router-view></router-view>'
+		+ '<a v-link="'+ '\'/home/' + '\'">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;'
+		+ '<a v-link="'+ '\'/home/todo' + '\'">待办事项</a>&nbsp;&nbsp;&nbsp;&nbsp;'
+		+ '<a v-link="'+ '\'/home/preview' + '\'">预测事项</a></div>'
+	});
+	var Mes = Vue.extend({
+		template : '<p>这是消息!</p>'
+	});
+	var Todo = Vue.extend({
+		template : '<p>这是待办事项!</p>'
+	});
+	var Preview = Vue.extend({
+		template : '<p>这是预测事项!</p>'
+	})
 
+	// 路由器需要一个根组件
+	var App = Vue.extend({});
+
+	// 创建一个路由实例
+	var router = new VueRouter();
+
+	// 定义路由规则
+	// 每条路由规则都需要映射到一个组件，这里的组件可以是一个使用Vue.extend({}) 构造出来的
+	router.map({
+		'/':{
+			component : Home
+		},
+		'/home' : {
+			component : Home,
+			subRoutes : {
+				'/' : {
+					component : {
+						template : '<p>这是首页!</p>'
+					}
+				},
+				'/todo' : {
+					component : Todo
+				},
+				'/preview' : {
+					component : Preview
+				}
+			}
+		},
+		'/mes' : {
+			component : Mes
+		}
+	})
+
+	// 路由器会创建一个App实例，并且挂载到选择符 #app匹配的元素上
+	router.start(App, '#app');
+</script>
 </body>
 </html>
