@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1.html</title>
+	<style>
+		.fade-transition{
+			transition:opacity .3s ease;
+		}
+		.fade-enter, .fade-leave{
+			opacity:0;
+		}
+	</style>
+</head>
+<body>
+<div id="app">
+	<h1>Hello World!</h1>
+	<p>
+		<a v-link="'/home1'">首页1</a>
+		<!--replace-->
+		<a v-link="{path: '/home2',replace:true}">首页2</a>
+		<a v-link="{name: 'Mes', params: { id: 1},query: { a: 1,b:2}}">消息</a>
+	</p>
+	<!--in-out-->
+	<!--out-in-->
+	<router-view keep-alive transition="fade" transition-mode="in-out"></router-view>
+</div>
+<script src="../public/js/vue.js"></script>
+<script src="../public/js/vue-router.js"></script>
+<script>
+	var Home1 = Vue.extend({
+		props : ['obj'],
+		template : '<p>这是首页1!</p>'
+	});
+	var Home2 = Vue.extend({
+		props : ['obj'],
+		template : '<p>这是首页2!</p>'
+	});
+	var Mes = Vue.extend({
+		template : '<p @click="clickFn">这是消息!</p>',
+		methods : {
+			clickFn : function(){
+				console.log('$route.path:');
+				console.log(this.$route.path)
+				console.log('$route.params:');
+				console.log(this.$route.params)
+				console.log('$route.query:');
+				console.log(this.$route.query)
+				console.log('$route.router:');
+				// 路由规则所属的路由实例
+				console.log(this.$route.router)
+				console.log('$route.matched:');
+				// 数组，包含当前匹配的路径中所包含的所有片段所对应的配置参数对象。
+				console.log(this.$route.matched)
+				console.log('$route.name:');
+				console.log(this.$route.name)
+			}
+		}
+	});
+
+	// 路由器需要一个根组件
+	var App = Vue.extend({});
+
+	// 创建一个路由实例
+	var router = new VueRouter();
+
+	// 定义路由规则
+	// 每条路由规则都需要映射到一个组件，这里的组件可以是一个使用Vue.extend({}) 构造出来的
+	router.map({
+		'/home1' : {
+			component : Home1
+		},
+		'/home2' : {
+			component : Home2
+		},
+		'/mes/:id' : {
+			name : 'Mes',
+			component : Mes
+		}
+	})
+
+	// 路由器会创建一个App实例，并且挂载到选择符 #app匹配的元素上
+	router.start(App, '#app');
+
+	// 1.router start(App,el)
+	// 启动一个启用了路由的应用。创建一个 App 的实例并且挂载到元素 el 。
+	// 2.router stop()  ??
+	// 停止监听 popstate 和 hashchange 事件
+	// 3.router map
+	// 4.router on
+	// 5.router go
+	// 导航到一个新的路由 配置方式与 v-link 几乎相同
+	// 6.router replace
+	// 不会在浏览器历史创建一条新的纪录
+	// 7.router.redirect(redirectMap)
+	router.redirect({
+
+		// 重定向 /a 到 /b
+		'/a': '/b',
+
+		// 重定向可以包含动态片段
+		// 而且重定向片段必须匹配
+		'/user/:userId': '/profile/:userId',
+
+		// 重定向任意未匹配路径到 /home
+		'*': '/home'
+	})
+
+
+</script>
+</body>
+</html>

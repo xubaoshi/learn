@@ -39,12 +39,22 @@
 点击浏览器的“前进”、“后退”，或者是由JavaScript调用的history.back()等方法，同时切换前后的两条历史记录都属于同一个网页文档，才会触onpopstate。
 
 ## 三、基本使用方法 ##
+通过使用vue及vue-router可以创建单页应用，只需要将整个单页应用拆解成一个个独立的组件。通过将路由（可以理解为每个组件对应的url）映射到各个组件中，然后根据不同的url将对应组件渲染出来。<br>
+
 参见 1.html
 ## 四、API介绍 ##
 ### router-view ###
+用来渲染匹配的组件,它基于vue组件。根据当前url,router-view会被替换为url对应的组件的内容<br>
+1.可以传递props；<br>
+2.支持v-transition及transition-mode（指定两个动态组件之间如何过渡） &nbsp;&nbsp;  [http://cn.vuejs.org/guide/transitions.html](http://cn.vuejs.org/guide/transitions.html "v-transition 和 transition-mode")<br>
+3.keep-alive(如果把切换出去的组件保留在内存中，可以保留它的状态或可以避免重新渲染。)<br>
+### v-link、路由对象及路由匹配 ###
+**1.v-link**<br>
+v-link 是一个用来让用户在 vue-router 应用的不同路径间跳转的指令。该指令接受一个 JavaScript 表达式。参考3.html <br>
+v-link 会监听点击事件，防止浏览器尝试重新加载页面。<br>
+replace。一个带有 replace: true 的链接被点击时将会触发 router.replace() 而不是 router.go()。由此产生的跳转不会留下历史记录 参考3.html<br>
 ### 路由嵌套 ###
 **使用场景：**<br>
 ![](http://i.imgur.com/cR23SzE.png) ![](http://i.imgur.com/66rDXu0.png)<br>
 参见 2.html
-
 ### 1、API ###

@@ -3,6 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>1.html</title>
+	<style>
+		.fade-transition{
+			transition:opacity .3s ease;
+		}
+		.fade-enter, .fade-leave{
+			opacity:0;
+		}
+	</style>
 </head>
 <body>
 <div id="app">
@@ -11,16 +19,20 @@
 		<a v-link="{ path: '/home' }">首页</a>
 		<a v-link="{ path: '/mes' }">消息</a>
 	</p>
-	<router-view></router-view>
+	<!--in-out-->
+	<!--out-in-->
+	<router-view obj="this is vue-router" keep-alive transition="fade" transition-mode="in-out"></router-view>
 </div>
 <script src="../public/js/vue.js"></script>
 <script src="../public/js/vue-router.js"></script>
 <script>
 	var Home = Vue.extend({
-		template : '<div><p>这是首页!</p>'
+		props : ['obj'],
+		template : '<p><span>{{obj}}</span>这是首页!</p>'
 	});
 	var Mes = Vue.extend({
-		template : '<p>这是消息!</p>'
+		name:'Mes',
+		template : '<p >这是消息!</p>'
 	});
 
 	// 路由器需要一个根组件
