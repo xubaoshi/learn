@@ -8,21 +8,23 @@
 <div id="app">
 	<h1>Hello</h1>
 	<p>
-		<a v-link="{path='/foo'}">Go to foo</a>
-		<a v-link="{path='/bar'}">Go to bar</a>
+		<a v-link="{ path: '/foo' }">Go to Foo</a>
+		<a v-link="{ path: '/bar' }">Go to Bar</a>
 	</p>
 	<router-view></router-view>
 </div>
+<script src="../public/js/vue.js"></script>
+<script src="../public/js/vue-router.js"></script>
 <script>
-	var Foo = vue.extend({
+	var Foo = Vue.extend({
 		template : '<p>This is foo!</p>'
 	});
-	var Bar = vue.extend({
+	var Bar = Vue.extend({
 		template : '<p>This is bar</p>'
 	});
 
 	// 路由器需要一个根组件
-	var App = vue.extend({});
+	var App = Vue.extend({});
 
 	// 创建一个路由实例
 	var router = new VueRouter();
@@ -31,7 +33,7 @@
 	// 每条路由规则都需要映射到一个组件，这里的组件可以是一个使用Vue.extend({}) 构造出来的
 	router.map({
 		'/foo' : {
-			coponent : Foo
+			component : Foo
 		},
 		'/bar' : {
 			component : Bar

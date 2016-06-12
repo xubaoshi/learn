@@ -41,4 +41,9 @@
 ## 三、基本使用方法 ##
 参见 1.html
 ## 四、API介绍 ##
+### 路由嵌套 ###
+**使用场景：**<br>
+![](http://i.imgur.com/cR23SzE.png) ![](http://i.imgur.com/66rDXu0.png)<br>
+参见 2.html
+
 ### 1、API ###
