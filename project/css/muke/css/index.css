@@ -8,11 +8,9 @@
 	z-index:1000;
 	min-width:1000px;
 }
-.header-content{
-	width:1000px;
+.header .content{
 	height:30px;
 	line-height:30px;
-	margin:0 auto;
 }
 .header-l{
 	/*height:20px;*/
@@ -38,10 +36,8 @@
 	height:88px;
 	background:#1d7ad9;
 }
-.search-content{
-	width:1000px;
+.search .content{
 	height:88px;
-	margin:0 auto;
 }
 .searh-rect{
 	float:left;
@@ -120,10 +116,8 @@
 	background-color:#1369c0;
 	min-width:1000px;
 }
-.menu-content{
-	width:1000px;
+.menu content{
 	height:29px;
-	margin:0 auto;
 }
 .menu-list{
 	list-style:none;
@@ -156,6 +150,7 @@
 
 /*content start*/
 .content{
+	position:relative;
 	width:1000px;
 	margin:0 auto;
 }
@@ -166,6 +161,20 @@
 	float:left;
 	width:190px;
 	background-color:#4593fd;
+}
+.side-bar a{
+	text-decoration:none;
+	color:#fff8f4;
+}
+.item-hover{
+	background-color:#fff;
+}
+.item-hover .tit > a,
+.item-hover .sub-tit > a{
+	color:#000;
+}
+.item-hover .icon-item-left{
+	display:none;
 }
 .bar-list{
 	list-style:none;
@@ -179,6 +188,9 @@
 }
 .bar-list li:first-child{
 	border-top:none;
+}
+.bar-list li:last-child{
+	border-bottom:none;
 }
 .tit{
 	position:absolute;
@@ -272,15 +284,15 @@
 	border-bottom:3px solid #ff7201;
 }
 .cate-2 li .pro-img{
-	float: left;
-	width: 74px;
-	height: 90px;
-	margin-top: 18px;
-	margin-left: 20px;
+	float:left;
+	width:74px;
+	height:90px;
+	margin-top:18px;
+	margin-left:20px;
 }
 .cate-2 li .price{
-	margin-top: 17px;
-	margin-right: 11px;
+	margin-top:17px;
+	margin-right:11px;
 }
 .pro-price{
 	text-align:center;
@@ -291,6 +303,57 @@
 .pro-price label{
 	font-size:14px;
 	color:#ff7300;
+}
+.bar-sec-list{
+	position:absolute;
+	left:190px;
+	width:570px;
+	padding:0 20px;
+	border:1px solid #ccc;
+	background-color:#fff;
+	z-index:22;
+}
+.sec-list{
+	margin-bottom:15px;
+	font-size:12px;
+	list-style:none;
+}
+.sec-list li{
+	padding:13px 0;
+	border-bottom:1px solid #e5e5e5;
+	padding-left:68px;
+}
+.sec-list li label{
+	float:left;
+	margin-left:-68px;
+	width:68px;
+	font-weight:bold;
+	color:#4b88da;
+}
+.sec-list .sec-item{
+	float:left;
+	width:100%;
+}
+.sec-item a{
+	margin-right:12px;
+	text-decoration:none;
+	color:#000;
+}
+.sec-item a:hover{
+	color:#ff7300;
+}
+.ope{
+	margin-bottom:13px;
+}
+.ope button{
+	margin-left:12px;
+	padding:5px 10px;
+	color:#fff;
+	background-color:#2785e6;
+	border:none;
+}
+.ope i{
+	margin:0 10px;
 }
 /*content end*/
 
