@@ -52,7 +52,56 @@
 **1.v-link**<br>
 v-link 是一个用来让用户在 vue-router 应用的不同路径间跳转的指令。该指令接受一个 JavaScript 表达式。参考3.html <br>
 v-link 会监听点击事件，防止浏览器尝试重新加载页面。<br>
-replace。一个带有 replace: true 的链接被点击时将会触发 router.replace() 而不是 router.go()。由此产生的跳转不会留下历史记录 参考3.html<br>
+replace。一个带有 replace: true 的链接被点击时产生的跳转不会留下历史记录 参考3.html<br>
+### 路由器实例属性 ###
+通过 new VueRouter()生成的对象。
+
+	var router = new VueRouter();
+
+	// 1.router.start(App,el)
+	// 启动一个启用了路由的应用。创建一个 App 的实例并且挂载到元素 el 。
+	// 2.router.stop()  ??
+	// 停止监听 popstate 和 hashchange 事件
+	// 3.router.map
+	// 4.router.on
+	// 5.router.go
+	// 导航到一个新的路由 配置方式与 v-link 几乎相同
+	// 6.router.replace
+	// 不会在浏览器历史创建一条新的纪录
+	// 7.router.redirect(redirectMap)
+		router.redirect({
+			// 重定向 /a 到 /b
+			'/a': '/b',
+			// 重定向可以包含动态片段
+			// 而且重定向片段必须匹配
+			'/user/:userId': '/profile/:userId',
+	
+			// 重定向任意未匹配路径到 /home
+			'*': '/home'
+		})
+	// 8.router.alias(aliasMap)
+		router.alias({
+			// 匹配 /a 时就像是匹配 /a/b/c
+			'/a': '/a/b/c',
+			// 别名可以包含动态片段
+			// 而且重定向片段必须匹配
+			'/user/:userId': '/user/profile/:userId'
+		})
+	// 9.router.beforeEach(hook)
+	// 路由切换开始时调用,调用发生在整个切换流水线之前
+		router.beforeEach(function (transition) {
+			if (transition.to.path === '/forbidden') {
+				transition.abort()
+			} else {
+				transition.next()
+			}
+		})
+	// 10. router.afterEach(hook)
+	// 路由切换成功进入激活阶段时被调用
+		router.afterEach(function (transition) {
+			console.log('成功浏览到: ' + transition.to.path)
+		})
+
 ### 路由嵌套 ###
 **使用场景：**<br>
 ![](http://i.imgur.com/cR23SzE.png) ![](http://i.imgur.com/66rDXu0.png)<br>
