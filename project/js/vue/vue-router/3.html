@@ -93,18 +93,42 @@
 	// 6.router replace
 	// 不会在浏览器历史创建一条新的纪录
 	// 7.router.redirect(redirectMap)
-	router.redirect({
-
-		// 重定向 /a 到 /b
-		'/a': '/b',
-
-		// 重定向可以包含动态片段
-		// 而且重定向片段必须匹配
-		'/user/:userId': '/profile/:userId',
-
-		// 重定向任意未匹配路径到 /home
-		'*': '/home'
-	})
+	//	router.redirect({
+	//
+	//		// 重定向 /a 到 /b
+	//		'/a': '/b',
+	//
+	//		// 重定向可以包含动态片段
+	//		// 而且重定向片段必须匹配
+	//		'/user/:userId': '/profile/:userId',
+	//
+	//		// 重定向任意未匹配路径到 /home
+	//		'*': '/home'
+	//	})
+	// 8.router.alias(aliasMap)
+	//	router.alias({
+	//
+	//		// 匹配 /a 时就像是匹配 /a/b/c
+	//		'/a': '/a/b/c',
+	//
+	//		// 别名可以包含动态片段
+	//		// 而且重定向片段必须匹配
+	//		'/user/:userId': '/user/profile/:userId'
+	//	})
+	// 9.router.beforeEach(hook)
+	// 路由切换开始时调用,调用发生在整个切换流水线之前
+	// router.beforeEach(function (transition) {
+	//	if (transition.to.path === '/forbidden') {
+	//		transition.abort()
+	//	} else {
+	//		transition.next()
+	//	}
+	//	})
+	// 10. router.afterEach(hook)
+	// 路由切换成功进入激活阶段时被调用
+	//	router.afterEach(function (transition) {
+	//		console.log('成功浏览到: ' + transition.to.path)
+	//	})
 
 
 </script>
