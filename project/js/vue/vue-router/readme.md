@@ -49,10 +49,16 @@
 2.支持v-transition及transition-mode（指定两个动态组件之间如何过渡） &nbsp;&nbsp;  [http://cn.vuejs.org/guide/transitions.html](http://cn.vuejs.org/guide/transitions.html "v-transition 和 transition-mode")<br>
 3.keep-alive(如果把切换出去的组件保留在内存中，可以保留它的状态或可以避免重新渲染。)<br>
 ### v-link、路由对象及路由匹配 ###
-**1.v-link**<br>
+#### v-link ####
 v-link 是一个用来让用户在 vue-router 应用的不同路径间跳转的指令。该指令接受一个 JavaScript 表达式。参考3.html <br>
 v-link 会监听点击事件，防止浏览器尝试重新加载页面。<br>
-replace。一个带有 replace: true 的链接被点击时产生的跳转不会留下历史记录 参考3.html<br>
+replace。一个带有 replace: true 的链接被点击时产生的跳转不会留下历史记录 <br>参见3.html
+#### 路由对象 ####
+在使用了 vue-router 的应用中，路由对象会被注入每个组件中，赋值为 this.$route ，并且当路由切换时，路由对象会被更新。<br>
+参见3.html clickFn方法的实现
+#### 路由匹配 ####
+![](http://i.imgur.com/MMezT8n.png)
+
 ### 路由器实例属性 ###
 通过 new VueRouter()生成的对象。
 
