@@ -50,14 +50,18 @@
 3.keep-alive(如果把切换出去的组件保留在内存中，可以保留它的状态或可以避免重新渲染。)<br>
 ### v-link、路由对象及路由匹配 ###
 #### v-link ####
-v-link 是一个用来让用户在 vue-router 应用的不同路径间跳转的指令。该指令接受一个 JavaScript 表达式。参考3.html <br>
+v-link 是一个用来让用户在 vue-router 应用的不同路径间跳转的指令。该指令接受一个 JavaScript 表达式。参考2.html <br>
 v-link 会监听点击事件，防止浏览器尝试重新加载页面。<br>
-replace。一个带有 replace: true 的链接被点击时产生的跳转不会留下历史记录 <br>参见3.html
+replace。一个带有 replace: true 的链接被点击时产生的跳转不会留下历史记录 <br>参见2.html
 #### 路由对象 ####
 在使用了 vue-router 的应用中，路由对象会被注入每个组件中，赋值为 this.$route ，并且当路由切换时，路由对象会被更新。<br>
-参见3.html clickFn方法的实现
+参见2.html clickFn方法的实现
 #### 路由匹配 ####
-![](http://i.imgur.com/MMezT8n.png)
+**动态片段**
+![](http://i.imgur.com/M3cw0sE.png)
+**全匹配片段**<br>
+动态匹配只能匹配路径中的一部分，而全匹配字段类似于动态匹配的贪心版。
+![](http://i.imgur.com/7oLPcyk.png)
 
 ### 路由器实例属性 ###
 通过 new VueRouter()生成的对象。
@@ -111,5 +115,6 @@ replace。一个带有 replace: true 的链接被点击时产生的跳转不会�
 ### 路由嵌套 ###
 **使用场景：**<br>
 ![](http://i.imgur.com/cR23SzE.png) ![](http://i.imgur.com/66rDXu0.png)<br>
-参见 2.html
-### 1、API ###
+参见 3.html
+### 路由切换 ###
+

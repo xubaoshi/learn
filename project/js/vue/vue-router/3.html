@@ -2,62 +2,36 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>1.html</title>
-	<style>
-		.fade-transition{
-			transition:opacity .3s ease;
-		}
-		.fade-enter, .fade-leave{
-			opacity:0;
-		}
-	</style>
+	<title>basic</title>
 </head>
 <body>
 <div id="app">
 	<h1>Hello World!</h1>
 	<p>
-		<a v-link="'/home1'">首页1</a>
-		<!--replace-->
-		<a v-link="{path: '/home2',replace:true}">首页2</a>
-		<a v-link="{name: 'Mes', params: { id: 1},query: { a: 1,b:2}}">消息</a>
+		<a v-link="{ path: '/home' }">首页</a>
+		<a v-link="{ path: '/mes' }">消息</a>
 	</p>
-	<!--in-out-->
-	<!--out-in-->
-	<router-view keep-alive transition="fade" transition-mode="in-out"></router-view>
+	<router-view></router-view>
 </div>
 <script src="../public/js/vue.js"></script>
 <script src="../public/js/vue-router.js"></script>
 <script>
-	var Home1 = Vue.extend({
-		props : ['obj'],
-		template : '<p>这是首页1!</p>'
-	});
-	var Home2 = Vue.extend({
-		props : ['obj'],
-		template : '<p>这是首页2!</p>'
+	var Home = Vue.extend({
+		template : '<div><p>这里是不变的!变的在下面！</p>'
+		+ '<router-view></router-view>'
+		+ '<a v-link="'+ '\'/home/' + '\'">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;'
+		+ '<a v-link="'+ '\'/home/todo' + '\'">待办事项</a>&nbsp;&nbsp;&nbsp;&nbsp;'
+		+ '<a v-link="'+ '\'/home/preview' + '\'">预测事项</a></div>'
 	});
 	var Mes = Vue.extend({
-		template : '<p @click="clickFn">这是消息! {{$route.params.id}}</p>',
-		methods : {
-			clickFn : function(){
-				console.log('当前路由对象的路径 $route.path:');
-				console.log(this.$route.path)
-				console.log('动态片段和全匹配片段 $route.params:');
-				console.log(this.$route.params)
-				console.log('路由中查询参数的键值对 $route.query:');
-				console.log(this.$route.query)
-				// 路由规则所属的路由实例(个人理解)
-				console.log('$route.router:');
-				console.log(this.$route.router)
-				console.log('$route.matched:');
-				// 数组，包含当前匹配的路径中所包含的所有片段所对应的配置参数对象。
-				console.log(this.$route.matched)
-				console.log('$route.name:');
-				console.log(this.$route.name)
-				this.$route.router.go({name:'home1'})
-			}
-		}
+		template : '<p>这是消息!</p>'
 	});
+	var Todo = Vue.extend({
+		template : '<p>这是待办事项!</p>'
+	});
+	var Preview = Vue.extend({
+		template : '<p>这是预测事项!</p>'
+	})
 
 	// 路由器需要一个根组件
 	var App = Vue.extend({});
@@ -68,39 +42,32 @@
 	// 定义路由规则
 	// 每条路由规则都需要映射到一个组件，这里的组件可以是一个使用Vue.extend({}) 构造出来的
 	router.map({
-		'/home1' : {
-			name:'home1',
-			component : Home1
+		'/':{
+			component : Home
 		},
-		'/home2' : {
-			name:'home2',
-			component : Home2
+		'/home' : {
+			component : Home,
+			subRoutes : {
+				'/' : {
+					component : {
+						template : '<p>这是首页!</p>'
+					}
+				},
+				'/todo' : {
+					component : Todo
+				},
+				'/preview' : {
+					component : Preview
+				}
+			}
 		},
-		'/mes/:id' : {
-			name : 'Mes',
+		'/mes' : {
 			component : Mes
 		}
 	})
 
-	// 拦截判断路由  待讲
-//	router.beforeEach(function (transition) {
-//		console.log('transition:');
-//		console.log(transition);
-//		if (transition.to.path === '/forbidden') {
-//			transition.abort()
-//		} else {
-//			transition.next()
-//		}
-//	})
-
 	// 路由器会创建一个App实例，并且挂载到选择符 #app匹配的元素上
 	router.start(App, '#app');
-
-	// router.start 创建router.app 待讲
-//	console.log('router.app:');
-//	console.log(router.app)
-
-
 </script>
 </body>
 </html>
