@@ -1,4 +1,5 @@
 # vue-router #
+
 **vue-router是vue的一个插件，用来创建单页应用**。<br>
 
 在使用vue-router，有必要了解什么是单页应用及HTML5 History API。
