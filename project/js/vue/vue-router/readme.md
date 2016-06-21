@@ -120,8 +120,8 @@ replace。一个带有 replace: true 的链接被点击时产生的跳转不会�
 在使用了 vue-router 的应用中，路由对象会被注入每个组件中，赋值为 this.$route ，并且当路由切换时，路由对象会被更新。<br>
 参见2.html clickFn方法的实现
 #### 路由匹配 ####
-**动态片段**
-![](http://i.imgur.com/M3cw0sE.png)
+**动态片段**<br>
+![](http://i.imgur.com/M3cw0sE.png)<br>
 **全匹配片段**<br>
 动态匹配只能匹配路径中的一部分，而全匹配字段类似于动态匹配的贪心版。
 ![](http://i.imgur.com/7oLPcyk.png)
@@ -132,5 +132,26 @@ replace。一个带有 replace: true 的链接被点击时产生的跳转不会�
 ### 路由切换 ###
 rouer-view在切换过程中，<router-view> 组件可以通过实现一些钩子函数来控制切换过程。
 data(参见 4.html)、activate、deactivate、canActivate、canDeactivate、canReuse
+每一个回调函数中都有一个参数 transition
+
+	transition.to
+
+	一个代表将要切换到的路径的路由对象。
+	
+	transition.from
+	
+	一个代表当前路径的路由对象。
+	
+	transition.next()
+	
+	调用此函数处理切换过程的下一步。
+	
+	transition.abort([reason])
+	
+	调用此函数来终止或者拒绝此次切换。
+	
+	transition.redirect(path)
+	
+	取消当前切换并重定向到另一个路由。
 
 
