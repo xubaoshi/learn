@@ -27,6 +27,7 @@
 </div>
 <script src="../public/js/vue.js"></script>
 <script src="../public/js/vue-router.js"></script>
+<script src="../public/js/jquery-2.1.1.js"></script>
 <script>
 	var Home1 = Vue.extend({
 		props : ['obj'],
@@ -37,15 +38,34 @@
 		template : '<p>这是首页2!</p>'
 	});
 	var Mes = Vue.extend({
-		template : '<p>这是消息! {{$route.params.id}}</p>',
-		route:{
-			data:function(transition){
-				console.log('data：');
-				// 向后端发起请求
-				console.log(transition);
-			}
-		}
-	});
+				template : '<div><p>这是消息! {{$route.params.id}}</p>' +
+							'<ul v-show="arrs.length > 0"><li v-for="commit in arrs">{{commit.commit.author.name}}</li><ul></div>',
+				data : function(){
+					return {
+						arrs : []
+					}
+				},
+				route : {
+					data : function(transition){
+						console.log('data：');
+						// 向后端发起请求
+						console.log(transition);
+						console.log('transition.to：');
+						console.log(transition.to);
+						console.log('transition.from：');
+						console.log(transition.from);
+						console.log('transition.params：');
+						console.log(transition.params);
+						console.log('transition.query：');
+						console.log(transition.query);
+
+						var baseUrl = "https://api.github.com/repos/facebook/react/commits";
+						$.get(baseUrl, function(data){
+							transition.next({arrs:data})
+						});
+					}
+				}
+			});
 
 	// 路由器需要一个根组件
 	var App = Vue.extend({});
@@ -57,11 +77,11 @@
 	// 每条路由规则都需要映射到一个组件，这里的组件可以是一个使用Vue.extend({}) 构造出来的
 	router.map({
 		'/home1' : {
-			name:'home1',
+			name : 'home1',
 			component : Home1
 		},
 		'/home2' : {
-			name:'home2',
+			name : 'home2',
 			component : Home2
 		},
 		'/mes/:id' : {
@@ -71,22 +91,22 @@
 	})
 
 	// 拦截判断路由  待讲
-//	router.beforeEach(function (transition) {
-//		console.log('transition:');
-//		console.log(transition);
-//		if (transition.to.path === '/forbidden') {
-//			transition.abort()
-//		} else {
-//			transition.next()
-//		}
-//	})
+	//	router.beforeEach(function (transition) {
+	//		console.log('transition:');
+	//		console.log(transition);
+	//		if (transition.to.path === '/forbidden') {
+	//			transition.abort()
+	//		} else {
+	//			transition.next()
+	//		}
+	//	})
 
 	// 路由器会创建一个App实例，并且挂载到选择符 #app匹配的元素上
 	router.start(App, '#app');
 
 	// router.start 创建router.app 待讲
-//	console.log('router.app:');
-//	console.log(router.app)
+	//	console.log('router.app:');
+	//	console.log(router.app)
 
 
 </script>

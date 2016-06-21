@@ -7,14 +7,27 @@
 单页应用顾名思义，即web前端只有一个页面，页面切换时，并没有刷新页面而是通过js代码渲染新页面。
 ### 控制浏览器刷新 ###
 1.正常情况下，当页面发生变化时，浏览器会根据新的URL发送请求，页面随之刷新。<br>
-2.通过URL.HASH可以解决此问题，即URL中包含#号，#号后面就是URL的HASH，当#号前面的部分不变，后面的部分发生变化时页面既不会发送请求也不会刷新页面。
+2.通过URL.HASH可以解决页面不刷新的问题，即URL中包含#号，#号后面就是URL的HASH。<br>
+3.由于HTTP请求中不包括#,当#号前面的部分不变，后面的部分发生变化时页面既不会发送请求也不会刷新页面。
+### URl.hash ###
+	
+	http://www.example.com/index.html#print
+ # 右面的字符代表网页中的一个位置。就是该位置的标识符，浏览器读取这个URL后，会自动将位置滚动至可视区域<br>
+网页位置指定标识符，有两个方法。
+	
+	// 使用锚点
+	<a name="print"></a>
+	
+	// id属性	
+	<div id="print"></div>
+
 ### 页面无刷新切换 ###
 **修改URL**<br>
 修改方式:1、直接修改浏览器URL；2、通过链接的点击形式 3.非链接的DOM形式<br>
 ### 页面与URL对应 ###
-页面不刷新，就要求每个页面都有对应的URL，javascript通过判断不同的URL，渲染不同的页面，如果该页面的展示依赖服务器中的数据源，在切换时会发出ajax请求将服务端数据取到，然后会根据此数据源进行页面的渲染。
-### 浏览器回退 ###
-当通过修改 URL.HASH 的方式来达到URL变化目的时，虽然点击浏览器回退，URL也会变化，但是因为 # 号的缘故，浏览器会不自动刷新到对应的页面。此时需要通过 javascript 来变通实现，定义window的hashchange事件，当URL变化时，会触发这个事件，然后在这个事件中执行新页面渲染。
+页面不刷新，就要求每个页面都有对应的URL.hash，javascript通过判断不同的URL.hash，渲染不同的页面，如果该页面的展示依赖服务器中的数据源，在切换时会发出ajax请求将服务端数据取到，然后会根据此数据源进行页面的渲染。
+### hashchange ###
+当通过修改 URL.HASH 的方式来达到URL变化目的时，URL也会变化，但是因为 # 号的缘故，浏览器会不自动刷新到对应的页面。此时需要通过 javascript 来变通实现，定义window的hashchange事件，当URL变化时，会触发这个事件，然后在这个事件中执行新页面渲染。
 
 	window.addEventListener("hashchange",locationHashChanged,false);
 	function locationHashChanged(){
@@ -23,10 +36,12 @@
 		}
 	}
 
-### 2、HTML5 History API###
+### 2、HTML5 History API ###
+操作浏览器的历史记录
 #### history.pushState() ####
 
 	window.history.pushState(stateObject, title, url)
+
 **stateObject：** 状态对象，可以理解为拿来存储自定义数据的元素，与url关联在一起;<br>
 **title：**标题，目前各类浏览器都会忽略它，可以忽略，目前传空字符串；<br>
 **url：**URL地址， 新的历史记录的地址。新的URL不一定是绝对路径；如果是相对路径，它将以当前URL为基准；传入的URL与当前URL应该是同源的，否则，pushState()会抛出异常。该参数是可选的；不指定的话则为文档当前URL。<br>
@@ -39,7 +54,7 @@
 点击浏览器的“前进”、“后退”，或者是由JavaScript调用的history.back()等方法，同时切换前后的两条历史记录都属于同一个网页文档，才会触onpopstate。
 
 ## 三、基本使用方法 ##
-通过使用vue及vue-router可以创建单页应用，只需要将整个单页应用拆解成一个个独立的组件。通过将路由（可以理解为每个组件对应的url）映射到各个组件中，然后根据不同的url将对应组件渲染出来。<br>
+通过使用vue及vue-router可以创建单页应用，只需要将整个单页应用涉及的页面拆解成一个个独立的组件。通过将路由（可以理解为每个组件对应的url.hash）映射到各个组件中，然后根据不同的url.hash将对应组件渲染出来。<br>
 
 参见 1.html
 ## 四、API介绍 ##
@@ -53,16 +68,6 @@
 v-link 是一个用来让用户在 vue-router 应用的不同路径间跳转的指令。该指令接受一个 JavaScript 表达式。参考2.html <br>
 v-link 会监听点击事件，防止浏览器尝试重新加载页面。<br>
 replace。一个带有 replace: true 的链接被点击时产生的跳转不会留下历史记录 <br>参见2.html
-#### 路由对象 ####
-在使用了 vue-router 的应用中，路由对象会被注入每个组件中，赋值为 this.$route ，并且当路由切换时，路由对象会被更新。<br>
-参见2.html clickFn方法的实现
-#### 路由匹配 ####
-**动态片段**
-![](http://i.imgur.com/M3cw0sE.png)
-**全匹配片段**<br>
-动态匹配只能匹配路径中的一部分，而全匹配字段类似于动态匹配的贪心版。
-![](http://i.imgur.com/7oLPcyk.png)
-
 ### 路由器实例属性 ###
 通过 new VueRouter()生成的对象。
 
@@ -111,10 +116,21 @@ replace。一个带有 replace: true 的链接被点击时产生的跳转不会�
 		router.afterEach(function (transition) {
 			console.log('成功浏览到: ' + transition.to.path)
 		})
-
+#### 路由对象 ####
+在使用了 vue-router 的应用中，路由对象会被注入每个组件中，赋值为 this.$route ，并且当路由切换时，路由对象会被更新。<br>
+参见2.html clickFn方法的实现
+#### 路由匹配 ####
+**动态片段**
+![](http://i.imgur.com/M3cw0sE.png)
+**全匹配片段**<br>
+动态匹配只能匹配路径中的一部分，而全匹配字段类似于动态匹配的贪心版。
+![](http://i.imgur.com/7oLPcyk.png)
 ### 路由嵌套 ###
 **使用场景：**<br>
 ![](http://i.imgur.com/cR23SzE.png) ![](http://i.imgur.com/66rDXu0.png)<br>
 参见 3.html
 ### 路由切换 ###
+rouer-view在切换过程中，<router-view> 组件可以通过实现一些钩子函数来控制切换过程。
+data(参见 4.html)、activate、deactivate、canActivate、canDeactivate、canReuse
+
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hash</title>
+	<style>
+		.container{
+			position:relative;
+			width:900px;
+			height:2000px;
+		}
+		.print1{
+			position:absolute;
+			bottom:0;
+			width:200px;
+			height:200px;
+			background-color:greenyellow;
+		}
+		.tar2{
+			position:fixed;
+			bottom:20px;
+			right:0;
+		}
+		.tar1{
+			position:fixed;
+			bottom:20px;
+			right:58px;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<a href="#" name="print2">name="print2" 锚链接</a>
+	<span id="print1" class="print1">
+		 id="print" 元素
+	</span>
+</div>
+<a class="tar1" href="#print1">print1</a>
+<a class="tar2" href="#print2">print2</a>
+
+</body>
+</html>
