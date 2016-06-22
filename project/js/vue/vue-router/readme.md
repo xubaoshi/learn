@@ -132,7 +132,7 @@ replace。一个带有 replace: true 的链接被点击时产生的跳转不会�
 参见 3.html
 ### 路由切换 ###
 rouer-view在切换过程中，<router-view> 组件可以通过实现一些钩子函数来控制切换过程。
-data(参见 4.html)、activate、deactivate、canActivate、canDeactivate、canReuse
+canReuse、canDeactivate、canActivate、deactivate、activate、data(参见 4.html)
 每一个回调函数中都有一个参数 transition
 
 	transition.to
