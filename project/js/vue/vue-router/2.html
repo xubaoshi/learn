@@ -82,16 +82,16 @@
 		}
 	})
 
-	// 拦截判断路由  待讲
-//	router.beforeEach(function (transition) {
-//		console.log('transition:');
-//		console.log(transition);
-//		if (transition.to.path === '/forbidden') {
-//			transition.abort()
-//		} else {
-//			transition.next()
-//		}
-//	})
+	//// 拦截判断路由  待讲
+	router.beforeEach(function (transition) {
+		console.log('transition:');
+		console.log(transition);
+		if (transition.to.path === '/forbidden') {
+			transition.abort()
+		} else {
+			transition.next()
+		}
+	})
 
 	// 路由器会创建一个App实例，并且挂载到选择符 #app匹配的元素上
 	router.start(App, '#app');
