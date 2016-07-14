@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animation</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box-wrap{
+			position:relative;
+			float:left;
+			width:450px;
+			height:200px;
+			margin:80px 0;
+		}
+		.box{
+			width:200px;
+			height:200px;
+			line-height:50px;
+			margin:0 auto;
+			background:#022c36;
+			color:#fff;
+			font-size:20px;
+			text-align:center;
+		}
+		.box1{
+			animation:anim 4s ease 1;
+		}
+		.box2{
+			animation:anim 4s ease infinite;
+		}
+		.box3{
+			animation:anim 4s ease infinite reverse;
+		}
+		.box4{
+			animation:anim 4s ease infinite alternate;
+		}
+		.box5{
+			animation:anim 4s ease infinite alternate-reverse;
+		}
+		@keyframes anim{
+			0%{
+				background:#022c36;
+				transform:translate(0,0);
+			}
+			25%{
+				background:#023436;
+				transform:translate(400px);
+			}
+			50%{
+				background:#02f0f6;
+				transform:translate(400px,400px);
+			}
+			75%{
+				background:#3f90df;
+				transform:translate(0,400px);
+			}
+			100%{
+				background:#0fff00;
+				transform:translate(0, 0);;
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="box-wrap">
+	<div class="box box1">1</div>
+	<p class="txt">animation:anim 1s ease 1;</p>
+</div>
+
+<div class="box-wrap">
+	<div class="box box2">infinite</div>
+	<p class="txt">animation:anim 1s ease infinite;</p>
+</div>
+<div class="box-wrap">
+	<div class="box box3">reverse</div>
+	<p class="txt">animation:anim 1s ease infinite reverse;</p>
+</div>
+<div class="box-wrap">
+	<div class="box box4">alternate</div>
+	<p class="txt">animation:anim 1s ease infinite alternate;</p>
+</div>
+<div class="box-wrap">
+	<div class="box box4">alternate-reverse</div>
+	<p class="txt">animation:anim 1s ease infinite alternate-reverse;</p>
+</div>
+</body>
+</html>
