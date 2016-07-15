@@ -85,3 +85,26 @@ flex-flow属性是flex-direction和flex-wrap属性的简写形式。默认值为
 - space-between:交叉轴两端对齐，轴线之间的间隔平均分布。
 - space-around:每根轴线两侧的间隔都相等。轴线之间的间隔比轴线与边框的间隔大一倍。
 - stretch(默认值)：轴线占满整个交叉轴。
+
+
+## 项目属性 ##
+
+- order
+- flex-grow
+- flex-shrink
+- flex-basis
+- flex
+- align-self
+
+### order ###
+定义项目的排列顺序。数值越小，排列越靠前，默认为0。
+	
+	.item{
+		order:<integer>
+	}
+### flex-grow ###
+定义项目的放大比例，默认为0，如果存在剩余空间，也不放大。
+
+	.item{
+		flex-grow:<number>; /*default 0*/
+	}
