@@ -59,3 +59,29 @@ flex-flow属性是flex-direction和flex-wrap属性的简写形式。默认值为
 - center： 居中
 - space-between：两端对齐，项目之间的间隔都相等。
 - space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+
+### align-items ###
+定义项目在交叉轴上如何对齐。
+	
+	.box{
+		align-items:flex-start | flex-end |center | baseline | stretch;
+	}
+- flex-start:交叉轴的起点对齐。
+- flex-end:交叉轴的终点对齐。
+- center:交叉轴的中点对齐。
+- baseline:项目的第一行文字的基线对齐。
+- stretch:如果项目没有设置高度或设为auoto，将占满整个容器的高度。
+
+### align-content ###
+定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+	
+	.box{
+		align-content:flex-start | flex-end | center space-between | space-around | stretch;
+	}
+
+- flex-start:与交叉轴的起点对齐。
+- flex-end:与交叉轴的终点对齐。
+- center:与交叉轴的中点对齐。
+- space-between:交叉轴两端对齐，轴线之间的间隔平均分布。
+- space-around:每根轴线两侧的间隔都相等。轴线之间的间隔比轴线与边框的间隔大一倍。
+- stretch(默认值)：轴线占满整个交叉轴。
