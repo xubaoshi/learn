@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><focus_login></focus_login></title>
+	<style>
+		label{
+			display:inline-block;
+			width:80px;
+		}
+		.input-group{
+			margin-bottom:10px;
+		}
+	</style>
+</head>
+<body>
+<form id="loginForm">
+	<div class="input-group">
+		<label>username</label>
+		<input type="text" name="username"/>
+	</div>
+	<div class="input-group">
+		<label>password</label>
+		<input type="password" name="password"/>
+	</div>
+	<div class="input-group">
+		<label>dynamickey</label>
+		<input type="text" name="dynamickey"/>
+	</div>
+	<button id="loginBtn" type="button">提交</button>
+</form>
+
+<script src="./js/jquery-2.1.1.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script src="./js/moment.min.js"></script>
+<script src="./js/underscore-min.js"></script>
+<script type="text/javascript">
+	var $form = $('#loginForm');
+
+	// 校验
+	(function(){
+		$form.validate({
+			rules:{
+				username:{
+					required: true
+				},
+				password:{
+					required: true
+				},
+				dynamickey:{
+					required: true
+				}
+			},
+			messages:{
+				username:{
+					required: 'username为必填项！'
+				},
+				password:{
+					required: 'password为必填项！'
+				},
+				dynamickey:{
+					required: 'dynamickey为必填项！'
+				}
+			}
+		})
+	})();
+
+	// 事件监听
+	(function(){
+		$('#loginBtn').click(function(){
+			if($form.valid()){
+				var url='http://oa.vemic.com/home/public/dologin'
+				$.ajax(url,{
+					data:{
+						username:$('[name="username"]').val(),
+						password:$('[name="password"]').val(),
+						dynamickey:$('[name="dynamickey"]').val()
+					},
+					dataType:'jsonp',
+					jsonp: 'jsoncallback',
+					contentType: "application/json;utf-8",
+//					crossDomain:true,
+					success:function(data){
+						console.log(data);
+					}
+				})
+			};
+		});
+	})();
+</script>
+</body>
+</html>
