@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rotate</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box-wrap{
+			position:relative;
+			float:left;
+			width:450px;
+			height:200px;
+			margin:80px 0;
+		}
+		.box-wrap:before{
+			position:absolute;
+			top:0;
+			left:50%;
+			content:"";
+			width:200px;
+			height:200px;
+			margin-left:-100px;
+			background:rgba(255,0,0,.6);
+			box-sizing:border-box;
+		}
+		.box{
+			width:200px;
+			height:200px;
+			line-height:50px;
+			margin:0 auto;
+			background:#022c36;
+			color:#fff;
+			font-size:16px;
+			text-align:center;
+		}
+		.box-wrap-3d{
+			perspective:800px;
+			transform-style:preserve-3d;
+		}
+		.box1{
+			transform:rotate(30deg);
+		}
+		.box2{
+			transform:rotate(-30deg);
+		}
+		.box3{
+			transform:rotateX(45deg);
+		}
+		.box-4{
+			transform:rotateY(60deg);
+		}
+		.box-5{
+			transform:rotateZ(20deg);
+		}
+		.box-6{
+			transform:rotate3d(1,0,0,-50deg);
+		}
+		.box-7{
+			transform:rotate3d(0,0,1.-50deg);
+		}
+	</style>
+</head>
+<body>
+<div class="box-wrap">
+	<div class="box box1">
+		transform.rotate(30deg)
+	</div>
+</div>
+<div class="box-wrap">
+	<div class="box box2">
+		transform.rotate(-30deg)
+	</div>
+</div>
+<div class="box-wrap box-wrap-3d">
+	<div class="box box3">
+		transform.rotateX(45deg)
+	</div>
+</div>
+<div class="box-wrap box-wrap-3d">
+	<div class="box box-4">
+		transform.rotateY(60deg)
+	</div>
+</div>
+<div class="box-wrap box-wrap-3d">
+	<div class="box box-5">
+		transform.rotateZ(20deg)
+	</div>
+</div>
+<div class="box-wrap box-wrap-3d">
+	<div class="box box-6">
+		transform.rotate3d(1,0,0,-50deg)
+	</div>
+</div>
+<div class="box-wrap box-wrap-3d">
+	<div class="box box-7">
+		transform.rotate3d(0,1,0,-50deg)
+	</div>
+</div>
+</body>
+</html>

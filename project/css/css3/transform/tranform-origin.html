@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transform-origin</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box-wrap{
+			position:relative;
+			float:left;
+			width:450px;
+			height:200px;
+			margin:80px 0;
+		}
+		.box-wrap:after{
+			position:absolute;
+			top:0;
+			left:50%;
+			content:"";
+			width:200px;
+			height:200px;
+			margin-left:-100px;
+			background:rgba(255,0,0,.6);
+			box-sizing:border-box;
+		}
+		.box{
+			width:200px;
+			height:200px;
+			line-height:50px;
+			margin:0 auto;
+			background:rgba(2, 44, 54, 0.8);
+			color:#fff;
+			font-size:16px;
+			text-align:center;
+		}
+		.box:after{
+			position:absolute;
+			content:"";
+			width:20px;
+			height:20px;
+			left:50%;
+			top:50%;
+			margin:-10px 0 0 -10px;
+			background:rgba(0,0,0,.8);
+			border-radius:100%;
+		}
+		.box{
+			transform:rotate(30deg);
+		}
+		.box1{
+			transform-origin:left top;
+		}
+		.box2{
+			transform-origin:100% 50%;
+		}
+		.box3{
+			transform-origin:200px 200px;
+		}
+		.box4{
+			transform-origin:300px 200px;
+		}
+		.box4:after{
+			left:300px;
+			top:200px;
+		}
+	</style>
+</head>
+<body>
+		<div class="box-wrap">
+			<div class="box">
+				默认中心
+			</div>
+		</div>
+		<div class="box-wrap">
+			<div class="box box1">
+				左上角
+			</div>
+		</div>
+		<div class="box-wrap">
+			<div class="box box2">
+				百分比（100% 50%）
+			</div>
+		</div>
+		<div class="box-wrap">
+			<div class="box box3">
+				px(200px,200px)
+			</div>
+		</div>
+		<div class="box-wrap">
+			<div class="box box4">
+				中心在外面 px(300px,200px)
+			</div>
+		</div>
+</body>
+</html>

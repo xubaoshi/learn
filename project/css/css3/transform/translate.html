@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>translate</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box-wrap{
+			position:relative;
+			float:left;
+			width:450px;
+			height:200px;
+			margin:80px 0;
+		}
+		.box-wrap:after{
+			position:absolute;
+			top:0;
+			left:50%;
+			content:"";
+			width:200px;
+			height:200px;
+			margin-left:-100px;
+			background:rgba(255,0,0,.6);
+			box-sizing:border-box;
+		}
+		.box{
+			width:200px;
+			height:200px;
+			line-height:50px;
+			margin:0 auto;
+			background:#022c36;
+			color:#fff;
+			font-size:16px;
+			text-align:center;
+		}
+		.box-wrap-3d{
+			perspective:800px;
+			transform-style:preserve:-3d;;
+		}
+		.box1{
+			transform:translate(50px,20px);
+		}
+		.box2{
+			transform:translate(50px);
+		}
+		.box3{
+			transform:translateX(50px);
+		}
+		.box4{
+			transform:translateY(50px)
+		}
+		.box5{
+			transform:translateZ(100px)
+		}
+		.box6{
+			transform:translate3D(-20px,-15px,0)
+		}
+	</style>
+</head>
+<body>
+	<div class="box-wrap">
+		<div class="box box1">
+			transform.translate(50px,20px)
+		</div>
+	</div>
+	<div class="box-wrap">
+		<div class="box box2">
+			transform.translate(50px)
+		</div>
+	</div>
+	<div class="box-wrap">
+		<div class="box box3">
+			transform.translateX(50px)
+		</div>
+	</div>
+	<div class="box-wrap">
+		<div class="box box4">
+			transform.translateY(50px)
+		</div>
+	</div>
+	<div class="box-wrap box-wrap-3d">
+		<div class="box box5">
+			transform.transformZ(100px)
+		</div>
+	</div>
+	<div class="box-wrap box-wrap-3d">
+		<div class="box box6">
+			transform.translate3D(-20px,-15px,0)
+		</div>
+	</div>
+</body>
+</html>

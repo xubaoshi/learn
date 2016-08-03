@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>slide</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.slide-image img{
+			width:600px;
+			height:250px;
+		}
+		#demoSliderContainer{
+			background:#fff;
+			-moz-box-shadow:1px 1px 5px #000;
+			-webkit-box-shadow:1px 1px 5px #000;
+			box-shadow:1px 1px 5px #000;
+			padding:0;
+			overflow:auto;
+			margin:10px auto;
+			width:610px;
+		}
+		#demoSlider{
+			border:1px solid #000;
+			border-width:5px 5px 0;
+			height:250px;
+			margin:0 auto;
+			width:600px;
+			overflow:hidden;
+			position:relative;
+		}
+		.slide-images .slide-image{
+			position:absolute;
+			list-style:none;
+		}
+		.slide-images .slide-image img{
+			z-index:2;
+		}
+		.slide-images .current img{
+			z-index:12;
+		}
+		#demoSliderContainer .options{
+			position:relative;
+			padding:3px 10px;
+			text-align:center;
+			vertical-align:middle;
+			overflow:hidden;
+		}
+		#demoSliderContainer .options a{
+			color:#91becc;
+			font-family:Georgia, Serif;
+			font-size:12px;
+			font-weight:bold;
+			text-decoration:none;
+		}
+		#demoSliderContainer .options a:hover{
+			color:#d3e5eb;
+		}
+		#demoSliderContainer .slide-pager a{
+			-moz-transition-duration:.5s;
+			-webkit-transition-duration:.5s;
+			-o-transition-duration:.5s;
+			transition-duration:.5s;
+		}
+		#demoSliderContainer .slide-pager .current{
+			background-color:#91becc;
+			border-radius:5px 5px 5px 5px;
+			color:black;
+			padding:0 4px;
+		}
+		#demoSliderContainer .options .prevSlide{
+			position:absolute;
+			left:10px;
+			top:6px;
+		}
+		#demoSliderContainer .options .nextSlide{
+			position:absolute;
+			right:10px;
+			top:6px;
+		}
+		/*transition effect*/
+		.slide-images .slide-image,
+		.slide-images .slide-image img{
+			-moz-transition-duration:1.5s;
+			-webkit-transition-duration:1.5s;
+			-o-transition-duration:1.5s;
+			transition-duration:1.5s;
+		}
+		/*opacity效果*/
+		.transition-opacity .slide-image{
+			opacity:0;
+			width:0;
+		}
+		.transition-opacity .current{
+			opacity:1;
+			width:600px;
+		}
+		/*左侧划入*/
+		.transition-left .slide-image{
+			left:-600px;
+			opacity:0;
+		}
+		.transition-left .current{
+			left:0;
+			opacity:1;
+		}
+		/*右侧划入*/
+		.transition-right .slide-image{
+			right:-600px;
+			opacity:0;
+		}
+		.transition-right .current{
+			right:0;
+			opacity:1;
+		}
+		/*从上而下*/
+		.transition-top .slide-image{
+			top:-250px;
+			opacity:0;
+		}
+		.transition-top .current{
+			top:0;
+			opacity:1;
+		}
+		/*从下而上*/
+		.transition-bottom .slide-image{
+			bottom:-250px;
+			opacity:0;
+		}
+		.transition-bottom .current{
+			bottom:0;
+			opacity:1;
+		}
+
+		.transition-cornerzoom .slide-image{
+			opacity:0;
+		}
+		.transition-cornerzoom .current{
+			opacity:1;
+		}
+		.transition-cornerzoom .slide-image img{
+			width:0;
+		}
+		.transition-cornerzoom .current img{
+			width:600px;
+		}
+
+
+		.transition-zoom .slide-image{
+			opacity:0;
+		}
+		.transition-zoom .current{
+			opacity:1;
+		}
+		.transition-zoom .slide-image img{
+			left:-875px;
+			position:relative;
+			top:-400px;
+			width:1100px;
+		}
+		.transition-zoom .current img{
+			left:0;
+			top:0;
+			width:600px;
+		}
+
+		/*旋转*/
+		.transition-rotate .slide-image{
+			opacity:0;
+		}
+		.transition-rotate .current{
+			opacity:1;
+		}
+		.transition-rotate .slide-image img{
+			width:600px;
+			height:250px;
+			position:relative;
+			left:-600px;
+			top:-250px;
+		}
+		.transition-rotate .current img{
+			width:600px;
+			height:250px;
+			left:0;
+			top:0;
+			-moz-transfrom:rotate(360deg);
+			-webkit-transfrom:rotate(360deg);
+			-o-transform:rotate(360deg);
+			transform:rotate(360deg);
+		}
+
+		.transition-dezoom .slide-image{
+			/*-moz-box-shadow: 2px 2px 8px black;*/
+			/*-webkit-box-shadow: 2px 2px 8px black;*/
+			/*box-shadow: 2px 2px 8px black;*/
+			opacity: 0;
+		}
+		.transition-dezoom .current{
+			opacity:1;
+		}
+		.transition-dezoom .slide-image img{
+			left: 600px;
+			position: relative;
+			top: 125px;
+			width: 0;
+		}
+		.transition-dezoom .current img{
+			left:0;
+			top:0;
+			width:600px;
+		}
+
+		#options {
+			margin: 20px auto;
+			padding: 5px;
+			width: 550px;
+		}
+	</style>
+</head>
+<body>
+<div id="demoSliderContainer">
+	<ul id="demoSlider" class="slide-images transition-opacity">
+		<li class="slide-image">
+			<img src="./images/1.jpg" alt="monsters inc"/>
+		</li>
+		<li class="slide-image">
+			<img src="./images/2.jpg" alt="nemo"/>
+		</li>
+		<li class="slide-image">
+			<img src="./images/3.jpg" alt="up"/>
+		</li>
+		<li class="slide-image">
+			<img src="./images/4.jpg" alt="walle"/>
+		</li>
+	</ul>
+	<div class="options">
+		<a href="javascript:;" class="prevSlide">Prev</a>
+		<span class="slide-pager">
+			<a href="javascript:;">1</a>
+			<a href="javascript:;" class="">2</a>
+			<a href="javascript:;">3</a>
+			<a href="javascript:;">4</a>
+		</span>
+		<a href="javascript:;" class="nextSlide">Next</a>
+	</div>
+</div>
+<div id="options">
+	<label for="transitionEffect">Transition effect:</label>
+	<select id="transitionEffect">
+		<option value="transition-opacity">opacity fade</option> <option value="transition-left">left slide</option>
+		<option value="transition-right">right slide</option> <option value="transition-top">top slide</option>
+		<option value="transition-bottom">bottom slide</option> <option value="transition-zoom">zoom</option>
+		<option value="transition-cornerzoom">corner zoom</option> <option value="transition-rotate">rotate</option>
+		<option value="transition-dezoom">dezoom</option>
+	</select>
+</div>
+<script src="jquery-2.1.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.slide-images').each(function(){
+			var slider = $(this);
+			var slides = $('.slide-image', slider);
+			var sliderPages = $('.slide-pager');
+
+			// Slide Navigation
+			var currentSlideNum = 0;
+			slides.removeClass('current');
+			slides.eq(currentSlideNum).addClass('current');
+			sliderPages.each(function(){
+				var pages = $('a', this);
+				pages.removeClass('current');
+				pages.eq(currentSlideNum).addClass('current');
+			});
+			// 跳转
+			var goToSlide = function(slideNum){
+				slides.eq(currentSlideNum).removeClass('current');
+				slides.eq(slideNum).addClass('current');
+				sliderPages.each(function(){
+					var pages = $("a", this);
+					pages.eq(currentSlideNum).removeClass("current");
+					pages.eq(slideNum).addClass("current");
+				})
+				currentSlideNum = slideNum;
+			}
+			// 下一个
+			var nextSlide = function(){
+				var nextSlideNum = currentSlideNum + 1;
+				if(nextSlideNum > slides.length - 1){
+					nextSlideNum = 0;
+				}
+				goToSlide(nextSlideNum);
+			}
+			// 上一个
+			var prevSlide = function(){
+				var preSlideNum = currentSlideNum - 1;
+				if(preSlideNum < 0){
+					preSlideNum = slides.length - 1;
+				}
+				goToSlide(preSlideNum);
+			}
+
+			// 点击事件
+			$('.prevSlide').click(prevSlide);
+			$('.nextSlide').click(nextSlide);
+			$('.slide-pager a').each(function(i){
+				if(i >= slides.length) return false;
+				$(this).click(function(){
+					goToSlide(i);
+				})
+			})
+
+			// 自动滚屏
+			var lastHumanNav = 0;
+			$('.prevSlide,.nextSlide,.slide-pager a').click(function(){
+				lastHumanNav = new Date().getTime();
+			});
+			setInterval(function(){
+				var now = new Date().getTime();
+				if(now - lastHumanNav > 5000) nextSlide();
+			}, 5000)
+
+			// 切换slide动画效果
+			$('#transitionEffect').change(function(){
+				slider.attr('class', 'slide-images ' + $(this).val());
+			})
+		})
+	});
+</script>
+</body>
+</html>

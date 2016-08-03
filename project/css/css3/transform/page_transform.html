@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>page</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.stage{
+			width:200px;
+			height:200px;
+			margin:80px auto;
+			perspective:800px;
+		}
+		.box-wrap{
+			position:relative;
+			width:200px;
+			height:200px;
+			transform-style:preserve-3d;
+			transition:2s;
+		}
+		.back,.front{
+			position:absolute;
+			width:200px;
+			height:200px;
+			line-height:200px;
+			text-align:center;
+		}
+		.back{
+			transform:rotateY(-180deg);
+			background-color:red;
+		}
+		.front{
+			background-color:#00a8e6;
+		}
+		.stage:hover .box-wrap{
+			transform:rotateY(180deg);
+		}
+	</style>
+</head>
+<body>
+<div class="stage">
+	<div class="box-wrap">
+
+		<div class="front">正面</div>
+		<div class="back">反面</div>
+	</div>
+</div>
+</body>
+</html>
