@@ -17,11 +17,11 @@
 <form id="loginForm">
 	<div class="input-group">
 		<label>username</label>
-		<input type="text" name="username"/>
+		<input type="text" name="username" value="xubaoshi"/>
 	</div>
 	<div class="input-group">
 		<label>password</label>
-		<input type="password" name="password"/>
+		<input type="password" name="password" value="bao910527"/>
 	</div>
 	<div class="input-group">
 		<label>dynamickey</label>
@@ -29,6 +29,7 @@
 	</div>
 	<button id="loginBtn" type="button">提交</button>
 </form>
+
 
 <script src="./js/jquery-2.1.1.js"></script>
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
@@ -69,7 +70,7 @@
 	(function(){
 		$('#loginBtn').click(function(){
 			if($form.valid()){
-				var url='http://oa.vemic.com/home/public/dologin'
+				var url='http://oa.vemic.com/home/public/dologin?callback=?'
 				$.ajax(url,{
 					data:{
 						username:$('[name="username"]').val(),
@@ -78,12 +79,37 @@
 					},
 					dataType:'jsonp',
 					jsonp: 'jsoncallback',
-					contentType: "application/json;utf-8",
-//					crossDomain:true,
+					contentType: "application/x-www-form-urlencoded",
+					crossDomain:true,
 					success:function(data){
 						console.log(data);
 					}
 				})
+
+//				$.load(url, {
+//					username:$('[name="username"]').val(),
+//					password:$('[name="password"]').val(),
+//					dynamickey:$('[name="dynamickey"]').val()},function(data){
+//					console.log("the taobao.com cookie object:" + userCookie + " username:" + userCookie._nk_);
+//				});
+
+//				var res=$.ajax({
+//					type:"get",
+//					dataType:"jsonp",/*-----------------------*/
+//					url: url,
+//					crossDomain:true,/*-----------------------*/
+//					success: function(data){
+//						alert("success:"+data.name);
+//
+//					},
+//					beforeSend:function(){
+//					},
+//					complete:function(data,status){
+//					},
+//					error:function(data){
+//						console.log(data.getResponseHeader('Set-Cookie'));
+//					}
+//				});
 			};
 		});
 	})();
