@@ -1,0 +1,35 @@
+.poster-main{
+	position: relative;
+	width: 800px;
+	height: 270px;
+}
+.poster-list{
+	width: 800px;
+	height: 270px;
+}
+.poster-item{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.poster-item a ,
+.poster-item img {
+	display: block;
+}
+.poster-btn{
+	position: absolute;
+	top: 0;
+	width: 100px;
+	height: 270px;
+	z-index: 10;
+	background-color: #00a8e6;
+	cursor: pointer;
+}
+.poster-prev-btn{
+	left: 0;
+	background: url("../img/btn_l.png") no-repeat center center;
+}
+.poster-next-btn{
+	right: 0;
+	background: url("../img/btn_r.png") no-repeat center center;
+}
