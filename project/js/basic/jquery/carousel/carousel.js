@@ -18,15 +18,15 @@
 		this.rotateFlag = true;                                            // 是否旋转
 
 		this.setting = {                                                   // 默认配置
-			"width" : 1000,                                                  // 幻灯片宽度
-			"height" : 270,                                                  // 幻灯片高度
-			"posterWidth" : 640,                                             // 第一帧宽度
-			"posterHeight" : 270,                                            // 第一帧高度
-			"scale" : 0.9,                                                   // 显示比例
-			"speed" : 500,                                                   // 速度
-			"autoPlay" : false,                                              // 是否自动播放
-			"delay" : 5000,                                                  // 延时
-			"verticalAlign" : "middle"                                       // 垂直对齐方式
+			"width" : 1000,                                                // 幻灯片宽度
+			"height" : 270,                                                // 幻灯片高度
+			"posterWidth" : 640,                                           // 第一帧宽度
+			"posterHeight" : 270,                                          // 第一帧高度
+			"scale" : 0.9,                                                 // 显示比例
+			"speed" : 500,                                                 // 速度
+			"autoPlay" : false,                                            // 是否自动播放
+			"delay" : 5000,                                                // 延时
+			"verticalAlign" : "middle"                                     // 垂直对齐方式
 		}
 
 		$.extend(this.setting, this.getSetting());
@@ -81,9 +81,8 @@
 			this.$posterItems.each(function(){
 				var self = $(this),
 					$to = (dir == 'left')
-						? (self.prev().get(0) ? self.prev() : _this_.$posterLastItem)
+						? (self.prev().get(0) ? self.prev(): _this_.$posterLastItem)
 						: (self.next().get(0) ? self.next() : _this_.$posterFirstItem);
-				width = $to.width(),
 					height = $to.height(),
 					zIndex = $to.css('zIndex'),
 					opacity = $to.css('opacity'),
