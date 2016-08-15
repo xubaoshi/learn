@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tree</title>
+</head>
+<ul id="app">
+	<tree :node="treeNodes"></tree>
+</ul>
+<body>
+<script src="../public/js/vue.js"></script>
+<script type="text/x-template" id="tree-template">
+	<li>
+		<div>
+			<input :id="node.name" type="checkbox" v-model="checked"/> <label :for="node.name">{{node.name}}</label>
+			<template v-if="node.children && node.children.length > 0">
+				<ul>
+					<tree v-for="node in node.children" :node="node"></tree>
+				</ul>
+			</template>
+		</div>
+	</li>
+</script>
+<script>
+	Vue.component('tree', {
+		template : '#tree-template',
+		replace : true,
+		props : {
+			node : Object
+		},
+		computed : {
+			checked : function(){
+				var isChecked = true;
+				if(this.node.children && this.node.children.length > 0){
+					this.node.children.forEach(function(obj, i){
+						if(obj.checked == false){
+							isChecked = false;
+							return false;
+						}
+					})
+				} else {
+					isChecked = false;
+				}
+				if(isChecked){
+					obj.checked = true;
+				}
+				return isChecked;
+			}
+
+		}
+//		,
+//		methods:{
+//			setChecked : function(){
+//				if(this.node.children && this.node.children.length > 0){
+//					this.node.children.forEach(function(obj, i){
+//						obj.checked = true;
+//					})
+//				}
+//			}
+//		}
+	})
+
+	var vm = new Vue({
+		el : '#app',
+		data : {
+			treeNodes : {
+				name : 'level',
+				checked : false,
+				children : [
+					{
+						name : '1_a',
+						level : '1',
+						checked : false,
+						children : [
+							{
+								name : '1_a_2_a',
+								level : '2',
+								checked : false,
+								children : [
+									{
+										name : '1_a_2_a_3_a',
+										level : '3',
+										checked : false,
+										children : []
+									},
+									{
+										name : '1_a_2_a_3_b',
+										level : '3',
+										checked : false,
+										children : []
+									}
+								]
+							},
+							{
+								name : '1_a_2_b',
+								level : '2',
+								checked : false,
+								children : [
+									{
+										name : '1_a_2_b_3_a',
+										level : '3',
+										checked : false,
+										children : []
+									}
+								]
+							}
+
+						]
+					},
+					{
+						name : '1-b',
+						level : '1',
+						checked : false,
+						type : 'level1',
+						children : [
+							{
+								name : '1_b_1',
+								level : '2',
+								checked : false,
+								children : []
+							},
+							{
+								name : '1_b_2',
+								level : '2',
+								checked : false,
+								children : []
+							},
+							{
+								name : '1_b_3',
+								level : '2',
+								checked : false,
+								children : []
+							}
+						]
+					},
+					{
+						name : '1_c',
+						level : '1',
+						checked : false,
+						children : [
+							{
+								name : '1_c_1',
+								level : '3',
+								checked : false,
+								children : []
+							}
+						]
+					},
+					{
+						name : '1_d',
+						level : '1',
+						checked : false,
+						children : []
+					}
+				]
+			}
+		}
+	})
+</script>
+</body>
+</html>
