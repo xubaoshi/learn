@@ -12,7 +12,8 @@
 <script type="text/x-template" id="tree-template">
 	<li>
 		<div>
-			<input :id="node.name" type="checkbox" v-model="checked"/> <label :for="node.name">{{node.name}}</label>
+			<input :id="node.name" type="checkbox" v-model="node.checked" @change="toggle(node)"/>
+			<label :for="node.name">{{node.name}}</label>
 			<template v-if="node.children && node.children.length > 0">
 				<ul>
 					<tree v-for="node in node.children" :node="node"></tree>
@@ -28,36 +29,56 @@
 		props : {
 			node : Object
 		},
-		computed : {
-			checked : function(){
-				var isChecked = true;
-				if(this.node.children && this.node.children.length > 0){
-					this.node.children.forEach(function(obj, i){
-						if(obj.checked == false){
-							isChecked = false;
-							return false;
+		methods : {
+			childFn : function(node){
+				if(!node.$children) return;
+				var _that = this;
+				var children = node.$children;
+				if(children && children.length > 0){
+					if(node.node.checked){
+						node.$children.forEach(function(obj, i){
+							obj.node.checked = true;
+							if(obj.$children && obj.$children.length > 0){
+								_that.childFn(obj);
+							}
+						})
+					} else {
+						node.$children.forEach(function(obj, i){
+							obj.node.checked = false;
+							if(obj.$children && obj.$children.length > 0){
+								_that.childFn(obj);
+							}
+						})
+					}
+				}
+			},
+			parentFn : function(node){
+				if(!node.$parent) return;
+				var _that = this;
+				var parent = node.$parent;
+				var allSelected = true;
+				var children = parent.node.children;
+				if(children && children.length > 0){
+					children.forEach(function(obj, i){
+						if(!obj.checked){
+							allSelected = false;
 						}
 					})
-				} else {
-					isChecked = false;
+					if(allSelected){
+						parent.node.checked = true;
+						_that.parentFn(parent);
+					} else {
+						parent.node.checked = false;
+					}
 				}
-				if(isChecked){
-					obj.checked = true;
-				}
-				return isChecked;
+			},
+			toggle : function(node){
+				// 子集处理
+				this.childFn(this);
+				// 父级处理
+				this.parentFn(this);
 			}
-
 		}
-//		,
-//		methods:{
-//			setChecked : function(){
-//				if(this.node.children && this.node.children.length > 0){
-//					this.node.children.forEach(function(obj, i){
-//						obj.checked = true;
-//					})
-//				}
-//			}
-//		}
 	})
 
 	var vm = new Vue({
