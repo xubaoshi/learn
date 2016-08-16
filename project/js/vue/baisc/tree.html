@@ -36,14 +36,14 @@
 				var children = node.$children;
 				if(children && children.length > 0){
 					if(node.node.checked){
-						node.$children.forEach(function(obj, i){
+						children.forEach(function(obj, i){
 							obj.node.checked = true;
 							if(obj.$children && obj.$children.length > 0){
 								_that.childFn(obj);
 							}
 						})
 					} else {
-						node.$children.forEach(function(obj, i){
+						children.forEach(function(obj, i){
 							obj.node.checked = false;
 							if(obj.$children && obj.$children.length > 0){
 								_that.childFn(obj);
