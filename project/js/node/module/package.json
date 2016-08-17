@@ -1,0 +1,17 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "**（1）路径分析<br>（2）文件定位<br>（3）编译执行<br>**\r ## 2. Node中模块分为两类 ##\r **Node提供的模块（核心模块）、用户编写的模块(文件模块)。<br>**",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "walk": "^2.3.9"
+  }
+}
