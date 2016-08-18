@@ -40,7 +40,7 @@ windows系统下<br>
 如果require() 方法内的参数不添加标识符，Node会按照.js、.json、.node的顺序依次加载。
 ### 4.3 目录分析和包###
 1.通过require()方法进行查找文件所得到的可能不是一个文件而是一个目录，这时node会将这个目录当做一个包进行处理。<br>
-首先node会在当前的目录下查找package.json文件，通过JSON.parse()方法将package.json进行解析成描述该包的对象，从该对象main属性指定的文件进行定位。<br>2.如果没有package.json,node会认为index当做默认的文件名，依次去查找.js、.json、.node文件。<br>3.如果在此目录分析过程中没有定位到任何文件的话，node会进入下一个模块路径进行查找。如果没有找到则直接抛错查找异常。
+首先node会在当前的目录下查找package.json文件，通过JSON.parse()方法将package.json进行解析成描述该包的对象，从该对象main属性指定的文件进行定位。<br>2.如果没有package.json,node会认为index当做默认的文件名，依次去查找.js、.json、.node文件。<br>3.如果在此目录分析过程中没有定位到任何文件的话，node会进入下一个模块路径进行查找。如果没有找到则直接抛错查找异常。<br>
 ![](http://i.imgur.com/TtkpN07.png)
 ## 5. 模块编译##
 编译和执行是引用模块的最后一个阶段，定位到文件后node会新建一个模块对象，然后根据路径进行载入并编译。不同的文件扩展名其载入方式也是不同的。<br>
@@ -55,7 +55,7 @@ windows系统下<br>
 ### 5.1 npm ###
 npm其实是node的包管理工具，可以帮助node的使用者发布、安装、依赖第三方包。
 ### 5.2 包的结构###
-通过npm install下载的包实际上是一个目录直接打包成.zip或tar.gz格式的问候，下载后安装解压成目录。符合CommonJS规范的包的结果应该包含以下文件：<br>
+通过npm install下载的包实际上是一个目录直接打包成.zip或tar.gz格式的文件，下载后安装解压成目录。符合CommonJS规范的包的结果应该包含以下文件：<br>
 - package.json: 包的描述文件。<br>
 - bin:用来指定各个内部命令对应的可执行文件的位置。<br>
 - lib:用于存放javascript代码的目录。<br>
