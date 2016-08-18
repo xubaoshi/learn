@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "walk": "^2.3.9"
+    "walk": "^2.3.9",
+    "webpack": "^1.13.1"
   }
 }

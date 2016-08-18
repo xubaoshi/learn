@@ -49,3 +49,54 @@ windows系统下<br>
 3. .json文件。通过fs模块同步读取文件后，用JSON.parse()解析返回结果。<br>
 4. 其余扩展名文件。当做.js文件进行载入。<br>
 
+## 5. 包与npm ##
+第三方模块中，模块与模块之间是散列在各地的，相互之间不能引用。包和npm则是将模块之间联系起来的一种机制。
+![](http://i.imgur.com/qy2APmY.png)
+### 5.1 npm ###
+npm其实是node的包管理工具，可以帮助node的使用者发布、安装、依赖第三方包。
+### 5.2 包的结构###
+通过npm install下载的包实际上是一个目录直接打包成.zip或tar.gz格式的问候，下载后安装解压成目录。符合CommonJS规范的包的结果应该包含以下文件：<br>
+- package.json: 包的描述文件。<br>
+- bin:用来指定各个内部命令对应的可执行文件的位置。<br>
+- lib:用于存放javascript代码的目录。<br>
+- doc:用于存放代码的目录。<br>
+- test:用于存放单元测试代码的目录。<br>
+### 5.3 包的安装###
+	
+	npm install walk
+	npm install webpack
+
+webpack为例 如果当前目录没有node_modules文件夹 执行命令后npm会在当前目录下创建node_modules,同时在node_modules文件夹内创建webpack文件夹，最后将下载后的压缩文件解压到webpack中。npm install 执行完成。
+
+#### 全局模式安装 ####
+
+	npm install walk -g
+	npm install webapck -g
+
+确切的说将此命令称为全局模式安装是不精确的，这会让人产生很多误解。<br>
+**全局模式并不是将一个模块包安装为一个全局包的意思，这并不意味这你可以通过require()方法在任何地方来引用它。**<br>
+`-g`事实上是将该包安装为全局可用的**可执行命令**。如:webpack、grunt、gulp等。
+
+	// webpack package.json
+
+	{
+		...
+		 "bin": {
+    		"webpack": "./bin/webpack.js"
+		 }
+		...
+	}
+
+
+	// walk package.json 并没有bin属性因此walk是不可能作为全局可用的可执行命令
+
+node在运行时会解析bin属性所对应的文件路径加入到系统的PATH变量中，因此可以在dos命令行中任何位置使用该命令。
+
+![](http://i.imgur.com/0GfMPW0.jpg)
+![](http://i.imgur.com/4I1MOwA.png)
+
+
+	// 查看全局安装模式包的位置
+	node root -g
+
+![](http://i.imgur.com/AZ8oNYR.jpg)
