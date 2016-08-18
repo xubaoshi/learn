@@ -1,7 +1,30 @@
 # nodejs 模块机制 #
-## 1. Node中引入模块的步骤： ##
+## 1.AMD、CMD、CommonJS规范 ##
+### CommonJS规范 ###
+CommonJS规范是2009年开始提出的，最初的名字叫ServerJS，后期重命名为CommonJS，CommonJS认为一个单独的文件就是一个模块,每一个模块都是一个单独的作用域。加载模块使用require()方法，该方法读取一个文件并编译执行，最终返回文件内部的exports对象。nodejs就是采用了CommonJS的规范。
+
+	//    filename: foo.js
+	//    dependencies
+	var $ = require('jquery');
+
+	//    methods
+	function myFunc(){};
+
+	//    exposed public method (single)
+	module.exports = myFunc;
+
+
+	// filename: index.js
+	var foo = require('./foo');
+	foo.myFunc();
+CommonJS加载的方式采用的是同步的方式，只有资源加载完成才能执行后面的操作，nodejs主要用来做服务端的编程，所依赖的文件大多都在本地，因此读取速度快，不需要考虑异步加载。但是如果此方案用在浏览器端，文件加载时间未知可能会导致浏览器页面处于卡死的状态。于是后面就有了AMD规范与CMD规范。
+### AMD规范 ###
+是在requirejs在推广的过程中产出的。
+
+
+## 2. Node中引入模块的步骤： ##
 **（1）路径分析<br>（2）文件定位<br>（3）编译执行<br>**
-## 2. Node中模块分为两类 ##
+## 3. Node中模块分为两类 ##
 **Node提供的模块（核心模块）、用户编写的模块(文件模块)。<br>**
 
 **核心模块：**<br>部分核心模块在Node源码的编译过程中，被编译进了二进制执行文件。Node启动时部分核心模块直接被加载到内存中，所以在引入这些模块时，文件定位及编译执行可以省略掉，并且路径分析中优先判断，加载速度最快.<br>
@@ -9,8 +32,8 @@
 运行时动态加载，需要完整的路径分析、文件定位、编译执行过程，速度比核心模块慢。
 ## 3. 优先从缓存加载##
 Node对引入过的模块进行缓存，以减少引入时的开销。浏览器缓存的仅仅是缓存文件，而Node缓存的是编译执行后的对象。
-## 4. 路径分析文件定位##
-### 4.1 模块标识符分析###
+## 5. 路径分析文件定位##
+### 5.1 模块标识符分析###
 node通过require方法引入模块，require方法内接受一个表示符作为参数，node基于此标识符进行模块的分析与定位。<br>
 
 	var path = require('path');                                                            // 核心模块  http、fs、path等
@@ -36,32 +59,32 @@ windows系统下<br>
 ![](http://i.imgur.com/tbG3eHu.png)
 
 当前目录下的node_modules,上级目录的node_modules,逐级查找直至到根目录的node_modules。文件目录越深，文件查找耗时越多。 
-### 4.2 文件扩展名分析###
+### 5.2 文件扩展名分析###
 如果require() 方法内的参数不添加标识符，Node会按照.js、.json、.node的顺序依次加载。
-### 4.3 目录分析和包###
+### 5.3 目录分析和包###
 1.通过require()方法进行查找文件所得到的可能不是一个文件而是一个目录，这时node会将这个目录当做一个包进行处理。<br>
 首先node会在当前的目录下查找package.json文件，通过JSON.parse()方法将package.json进行解析成描述该包的对象，从该对象main属性指定的文件进行定位。<br>2.如果没有package.json,node会认为index当做默认的文件名，依次去查找.js、.json、.node文件。<br>3.如果在此目录分析过程中没有定位到任何文件的话，node会进入下一个模块路径进行查找。如果没有找到则直接抛错查找异常。<br>
 ![](http://i.imgur.com/TtkpN07.png)
-## 5. 模块编译##
+## 6. 模块编译##
 编译和执行是引用模块的最后一个阶段，定位到文件后node会新建一个模块对象，然后根据路径进行载入并编译。不同的文件扩展名其载入方式也是不同的。<br>
 1. .js文件。通过fs模块同步读取后编译执行。<br>
 2. .node文件。使用c/c++编写的扩展文件，通过内建的process.dlopen()方法加载编译执行。<br>
 3. .json文件。通过fs模块同步读取文件后，用JSON.parse()解析返回结果。<br>
 4. 其余扩展名文件。当做.js文件进行载入。<br>
 
-## 5. 包与npm ##
+## 6. 包与npm ##
 第三方模块中，模块与模块之间是散列在各地的，相互之间不能引用。包和npm则是将模块之间联系起来的一种机制。
 ![](http://i.imgur.com/qy2APmY.png)
-### 5.1 npm ###
+### 6.1 npm ###
 npm其实是node的包管理工具，可以帮助node的使用者发布、安装、依赖第三方包。
-### 5.2 包的结构###
+### 6.2 包的结构###
 通过npm install下载的包实际上是一个目录直接打包成.zip或tar.gz格式的文件，下载后安装解压成目录。符合CommonJS规范的包的结果应该包含以下文件：<br>
 - package.json: 包的描述文件。<br>
 - bin:用来指定各个内部命令对应的可执行文件的位置。<br>
 - lib:用于存放javascript代码的目录。<br>
 - doc:用于存放代码的目录。<br>
 - test:用于存放单元测试代码的目录。<br>
-### 5.3 包的安装###
+### 6.3 包的安装###
 	
 	npm install walk
 	npm install webpack
