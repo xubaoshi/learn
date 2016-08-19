@@ -1,5 +1,5 @@
 # nodejs 模块机制 #
-## 1.AMD、CMD、CommonJS规范 ##
+## 1.AMD、CMD、CommonJS  模块规范 ##
 ### CommonJS规范 ###
 CommonJS规范是2009年开始提出的，最初的名字叫ServerJS，后期重命名为CommonJS，CommonJS认为一个单独的文件就是一个模块,每一个模块都是一个单独的作用域。加载模块使用require()方法，该方法读取一个文件并编译执行，最终返回文件内部的exports对象。nodejs就是采用了CommonJS的规范。
 
@@ -19,9 +19,29 @@ CommonJS规范是2009年开始提出的，最初的名字叫ServerJS，后期重
 	foo.myFunc();
 CommonJS加载的方式采用的是同步的方式，只有资源加载完成才能执行后面的操作，nodejs主要用来做服务端的编程，所依赖的文件大多都在本地，因此读取速度快，不需要考虑异步加载。但是如果此方案用在浏览器端，文件加载时间未知可能会导致浏览器页面处于卡死的状态。于是后面就有了AMD规范与CMD规范。
 ### AMD规范 ###
-是在requirejs在推广的过程中产出的。
+是在requirejs在推广的过程中产出的。AMD异步加载模块，requirejs使用define进行模块定义。
+	
+	define(['jquery','underscore'],function($,_){
+	
+	})
+
+AMD推崇依赖前置，但AMD依然支持依赖就近（官方推荐依赖前置即遵循CommonJS规范）。
+
+	define(function(require,exports,module)){
+		var $ = require('jquery');
+		var _ = require('underscore');
+	}
+### CMD规范 ###
+是在seajs在推广的过程中产出的。
+	
+	define(function(require,exports,module)){
+		var $ = require('jquery');
+		var _ = require('underscore');
+	}
 
 
+AMD推崇依赖就近。
+	
 ## 2. Node中引入模块的步骤： ##
 **（1）路径分析<br>（2）文件定位<br>（3）编译执行<br>**
 ## 3. Node中模块分为两类 ##
