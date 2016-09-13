@@ -23274,7 +23274,7 @@
 	            var _props = this.props;
 	            var dispatch = _props.dispatch;
 	            var visibleTodos = _props.visibleTodos;
-	            var visbilityFilter = _props.visbilityFilter;
+	            var visibilityFilter = _props.visibilityFilter;
 
 	            return _react2.default.createElement(
 	                'div',
@@ -23285,13 +23285,13 @@
 	                _react2.default.createElement(_TodoList2.default, { todos: visibleTodos,
 	                    onTodoClick: function onTodoClick(index) {
 	                        return dispatch((0, _actions.completeTodo)(index));
-	                    } }),
-	                _react2.default.createElement(_Footer2.default, { filter: visibilityFilter,
-	                    onFilterChange: function onFilterChange(nextFilter) {
-	                        return dispatch((0, _actions.setVisibilityFilter)(nextFilter));
 	                    } })
 	            );
 	        }
+
+	        // <Footer filter={visibilityFilter}
+	        //                 onFilterChange = {nextFilter => dispatch(setVisibilityFilter(nextFilter)) }/>
+
 	    }]);
 
 	    return App;
@@ -23322,8 +23322,8 @@
 
 	function select(state) {
 	    return {
-	        visibleTodos: selectTodos(state.todos, state.visbilityFilter),
-	        visbilityFilter: state.visbilityFilter
+	        visibleTodos: selectTodos(state.todos, state.visibilityFilter),
+	        visbilityFilter: state.visibilityFilter
 	    };
 	}
 
@@ -23362,9 +23362,69 @@
 
 /***/ },
 /* 203 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AddTodo = function (_Component) {
+	    _inherits(AddTodo, _Component);
+
+	    function AddTodo() {
+	        _classCallCheck(this, AddTodo);
+
+	        return _possibleConstructorReturn(this, (AddTodo.__proto__ || Object.getPrototypeOf(AddTodo)).apply(this, arguments));
+	    }
+
+	    _createClass(AddTodo, [{
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement('input', { type: 'text', ref: 'input' }),
+	                _react2.default.createElement(
+	                    'button',
+	                    { onClick: function onClick(e) {
+	                            return _this2.handleClick(e);
+	                        } },
+	                    'Add'
+	                )
+	            );
+	        }
+	    }, {
+	        key: 'handleClick',
+	        value: function handleClick(e) {
+	            var node = this.refs.input;
+	            var text = node.value.trim();
+	            this.props.onAddClick(text);
+	            node.value = '';
+	        }
+	    }]);
+
+	    return AddTodo;
+	}(_react.Component);
+
+	exports.default = AddTodo;
 
 /***/ },
 /* 204 */
@@ -23412,7 +23472,7 @@
 
 	            return _react2.default.createElement(
 	                'ul',
-	                null,
+	                { className: 'todo-list' },
 	                this.props.todos.map(function (todo, index) {
 	                    return _react2.default.createElement(_Todo2.default, _extends({}, todo, {
 	                        key: index,
@@ -23431,11 +23491,12 @@
 
 
 	TodoList.propTypes = {
-	    onTodoClick: PropTypes.func.isRequired,
-	    todos: _react.PropsTypes.arrayOf(_react.PropsTypes.shape({
-	        text: _react.PropsTypes.string.isRequired,
-	        completed: _react.PropsTypes.bool.isRequired
-	    }).isRequired).isRequired
+	    onTodoClick: _react.PropTypes.func.isRequired
+	    // ,
+	    // todos: PropTypes.arrayOf(PropTypes.shape({
+	    //     text: PropTypes.string.isRequired,
+	    //     completed: PropTypes.bool.isRequired
+	    // }).isRequired).isRequired
 	};
 
 /***/ },
@@ -23522,7 +23583,10 @@
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-	function visibilityFilters() {
+	var SHOW_ALL = _actions.VisibilityFilters.SHOW_ALL;
+
+
+	function visibilityFilter() {
 	    var state = arguments.length <= 0 || arguments[0] === undefined ? SHOW_ALL : arguments[0];
 	    var action = arguments[1];
 
@@ -23554,7 +23618,7 @@
 	}
 
 	var todoApp = (0, _redux.combineReducers)({
-	    visibilityFilters: visibilityFilters,
+	    visibilityFilter: visibilityFilter,
 	    todos: todos
 	});
 
