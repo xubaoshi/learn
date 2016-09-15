@@ -21,7 +21,7 @@ export function invalidateSubreddit(subreddit) {
 
 function requestPosts(subreddit) {
     return {
-        type: RECEIVE_POSTS,
+        type: REQUEST_POSTS,
         subreddit
     }
 }

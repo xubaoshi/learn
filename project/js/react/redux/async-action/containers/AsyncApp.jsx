@@ -8,7 +8,7 @@ class AsyncApp extends Component {
     constructor(props) {
         super(props)
         this.handleChange = this.handleChange.bind(this)
-        this.handRefreshClick = this.handRefreshClick.bind(this)
+        this.handleRefreshClick = this.handleRefreshClick.bind(this)
     }
 
     componentDidMount() {
@@ -87,6 +87,8 @@ function mapStateToProps(state) {
         isFetching: true,
         items: []
     }
+
+    console.log(posts);
 
     return {
         selectedSubreddit,
