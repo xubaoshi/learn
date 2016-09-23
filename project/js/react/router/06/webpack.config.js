@@ -4,6 +4,7 @@
 // var Dashboard = require('webpack-dashboard');
 // var DashboardPlugin = require('webpack-dashboard/plugin');
 // var dashboard = new Dashboard();
+var webpack = require('webpack')
 
 module.exports = {
 	entry: './index.js',
@@ -27,9 +28,18 @@ module.exports = {
                 }
             },
 		]
-		// ,
-		// plugins: [
-		// 	new DashboardPlugin(dashboard.setData)
-		// ]
+		,
+		plugins:
+		process.env.NODE_ENV === 'production'
+			?
+			[
+				new webpack.optimize.DedupePlugin(),
+				new webpack.optimize.OccurrenceOrderPlugin(),
+				new webpack.optimize.UglifyJsPlugin()
+			]
+			:
+			[
+				// new DashboardPlugin(dashboard.setData)
+			]
 	}
 }

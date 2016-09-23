@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "if-env NODE_ENV=production  && npm run start:prod || npm run start:dev",
-    "start:dev": "webpack-dev-server --inline --content-base . --history-api-fallback --open",
+    "start:dev": "webpack-dev-server --inline --content-base public --history-api-fallback --open",
     "start:prod": "webpack && node server.js"
   },
   "author": "",
@@ -19,6 +19,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-2": "^6.13.0",
     "babel-register": "^6.14.0",
+    "compression": "^1.6.2",
     "express": "^4.14.0",
     "if-env": "^1.0.0",
     "isomorphic-fetch": "^2.2.1",
