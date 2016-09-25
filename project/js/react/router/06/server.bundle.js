@@ -44,33 +44,40 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(__dirname) {'use strict';
+	'use strict';
 
-	var _react = __webpack_require__(1);
+	var _express = __webpack_require__(1);
+
+	var _express2 = _interopRequireDefault(_express);
+
+	var _path = __webpack_require__(2);
+
+	var _path2 = _interopRequireDefault(_path);
+
+	var _compression = __webpack_require__(3);
+
+	var _compression2 = _interopRequireDefault(_compression);
+
+	var _react = __webpack_require__(4);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _server = __webpack_require__(2);
+	var _server = __webpack_require__(5);
 
-	var _reactRouter = __webpack_require__(3);
+	var _reactRouter = __webpack_require__(6);
 
-	var _routes = __webpack_require__(4);
+	var _routes = __webpack_require__(7);
 
 	var _routes2 = _interopRequireDefault(_routes);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var express = __webpack_require__(11);
-	var path = __webpack_require__(12);
-	var compression = __webpack_require__(13);
-
-
-	var app = express();
+	var app = (0, _express2.default)();
 
 	// must be first
-	app.use(compression());
+	app.use((0, _compression2.default)());
 
-	app.use(express.static(path.join(__dirname, 'public')));
+	app.use(_express2.default.static(_path2.default.join(__dirname, 'public')));
 
 	app.get('*', function (req, res) {
 	    // res.sendFile(path.join(__dirname, 'public','index.html'))
@@ -96,55 +103,72 @@
 	app.listen(PORT, function () {
 	    console.log('Production Express server running at localhost:' + PORT);
 	});
-	/* WEBPACK VAR INJECTION */}.call(exports, ""))
 
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
 
-	module.exports = commonjsreact;
+	module.exports = commonjsexpress;
 
 /***/ },
 /* 2 */
 /***/ function(module, exports) {
 
-	module.exports = commonjsreact-dom/server;
+	module.exports = require("path");
 
 /***/ },
 /* 3 */
 /***/ function(module, exports) {
 
-	module.exports = commonjsreact-router;
+	module.exports = commonjscompression;
 
 /***/ },
 /* 4 */
+/***/ function(module, exports) {
+
+	module.exports = commonjsreact;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	module.exports = commonjsreact-dom/server;
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	module.exports = commonjsreact-router;
+
+/***/ },
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(4);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(3);
+	var _reactRouter = __webpack_require__(6);
 
-	var _App = __webpack_require__(5);
+	var _App = __webpack_require__(8);
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _Home = __webpack_require__(6);
+	var _Home = __webpack_require__(9);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Repos = __webpack_require__(8);
+	var _Repos = __webpack_require__(11);
 
 	var _Repos2 = _interopRequireDefault(_Repos);
 
-	var _Repo = __webpack_require__(9);
+	var _Repo = __webpack_require__(12);
 
 	var _Repo2 = _interopRequireDefault(_Repo);
 
-	var _About = __webpack_require__(10);
+	var _About = __webpack_require__(13);
 
 	var _About2 = _interopRequireDefault(_About);
 
@@ -163,7 +187,7 @@
 	);
 
 /***/ },
-/* 5 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -172,19 +196,19 @@
 	    value: true
 	});
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(4);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Home = __webpack_require__(6);
+	var _Home = __webpack_require__(9);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _NavLink = __webpack_require__(7);
+	var _NavLink = __webpack_require__(10);
 
 	var _NavLink2 = _interopRequireDefault(_NavLink);
 
-	var _reactRouter = __webpack_require__(3);
+	var _reactRouter = __webpack_require__(6);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -236,7 +260,7 @@
 	});
 
 /***/ },
-/* 6 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -245,7 +269,7 @@
 	    value: true
 	});
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(4);
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -263,7 +287,7 @@
 	});
 
 /***/ },
-/* 7 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -274,11 +298,11 @@
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(4);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(3);
+	var _reactRouter = __webpack_require__(6);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -290,7 +314,7 @@
 	});
 
 /***/ },
-/* 8 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -299,11 +323,11 @@
 	    value: true
 	});
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(4);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _NavLink = __webpack_require__(7);
+	var _NavLink = __webpack_require__(10);
 
 	var _NavLink2 = _interopRequireDefault(_NavLink);
 
@@ -376,7 +400,7 @@
 	});
 
 /***/ },
-/* 9 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -385,7 +409,7 @@
 	    value: true
 	});
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(4);
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -407,7 +431,7 @@
 	});
 
 /***/ },
-/* 10 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -416,7 +440,7 @@
 	    value: true
 	});
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(4);
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -436,24 +460,6 @@
 	        );
 	    }
 	});
-
-/***/ },
-/* 11 */
-/***/ function(module, exports) {
-
-	module.exports = commonjsexpress;
-
-/***/ },
-/* 12 */
-/***/ function(module, exports) {
-
-	module.exports = require("path");
-
-/***/ },
-/* 13 */
-/***/ function(module, exports) {
-
-	module.exports = commonjscompression;
 
 /***/ }
 /******/ ]);

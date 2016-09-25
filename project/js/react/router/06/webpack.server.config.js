@@ -8,14 +8,14 @@ module.exports = {
     },
     target:'node',
     externals:fs.readdirSync(path.resolve(__dirname,'node_modules')).concat([
-        'react-dom/server','react/addons'
+        'react-dom/server'
     ]).reduce(function(ext,mod){
         ext[mod] = 'commonjs' + mod
         return ext
     },{}),
     node:{
-        __filename:true,
-        __dirname:true
+        __filename:false,
+        __dirname:false
     },
     module:{
         loaders:[
