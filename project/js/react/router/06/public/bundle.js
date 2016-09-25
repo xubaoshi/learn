@@ -54,43 +54,13 @@
 
 	var _reactRouter = __webpack_require__(172);
 
-	var _App = __webpack_require__(235);
+	var _routes = __webpack_require__(235);
 
-	var _App2 = _interopRequireDefault(_App);
-
-	var _About = __webpack_require__(238);
-
-	var _About2 = _interopRequireDefault(_About);
-
-	var _Repos = __webpack_require__(239);
-
-	var _Repos2 = _interopRequireDefault(_Repos);
-
-	var _Repo = __webpack_require__(240);
-
-	var _Repo2 = _interopRequireDefault(_Repo);
-
-	var _Home = __webpack_require__(236);
-
-	var _Home2 = _interopRequireDefault(_Home);
+	var _routes2 = _interopRequireDefault(_routes);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	(0, _reactDom.render)(_react2.default.createElement(
-	    _reactRouter.Router,
-	    { history: _reactRouter.browserHistory },
-	    _react2.default.createElement(
-	        _reactRouter.Route,
-	        { path: '/', component: _App2.default },
-	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
-	        _react2.default.createElement(
-	            _reactRouter.Route,
-	            { path: '/repos', component: _Repos2.default },
-	            _react2.default.createElement(_reactRouter.Route, { path: '/repos/:username/:repoName', component: _Repo2.default })
-	        ),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _About2.default })
-	    )
-	), document.getElementById('app'));
+	(0, _reactDom.render)(_react2.default.createElement(_reactRouter.Router, { routes: _routes2.default, history: _reactRouter.browserHistory }), document.getElementById('app'));
 
 /***/ },
 /* 1 */
@@ -27116,6 +27086,52 @@
 
 	'use strict';
 
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(172);
+
+	var _App = __webpack_require__(236);
+
+	var _App2 = _interopRequireDefault(_App);
+
+	var _Home = __webpack_require__(237);
+
+	var _Home2 = _interopRequireDefault(_Home);
+
+	var _Repos = __webpack_require__(239);
+
+	var _Repos2 = _interopRequireDefault(_Repos);
+
+	var _Repo = __webpack_require__(240);
+
+	var _Repo2 = _interopRequireDefault(_Repo);
+
+	var _About = __webpack_require__(241);
+
+	var _About2 = _interopRequireDefault(_About);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	module.exports = _react2.default.createElement(
+	    _reactRouter.Route,
+	    { path: '/', component: _App2.default },
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
+	    _react2.default.createElement(
+	        _reactRouter.Route,
+	        { path: '/repos', component: _Repos2.default },
+	        _react2.default.createElement(_reactRouter.Route, { path: '/repos/:username/:repoName', component: _Repo2.default })
+	    ),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _About2.default })
+	);
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
@@ -27124,11 +27140,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Home = __webpack_require__(236);
+	var _Home = __webpack_require__(237);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _NavLink = __webpack_require__(237);
+	var _NavLink = __webpack_require__(238);
 
 	var _NavLink2 = _interopRequireDefault(_NavLink);
 
@@ -27184,7 +27200,7 @@
 	});
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27211,7 +27227,7 @@
 	});
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27238,37 +27254,6 @@
 	});
 
 /***/ },
-/* 238 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _react2.default.createClass({
-	    displayName: 'About',
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(
-	                'h2',
-	                null,
-	                'This is About'
-	            )
-	        );
-	    }
-	});
-
-/***/ },
 /* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -27282,7 +27267,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _NavLink = __webpack_require__(237);
+	var _NavLink = __webpack_require__(238);
 
 	var _NavLink2 = _interopRequireDefault(_NavLink);
 
@@ -27290,6 +27275,19 @@
 
 	exports.default = _react2.default.createClass({
 	    displayName: 'Repos',
+
+	    contextTypes: {
+	        router: _react2.default.PropTypes.object
+	    },
+	    handleSubmit: function handleSubmit(event) {
+	        event.preventDefault();
+	        var userName = event.target.elements[0].value;
+	        var repo = event.target.elements[1].value;
+	        var path = '/repos/' + userName + '/' + repo;
+
+	        console.log(path);
+	        this.context.router.push(path);
+	    },
 	    render: function render() {
 	        return _react2.default.createElement(
 	            'div',
@@ -27318,6 +27316,21 @@
 	                        _NavLink2.default,
 	                        { to: '/repos/facebook/react' },
 	                        'react'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                        'form',
+	                        { onSubmit: this.handleSubmit },
+	                        _react2.default.createElement('input', { type: 'text', placeholder: 'userName' }),
+	                        _react2.default.createElement('input', { type: 'text', placeholder: 'repo' }),
+	                        _react2.default.createElement(
+	                            'button',
+	                            { type: 'submit' },
+	                            'Go'
+	                        )
 	                    )
 	                )
 	            ),
@@ -27352,6 +27365,37 @@
 	                'h2',
 	                null,
 	                this.props.params.repoName
+	            )
+	        );
+	    }
+	});
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	    displayName: 'About',
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                'h2',
+	                null,
+	                'This is About'
 	            )
 	        );
 	    }
