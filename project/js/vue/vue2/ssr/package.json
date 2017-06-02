@@ -1,0 +1,13 @@
+{
+  "name": "vue-ssr",
+  "version": "1.0.0",
+  "description": "vue server side render",
+  "main": "index.js",
+  "author": "xubaoshi",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3",
+    "vue": "^2.3.3",
+    "vue-server-renderer": "^2.3.3"
+  }
+}
