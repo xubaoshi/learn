@@ -8,9 +8,12 @@ $(function () {
     }();
     var publicObj = {
         $chart: $('#container'),
+        $returnBtn: $('#return-button'),
         echartInstacnce: null,
         option: {},
-        stack: []
+        stackArr: [],
+        stackData: {},
+        count: 0
     };
 
 
@@ -43,6 +46,7 @@ $(function () {
          * @param option  当前echar配置
          */
         privateFn.initChart = function (option) {
+            console.log(option);
             if (publicObj.echartInstacnce) {
                 publicObj.echartInstacnce.dispose(publicObj.$chart[0]);
             }
@@ -77,19 +81,22 @@ $(function () {
                     '2016-09-17', '2016-09-18', '2016-09-19', '2016-09-20', '2016-09-21', '2016-09-22', '2016-09-23', '2016-09-24',
                     '2016-09-25', '2016-09-26', '2016-09-27', '2016-09-28', '2016-09-29', '2016-09-30'
                 ];
+
                 var data = [
                     3, 4, 5, 6, 5, 6, 7, 8, 8, 9,
                     12, 13, 15, 16, 20, 12, 30, 21, 22, 29,
                     30, 31, 33, 34, 35, 36, 20, 29, 33, 40
                 ];
-                
-                publicObj.option.series[0].data = [
-                    3, 4, 5, 6, 5, 6, 7, 8, 8, 9,
-                    12, 13, 15, 16, 20, 12, 30, 21, 22, 29,
-                    30, 31, 33, 34, 35, 36, 20, 29, 33, 40
-                ];
-                console.log(params);
-                publicObj.stack.push(params.data);
+                var newData = data.map(function (val, index) {
+                    return val + 10 * publicObj.count;
+                })
+                publicObj.count++;
+                publicObj.option.series[0].data = newData;
+                publicObj.stackArr.push(params.name);
+                publicObj.stackData[params.name] = {
+                    xAxisData: publicObj.option.xAxis.data,
+                    seriesData: publicObj.option.series[0].data
+                };
                 privateFn.initChart(publicObj.option);
                 privateFn.initChartEvent();
             })
@@ -113,8 +120,21 @@ $(function () {
         });
 
         // 点击返回上一级
-        $('#return-up').on('click',function(){
-            console.log(publicObj.stack)
+        $('#return-up').on('click', function () {
+            console.log(publicObj.stackArr.length);
+            if (publicObj.stackArr.length > 0) {
+                var preName = publicObj.stackArr.pop();
+                var preData = publicObj.stackData[preName];
+                delete publicObj.stackData[preName];
+                if (preData) {
+                    publicObj.option.xAxis.data = preData.xAxisData;
+                    publicObj.option.series[0].data = preData.seriesData
+                }
+                privateFn.initChart(publicObj.option);
+                privateFn.initChartEvent();
+            } else {
+                publicObj.$returnBtn.trigger('click');
+            }
         });
     }();
 
