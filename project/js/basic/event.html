@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="el1">
+        <div id="el2">
+            <div id="el3">
+                <h1 id="el4">冒泡</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var el1 = document.getElementById('el1');
+            var el2 = document.getElementById('el2');
+            var el3 = document.getElementById('el3');
+            var el4 = document.getElementById('el4');
+            el1.addEventListener('click',function (e) {
+                console.log('this is el1');
+            },true)
+
+            el2.addEventListener('click',function (e) {
+                console.log('this is el2');
+            },true)
+            el3.addEventListener('click',function (e) {
+                console.log('this is el3');
+            },true)
+            el4.addEventListener('click',function (e) {
+                console.log('this is el4');
+            },true)
+
+            document.addEventListener('click',function (e) {
+                console.log('this is document');
+                e.stopPropagation();
+            },true)
+        };
+    </script>
+</body>
+
+</html>
