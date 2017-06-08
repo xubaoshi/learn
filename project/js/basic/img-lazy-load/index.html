@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #picList img {
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+        #picList img:after {
+            content: "( ⊙ o ⊙ )加载失败";
+            font-size: 6px;
+            font-family: FontAwesome;
+            color: rgb(100, 100, 100);
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: #ddd;
+        }
+
+        .lazy {
+            background: url(./img/loading.gif) center no-repeat;
+            border: 1px solid black;
+        }
+
+        #loadBar {
+            width: 200px;
+            height: 15px;
+            background: linear-gradient(90deg, #187103, #81b50b, #187103);
+            border: 10px solid white;
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            margin-left: -100px;
+        }
+
+        #loadBar #loadBarMask {
+            width: 70%;
+            height: 100%;
+            background-color: beige;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="picList">
+        <img class="lazy" data-src="./img/01.jpg">
+        <img class="lazy" data-src="./img/02.jpg">
+        <img class="lazy" data-src="./img/03.jpg">
+        <img class="lazy" data-src="./img/04.jpg">
+        <img class="lazy" data-src="./img/05.jpg">
+        <img class="lazy" data-src="./img/06.jpg">
+        <img class="lazy" data-src="./img/07.jpg">
+        <img class="lazy" data-src="./img/08.jpg">
+        <img class="lazy" data-src="./img/09.jpg">
+    </div>
+    <div id="loadBar">
+        <div id="loadBarMask"></div>
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script>
+        $(function () {
+            var $lazys = $('.lazy');
+            var $loadBarMask = $('#loadBarMask');
+            var $picList = $('.picList');
+            var $loadBar = $('#loadBar');
+
+            var activePic = 0;
+            var totalPic = $lazys.length;
+            var src = [];
+
+            var loadPicPerSencond = function () {
+                $lazys.each(function (index) {
+                    var self = $(this);
+                    setTimeout(function () {
+                        self.attr('src', self.data('src'));
+                        self[0].onload = function () {
+                            self.removeClass('lazy');
+                            countPic();
+                        }
+                        self[0].onerror = function () {
+                            countPic();
+                        }
+                    }, 1000 * index)
+                })
+            }
+
+            var countPic = function () {
+                activePic++;
+                var leftPic = totalPic - activePic;
+                var percent = Math.ceil(leftPic / totalPic * 100);
+                $loadBarMask.css('width', percent + '%');
+                if (percent == 0) {
+                    $loadBar.hide();
+                }
+            };
+
+            loadPicPerSencond();
+        });
+    </script>
+</body>
+
+</html>
