@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <form id="myForm">
+        <input type="text" name="input1" value="2222">
+        <input type="hidden" name="input1-hidden" value="1111111">
+        <input type="radio">
+        <input type="checkbox" checked>
+        <textarea rows="" cols=""></textarea>
+        <button id="resetBtn" type="button">重置</button>
+    </form>
+    <script>
+        window.onload = function () {
+            // 重置表单
+            var $reset = document.getElementById('resetBtn');
+            var $form = document.getElementById('myForm');
+            var $input1 = document.getElementsByName('input1')[0];
+            var $input1Hidden = document.getElementsByName('input1-hidden')[0];
+            $reset.addEventListener('click', function () {
+                $form.reset();
+            });
+            $input1.addEventListener('change', function () {
+                $input1Hidden.value = $input1.value;
+            })
+
+        }
+    </script>
+</body>
+
+</html>

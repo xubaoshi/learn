@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        h2 {
+            position: absolute;
+            top: 500px;
+            left: 500px;
+        }
+
+        h3 {
+            position: absolute;
+            top: 2500px;
+            left: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://www.baidu.com">百度</a>
+    <h2>clientX and clientY</h2>
+    <h3>pageX and pageY</h3>
+    <!--<script src="./img-lazy-load/jquery.min.js"></script>-->
+    <script>
+        window.onload = function () {
+            var h2 = document.getElementsByTagName('h2')[0];
+            h2.addEventListener('click', function (event) {
+                console.log('clientX: ' + event.clientX);
+                console.log('clientY: ' + event.clientY);
+                console.log('screenX: ' + event.screenX);
+                console.log('screenY: ' + event.screenY);
+            });
+            var h3 = document.getElementsByTagName('h3')[0];
+            h3.addEventListener('click', function (event) {
+                console.log('clientX: ' + event.clientX);
+                console.log('clientY: ' + event.clientY);
+                console.log('pageX: ' + event.pageX);
+                console.log('pageY: ' + event.pageY);
+            })
+            h2.addEventListener('mouseout', function () {
+                console.log('h2 mouse out');
+            })
+            var body = document.getElementsByTagName('body')[0];
+            body.addEventListener('mouseover', function () {
+                console.log('body mouse over')
+            })
+        }
+        // window.addEventListener('beforeunload', function (event) {
+        //     var message = "表单尚未提交完整，确认离开页面？";
+        //     event.returnValue = message;
+        //     return message;
+        // })
+        document.addEventListener('DOMContentLoaded',function(event){
+            console.log(document.getElementsByTagName('body'))
+            console.log(document.getElementsByTagName('h3')) 
+            console.log($('h3')) 
+        })
+    </script>
+</body>
+
+</html>

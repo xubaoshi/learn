@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .gesture-area {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            margin-top: 100px;
+            background-color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gesture-area">
+
+    </div>
+    <script>
+        window.onload = function () {
+            var area = document.getElementsByClassName('gesture-area')[0];
+            area.addEventListener('touchstart', function (event) {
+                if (event.touches.length == 1) {
+                    area.innerHTML = 'Touch started (' + event.touches[0].clientX + ',' + event.touches[0].clientY +
+                        ')';
+                }
+            });
+            area.addEventListener('touchend', function (event) {
+                area.innerHTML = 'Touch ended (' + event.changedTouches[0].clientX + ',' + event.changedTouches[
+                    0].clientY + ')';
+            });
+            area.addEventListener('touchmove', function (event) {
+                if (event.touches.length == 1) {
+                    area.innerHTML = 'Touch moved (' + event.changedTouches[0].clientX + ',' + event.changedTouches[
+                        0].clientY + ')';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
