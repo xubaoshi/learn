@@ -1,0 +1,223 @@
+{
+  "keys": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\config\\config.default.js",
+  "view": {
+    "defaultViewEngine": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\config\\config.default.js",
+    "mapping": {
+      ".html": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\config\\config.default.js"
+    },
+    "root": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.2@egg-view\\config\\config.default.js",
+    "cache": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.2@egg-view\\config\\config.local.js",
+    "defaultExtension": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.2@egg-view\\config\\config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.5.0@egg-onerror\\config\\config.default.js",
+    "appErrorFilter": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.5.0@egg-onerror\\config\\config.default.js"
+  },
+  "session": {
+    "maxAge": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.1.1@egg-session\\config\\config.default.js",
+    "key": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.1.1@egg-session\\config\\config.default.js",
+    "httpOnly": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.1.1@egg-session\\config\\config.default.js",
+    "encrypt": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.1.1@egg-session\\config\\config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.1@egg-i18n\\config\\config.default.js",
+    "dirs": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.1@egg-i18n\\config\\config.default.js",
+    "queryField": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.1@egg-i18n\\config\\config.default.js",
+    "cookieField": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.1@egg-i18n\\config\\config.default.js",
+    "cookieMaxAge": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.1@egg-i18n\\config\\config.default.js"
+  },
+  "watcher": {
+    "type": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.1.3@egg-watcher\\config\\config.local.js",
+    "eventSources": {
+      "default": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.1.3@egg-watcher\\config\\config.default.js",
+      "development": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.1.3@egg-watcher\\config\\config.default.js"
+    }
+  },
+  "multipart": {
+    "autoFields": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.5.0@egg-multipart\\config\\config.default.js",
+    "defaultCharset": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.5.0@egg-multipart\\config\\config.default.js",
+    "fieldNameSize": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.5.0@egg-multipart\\config\\config.default.js",
+    "fieldSize": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.5.0@egg-multipart\\config\\config.default.js",
+    "fields": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.5.0@egg-multipart\\config\\config.default.js",
+    "fileSize": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.5.0@egg-multipart\\config\\config.default.js",
+    "files": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.5.0@egg-multipart\\config\\config.default.js",
+    "fileExtensions": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.5.0@egg-multipart\\config\\config.default.js",
+    "whitelist": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.5.0@egg-multipart\\config\\config.default.js"
+  },
+  "security": {
+    "domainWhiteList": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+    "protocolWhiteList": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+    "defaultMiddleware": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+    "csrf": {
+      "enable": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+      "useSession": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+      "ignoreJSON": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+      "cookieName": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+      "sessionName": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+      "headerName": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+      "bodyName": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+      "queryName": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js"
+    },
+    "xframe": {
+      "enable": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+      "value": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js"
+    },
+    "hsts": {
+      "enable": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.local.js",
+      "maxAge": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+      "includeSubdomains": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js"
+    },
+    "dta": {
+      "enable": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js"
+    },
+    "noopen": {
+      "enable": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js"
+    },
+    "nosniff": {
+      "enable": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js"
+    },
+    "xssProtection": {
+      "enable": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+      "value": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js"
+    },
+    "csp": {
+      "enable": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js",
+      "policy": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js"
+    }
+  },
+  "helper": {
+    "shtml": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.12.1@egg-security\\config\\config.default.js"
+  },
+  "development": {
+    "watchDirs": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.3.1@egg-development\\config\\config.default.js",
+    "ignoreDirs": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.3.1@egg-development\\config\\config.default.js",
+    "fastReady": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.3.1@egg-development\\config\\config.default.js",
+    "reloadOnDebug": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.3.1@egg-development\\config\\config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.2.3@egg-logrotator\\config\\config.default.js",
+    "filesRotateBySize": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.2.3@egg-logrotator\\config\\config.default.js",
+    "maxFileSize": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.2.3@egg-logrotator\\config\\config.default.js",
+    "maxFiles": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.2.3@egg-logrotator\\config\\config.default.js",
+    "rotateDuration": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.2.3@egg-logrotator\\config\\config.default.js",
+    "maxDays": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.2.3@egg-logrotator\\config\\config.default.js"
+  },
+  "static": {
+    "prefix": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.4.1@egg-static\\config\\config.default.js",
+    "dir": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.4.1@egg-static\\config\\config.default.js",
+    "dynamic": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.4.1@egg-static\\config\\config.default.js",
+    "preload": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.4.1@egg-static\\config\\config.default.js",
+    "buffer": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.4.1@egg-static\\config\\config.default.js",
+    "maxFiles": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.4.1@egg-static\\config\\config.default.js"
+  },
+  "jsonp": {
+    "limit": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.2@egg-jsonp\\config\\config.default.js",
+    "callback": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.2@egg-jsonp\\config\\config.default.js",
+    "csrf": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.2@egg-jsonp\\config\\config.default.js"
+  },
+  "env": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+  "name": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+  "proxy": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+  "protocolHeaders": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+  "ipHeaders": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+  "hostHeaders": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+  "pkg": {
+    "name": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "version": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "description": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "main": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "scripts": {
+      "dev": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+    },
+    "author": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "license": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "devDependencies": {
+      "egg": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "egg-bin": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+    },
+    "dependencies": {
+      "egg": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "egg-view-nunjucks": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+    }
+  },
+  "baseDir": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+  "HOME": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+  "rundir": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+  "dump": {
+    "ignore": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "notFound": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "sitefile": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "middlewares": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "httpClient": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+  },
+  "bodyParser": {
+    "enable": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "encoding": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "formLimit": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "jsonLimit": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "strict": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "queryString": {
+      "arrayLimit": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "depth": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "parameterLimit": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+    }
+  },
+  "logger": {
+    "dir": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "encoding": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "env": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "level": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "consoleLevel": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "disableConsoleAfterReady": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "outputJSON": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "buffer": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "appLogName": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "coreLogName": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "agentLogName": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "errorLogName": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "coreLogger": {
+      "consoleLevel": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.local.js"
+    }
+  },
+  "httpclient": {
+    "enableDNSCache": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "dnsCacheMaxLength": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "dnsCacheMaxAge": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+    "request": {
+      "timeout": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "freeSocketKeepAliveTimeout": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "maxSockets": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "maxFreeSockets": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "freeSocketKeepAliveTimeout": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "maxSockets": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "maxFreeSockets": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+    }
+  },
+  "coreMiddleware": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+  "workerStartTimeout": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "port": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "hostname": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+    }
+  }
+}

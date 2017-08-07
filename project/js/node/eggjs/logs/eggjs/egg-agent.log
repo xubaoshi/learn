@@ -1,0 +1,70 @@
+2017-08-07 16:45:06,545 INFO 4588 [egg:logger] init all loggers with options: {"dir":"E:\\code\\own\\learn\\project\\js\\node\\eggjs\\logs\\eggjs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"eggjs-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"type":"agent"}
+2017-08-07 16:45:06,702 INFO 4588 [egg-watcher:agent] watcher start success
+2017-08-07 16:46:02,247 WARN 4588 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\app\router.js change
+2017-08-07 16:46:04,926 WARN 4588 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:02:32,921 INFO 4144 [egg:logger] init all loggers with options: {"dir":"E:\\code\\own\\learn\\project\\js\\node\\eggjs\\logs\\eggjs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"eggjs-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"type":"agent"}
+2017-08-07 17:02:33,071 INFO 4144 [egg-watcher:agent] watcher start success
+2017-08-07 17:08:25,902 INFO 2792 [egg:logger] init all loggers with options: {"dir":"E:\\code\\own\\learn\\project\\js\\node\\eggjs\\logs\\eggjs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"eggjs-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"type":"agent"}
+2017-08-07 17:08:26,063 INFO 2792 [egg-watcher:agent] watcher start success
+2017-08-07 17:09:17,518 INFO 2892 [egg:logger] init all loggers with options: {"dir":"E:\\code\\own\\learn\\project\\js\\node\\eggjs\\logs\\eggjs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"eggjs-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"type":"agent"}
+2017-08-07 17:09:17,708 INFO 2892 [egg-watcher:agent] watcher start success
+2017-08-07 17:10:17,615 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\app\controller\news.js change
+2017-08-07 17:10:20,306 WARN 2892 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:10:21,863 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\app\controller\news.js change
+2017-08-07 17:10:22,072 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\app\controller\news.js change
+2017-08-07 17:10:22,294 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\app\controller\news.js change
+2017-08-07 17:10:25,907 WARN 2892 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:11:00,336 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\app\controller\news.js change
+2017-08-07 17:11:00,782 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\app\controller\news.js change
+2017-08-07 17:11:01,041 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\app\controller\news.js change
+2017-08-07 17:11:02,636 WARN 2892 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:11:04,783 WARN 2892 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:11:34,758 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.js change
+2017-08-07 17:11:36,300 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.js change
+2017-08-07 17:11:37,507 WARN 2892 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:11:38,690 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:11:38,931 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:11:39,202 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:11:40,346 WARN 2892 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:11:42,121 WARN 2892 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:12:02,718 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:12:04,580 WARN 2892 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:12:22,025 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:12:23,241 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:12:24,764 WARN 2892 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:12:26,849 WARN 2892 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:12:32,605 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.js change
+2017-08-07 17:12:32,835 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.js change
+2017-08-07 17:12:33,256 WARN 2892 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.js change
+2017-08-07 17:12:34,464 WARN 2892 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:12:42,379 INFO 7744 [egg:logger] init all loggers with options: {"dir":"E:\\code\\own\\learn\\project\\js\\node\\eggjs\\logs\\eggjs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"eggjs-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"type":"agent"}
+2017-08-07 17:12:42,542 INFO 7744 [egg-watcher:agent] watcher start success
+2017-08-07 17:15:35,679 WARN 7744 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.js change
+2017-08-07 17:15:37,633 WARN 7744 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:15:38,705 WARN 7744 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.js change
+2017-08-07 17:15:38,972 WARN 7744 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.js change
+2017-08-07 17:15:39,235 WARN 7744 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.js change
+2017-08-07 17:15:41,088 WARN 7744 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:15:42,794 WARN 7744 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:16:00,152 INFO 8384 [egg:logger] init all loggers with options: {"dir":"E:\\code\\own\\learn\\project\\js\\node\\eggjs\\logs\\eggjs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"eggjs-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"type":"agent"}
+2017-08-07 17:16:00,314 INFO 8384 [egg-watcher:agent] watcher start success
+2017-08-07 17:21:10,676 INFO 5136 [egg:logger] init all loggers with options: {"dir":"E:\\code\\own\\learn\\project\\js\\node\\eggjs\\logs\\eggjs","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"eggjs-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"type":"agent"}
+2017-08-07 17:21:10,879 INFO 5136 [egg-watcher:agent] watcher start success
+2017-08-07 17:24:13,967 WARN 5136 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.js change
+2017-08-07 17:24:16,058 WARN 5136 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.js change
+2017-08-07 17:24:16,007 WARN 5136 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:24:17,694 WARN 5136 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:24:29,072 WARN 5136 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:24:31,143 WARN 5136 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:24:31,096 WARN 5136 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:24:32,711 WARN 5136 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:24:42,269 WARN 5136 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:24:42,562 WARN 5136 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:24:42,832 WARN 5136 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:24:43,915 WARN 5136 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:24:46,174 WARN 5136 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:24:48,500 WARN 5136 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:24:49,800 WARN 5136 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:24:50,336 WARN 5136 [agent:development] reload worker because E:\code\own\learn\project\js\node\eggjs\config\config.default.js change
+2017-08-07 17:24:50,403 WARN 5136 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer
+2017-08-07 17:24:52,612 WARN 5136 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer

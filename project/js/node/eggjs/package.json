@@ -1,0 +1,19 @@
+{
+  "name": "eggjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "egg-bin dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "egg": "^1.7.0",
+    "egg-bin": "^4.1.0"
+  },
+  "dependencies": {
+    "egg": "^1.7.0",
+    "egg-view-nunjucks": "^2.1.3"
+  }
+}
