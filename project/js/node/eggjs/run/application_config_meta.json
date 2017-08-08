@@ -9,6 +9,14 @@
     "cache": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.2@egg-view\\config\\config.local.js",
     "defaultExtension": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.2@egg-view\\config\\config.default.js"
   },
+  "news": {
+    "pageSize": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\config\\config.default.js",
+    "serverUrl": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\config\\config.default.js"
+  },
+  "middleware": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\config\\config.default.js",
+  "robot": {
+    "ua": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\config\\config.local.js"
+  },
   "onerror": {
     "errorPageUrl": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.5.0@egg-onerror\\config\\config.default.js",
     "appErrorFilter": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.5.0@egg-onerror\\config\\config.default.js"
@@ -118,6 +126,13 @@
     "callback": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.2@egg-jsonp\\config\\config.default.js",
     "csrf": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.2@egg-jsonp\\config\\config.default.js"
   },
+  "nunjucks": {
+    "autoescape": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.1.3@egg-view-nunjucks\\config\\config.default.js",
+    "throwOnUndefined": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.1.3@egg-view-nunjucks\\config\\config.default.js",
+    "trimBlocks": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.1.3@egg-view-nunjucks\\config\\config.default.js",
+    "lstripBlocks": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.1.3@egg-view-nunjucks\\config\\config.default.js",
+    "cache": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.1.3@egg-view-nunjucks\\config\\config.local.js"
+  },
   "env": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
   "name": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
   "proxy": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
@@ -130,13 +145,15 @@
     "description": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
     "main": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
     "scripts": {
-      "dev": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+      "dev": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "test": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
     },
     "author": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
     "license": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
     "devDependencies": {
       "egg": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
-      "egg-bin": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
+      "egg-bin": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",
+      "egg-mock": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js"
     },
     "dependencies": {
       "egg": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\config.default.js",

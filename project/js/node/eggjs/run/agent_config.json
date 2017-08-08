@@ -121,6 +121,13 @@
         ".html": "nunjucks"
       }
     },
+    "nunjucks": {
+      "autoescape": true,
+      "throwOnUndefined": false,
+      "trimBlocks": false,
+      "lstripBlocks": false,
+      "cache": false
+    },
     "env": "local",
     "name": "eggjs",
     "keys": "<String len: 8>",
@@ -134,13 +141,15 @@
       "description": "",
       "main": "index.js",
       "scripts": {
-        "dev": "egg-bin dev"
+        "dev": "egg-bin dev",
+        "test": "egg-bin test"
       },
       "author": "",
       "license": "ISC",
       "devDependencies": {
         "egg": "^1.7.0",
-        "egg-bin": "^4.1.0"
+        "egg-bin": "^4.1.0",
+        "egg-mock": "^3.9.0"
       },
       "dependencies": {
         "egg": "^1.7.0",
@@ -231,6 +240,18 @@
         "hostname": ""
       }
     },
+    "news": {
+      "pageSize": 5,
+      "serverUrl": "https://hacker-news.firebaseio.com/v0"
+    },
+    "middleware": [
+      "robot"
+    ],
+    "robot": {
+      "ua": [
+        {}
+      ]
+    },
     "coreMiddlewares": [
       "meta",
       "siteFile",
@@ -238,8 +259,12 @@
       "bodyParser",
       "overrideMethod"
     ],
-    "appMiddlewares": [],
-    "appMiddleware": []
+    "appMiddlewares": [
+      "robot"
+    ],
+    "appMiddleware": [
+      "robot"
+    ]
   },
   "plugins": {
     "onerror": {
@@ -383,6 +408,20 @@
       "from": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.7.0@egg\\config\\plugin.js",
       "path": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.1.1.2@egg-view",
       "version": "1.1.2"
+    },
+    "nunjucks": {
+      "enable": true,
+      "package": "egg-view-nunjucks",
+      "name": "nunjucks",
+      "dependencies": [
+        "security",
+        "view"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\config\\plugin.js",
+      "path": "E:\\code\\own\\learn\\project\\js\\node\\eggjs\\node_modules\\.2.1.3@egg-view-nunjucks",
+      "version": "2.1.3"
     }
   }
 }
