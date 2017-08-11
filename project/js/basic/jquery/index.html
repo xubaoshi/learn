@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./carousel/jquery-2.1.1.js"></script>
+    <script>
+        $(function () {
+            // 首先不应该传数组的，后期维护性不好
+            var generateDivDom = function (id, args,$parent) {
+                // 0:width 1:height 2:backgroundcolor 3:top 4:left 5:position
+                var $div = $('<div id="' + id + '"></div>');
+
+                $div.appendTo($parent);
+                $div.css({
+                    'width': args[0],
+                    'height': args[1],
+                    'background-color': args[2],
+                    'top': args[3],
+                    'left': args[4],
+                    'position': args[5],
+                    'border': args[6]
+                });
+
+                return $div;
+            }
+
+            $div1 = generateDivDom('div1', ['400px', '400px', '#fff', '100px', '100px', 'absolute', 'solid 1px #eee'],$('body'));
+            $div2 = generateDivDom('div2', ['20px', '20px', 'red', '20px', '20px', 'absolute', 'solid 1px #eee'],$div1);
+            $div3 = generateDivDom('div3', ['50px', '50px', 'green', '40px', '40px', 'absolute', 'solid 1px #eee'],$div1);
+            $div4 = generateDivDom('div4', ['20px', '20px', 'blue', '100px', '160px', 'absolute', 'solid 1px #eee'],$div1);
+        })
+    </script>
+</body>
+
+</html>

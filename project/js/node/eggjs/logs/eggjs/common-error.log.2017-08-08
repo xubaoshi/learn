@@ -1,4 +1,4 @@
-2017-08-09 08:33:29,649 ERROR 5232 nodejs.ClusterClientNoResponseError: client no response in 20046182ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+2017-08-08 19:53:18,556 ERROR 5232 nodejs.ClusterClientNoResponseError: client no response in 4561515ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
     at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (E:\code\own\learn\project\js\node\eggjs\node_modules\.1.6.7@cluster-client\lib\leader.js:72:23)
     at ontimeout (timers.js:386:14)
     at tryOnTimeout (timers.js:250:5)
@@ -7,7 +7,7 @@ name: 'ClusterClientNoResponseError'
 pid: 5232
 hostname: xubaoshi
 
-2017-08-09 13:18:43,655 ERROR 5232 nodejs.ClusterClientNoResponseError: client no response in 1205568ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+2017-08-09 02:59:02,602 ERROR 5232 nodejs.ClusterClientNoResponseError: client no response in 21602516ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
     at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (E:\code\own\learn\project\js\node\eggjs\node_modules\.1.6.7@cluster-client\lib\leader.js:72:23)
     at ontimeout (timers.js:386:14)
     at tryOnTimeout (timers.js:250:5)
