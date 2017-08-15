@@ -1,0 +1,1 @@
+::1 - - [15/Aug/2017:09:28:39 +0000] "GET /dog/4 HTTP/1.1" 200 5 "http://localhost:3000/dog/6" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
