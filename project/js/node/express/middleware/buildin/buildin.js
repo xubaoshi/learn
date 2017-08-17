@@ -27,3 +27,54 @@
     协商缓存是利用的是 【Last-Modified,If-Modified-Since】和 【ETag，If-None-Match】这两对Header来管理的。
         
 */
+
+var express = require('express');
+var app = express();
+
+app.get('/cache-p',function(req,res){
+    res.sendFile(__dirname + '/cache.html')
+});
+
+app.get('/etag-p',function(req,res){
+    res.sendFile(__dirname + '/etag.html')
+});
+
+app.get('/modified-p',function(req,res){
+    res.sendFile(__dirname + '/modified.html')
+});
+
+app.use(express.static('cache-control', {
+    dotfiles: 'ignore',
+    etag: false,
+    extensions: ['html', 'htm', 'css', 'png', 'gif', 'jpg', 'js', 'tpl'],
+    index: 'index.html',
+    lastModified: false,
+    maxAge: '10000',
+    redirect: true
+}));
+
+app.use(express.static('etag', {
+    dotfiles: 'ignore',
+    etag: true,
+    extensions: ['html', 'htm', 'css', 'png', 'gif', 'jpg', 'js', 'tpl'],
+    index: 'index.html',
+    lastModified: false,
+    maxAge: 0,
+    redirect: true
+}));
+
+app.use(express.static('modified', {
+    dotfiles: 'ignore',
+    etag: false,
+    extensions: ['html', 'htm', 'css', 'png', 'gif', 'jpg', 'js', 'tpl'],
+    index: 'index.html',
+    lastModified: true,
+    maxAge: 0,
+    redirect: true
+}));
+
+var server = app.listen(3000, '', function () {
+    var host = server.address().address;
+    var port = server.address().port;
+    console.log(`listen on ${host} : ${port}`);
+});
