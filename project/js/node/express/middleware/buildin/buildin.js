@@ -94,7 +94,7 @@ app.use(express.static('modified', {
     index: 'index.html',
     lastModified: true,
     maxAge: 0,
-    redirect: true
+    redirect: false
 }));
 
 var server = app.listen(3000, '', function () {
