@@ -18,7 +18,14 @@
     ### 强缓存 200-from-cache ###
     强缓存是利用Expires或者Cache-Control实现的，它们都表示资源在客户端缓存的有效时间
     Expires是http1.0提出的一个表示资源过期时间的header，描述的是一个绝对时间由服务器返回，GMT格式的字符串表示，
-    如：Expires:Thu, 31 Dec 2037 23:55:55 GMT，其缓存原理是：
+    如：Expires:Thu, 31 Dec 2037 23:55:55 GMT，当浏览器对某个资源的请求命中了强缓存时，返回的http状态200,chrome f12查看network
+    中size会显示为 from cache。
+
+    ![][]
+
+    ### Expires与Cache-Control 区别###
+    
+    其缓存原理是：
 
     ### 协商缓存 200-not-modified ###
     当浏览器对某个资源的请求没有命中强缓存，就就发一个请求到服务器，验证协商缓存是否命中，如果协商缓存命中，响应返回的http状态码304
@@ -31,17 +38,34 @@
 var express = require('express');
 var app = express();
 
-app.get('/cache-p',function(req,res){
+app.get('/cache-p', function (req, res) {
     res.sendFile(__dirname + '/cache.html')
 });
 
-app.get('/etag-p',function(req,res){
+app.get('/etag-p', function (req, res) {
     res.sendFile(__dirname + '/etag.html')
 });
 
-app.get('/modified-p',function(req,res){
+app.get('/modified-p', function (req, res) {
     res.sendFile(__dirname + '/modified.html')
 });
+
+app.get('/expires-p', function (req, res) {
+    res.sendFile(__dirname + '/expires.html')
+});
+
+app.use(express.static('expires', {
+    dotfiles: 'ignore',
+    etag: false,
+    extensions: ['html', 'htm', 'css', 'png', 'gif', 'jpg', 'js', 'tpl'],
+    index: 'index.html',
+    lastModified: false,
+    maxAge: 0,
+    redirect: true,
+    setHeaders: function (res,path,stat) {
+        res.setHeader('Expires', new Date(Date.now() + 345600000).toUTCString());
+    }
+}));
 
 app.use(express.static('cache-control', {
     dotfiles: 'ignore',
