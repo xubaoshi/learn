@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        p {
+            text-align: center; 
+        }
+        
+        .shadow {
+            width: 200px;
+            height: 200px;
+            background-color: burlywood;
+            margin: 50px auto;
+        }
+        
+        .shadow-bottom {
+            box-shadow: 0px 6px 10px -4px #666060;
+        }
+        
+        .shadow-near-side {
+            box-shadow: 2px 3px 10px -1px #666060;
+        }
+        
+        .shadow-op-side {
+            box-shadow: 7px 0px 10px -5px #666060, -7px 0px 10px -5px #666060
+        }
+    </style>
+</head>
+
+<body>
+    <p>底部阴影</p>
+    <div class="shadow shadow-bottom"></div>
+    <p>相邻两侧阴影</p>
+    <div class="shadow shadow-near-side"></div>
+    <p>左右两侧阴影</p>
+    <div class="shadow shadow-op-side"></div>
+</body>
+
+</html>

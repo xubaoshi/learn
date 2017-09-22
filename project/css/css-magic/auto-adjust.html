@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /*
+            title: figure元素能跟它所包含的图片宽度一致
+            尝试如下：
+            1. figure左浮动 （缺点：页面布局混乱）
+            2. figure设置 inline-block  （缺点：如果figure内部还有文字，且文字的宽度超过图片的宽度的话，方式不可靠）
+            3. 定宽 figure内部 img max-width="100%" （缺点：figure定宽后确实可以解决 此问题，但响应页面无法兼容）
+            4. figure 设置 width=min-content min-content表示容器内部最大的不可断行元素的宽度（ps：不可断行元素如最宽的单词、图片或最宽的盒元素）
+        */
+        
+    
+        .wrap {
+            /*float: left;*/
+            /*display: inline-block;*/
+            border: 1px #ccc dotted;
+            /*width: 200px;*/
+            width: min-content;
+            margin: auto;
+        }
+        /* 兼容低版本浏览器 */
+        
+        .wrap {
+            max-width: 300px;
+            max-width: min-content;
+            margin: auto;
+        }
+        
+        .wrap>img {
+            max-width: inherit;
+        }
+        /*.wrap>img {
+            max-width: 100%;
+        }*/
+    </style>
+</head>
+
+<body>
+    <p>Some text [...]</p>
+    <figure class="wrap">
+        <img src="./img/timg.jpg" alt="图片。。。" />
+        <figcaption>
+            The great Sir Adam Catlace was named after Countess Ada Lovelace,the first programmer.
+        </figcaption>
+    </figure>
+    <p>More text [...]</p>
+</body>
+
+</html>
