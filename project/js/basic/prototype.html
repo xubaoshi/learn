@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var pets = {
+        //     sound:'',
+        //     makeSound:function(){
+        //         console.log(this.sound);
+        //     }
+        // }
+        // errors
+        // var cat = {sound:'miao'};
+        // cat.prototype = pets;
+        // cat.makeSound();
+        // 
+        // var cat = Object.create(pets);
+        // cat.sound = 'miao';
+        // cat.makeSound();
+
+        // // 原型源头
+        // var Pets = function(sound){
+        //     var obj = {sound:sound};
+        //     obj.makeSound = function() {
+        //         console.log(obj.sound);
+        //     }
+        //     obj.bite = function(){
+        //         console.log('bit');
+        //     }
+        // }
+        // var dog = Pets('wang');
+        // dog.makeSound();
+
+        // 优化
+        // var Pets = function(sound){
+        //     return Object.assign({sound:sound},Pets.methods);
+        // }
+        // Pets.methods =  {
+        //     makeSound:function(){
+        //         console.log(this.sound);
+        //     },
+        //     bite:function(){
+        //         console.log('bite');
+        //     }
+        // }
+        // var dog = Pets('wang');
+        // dog.makeSound();
+
+        // 继续优化
+        // var Pets = function(sound){
+        //     var obj = Object.create(Pets.methods);
+        //     obj.sound = sound;
+        //     return obj;
+        // }
+        // Pets.methods =  {
+        //     makeSound:function(){
+        //         console.log(this.sound);
+        //     },
+        //     bite:function(){
+        //         console.log('bite');
+        //     }
+        // }
+        // var dog = Pets('wang');
+        // dog.makeSound();
+
+        // 将methods修改为prototype
+        var Pets = function(sound){
+            var obj  = Object.create(Pets.prototype);
+            obj.sound = sound;
+            return obj;
+        };
+        Pets.prototype.makeSound = function(){
+            console.log(this.sound);
+        }
+        Pets.prototype.bite = function(){
+            console.log('bite');
+        }
+        var dog = Pets('wang');
+        dog.makeSound();
+    </script>
+</body>
+</html>
