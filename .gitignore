@@ -6,3 +6,4 @@ project/js/vue/node_modules/
 project/js/vue/example/
 *.scssc
 *.log
+.DS_Store
