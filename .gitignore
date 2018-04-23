@@ -7,3 +7,4 @@ project/js/vue/example/
 *.scssc
 *.log
 .DS_Store
+.cache/
