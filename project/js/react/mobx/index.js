@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom'
 import {observable,action,autorun} from 'mobx'
 import {observer} from 'mobx-react'
 // import './basic'
-import './observable'
+// import './observable'
+// import './objects'
+import './arrays'
 
 const appState = observable({
   timer:0,
