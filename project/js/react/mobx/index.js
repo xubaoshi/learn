@@ -5,7 +5,8 @@ import {observer} from 'mobx-react'
 // import './basic'
 // import './observable'
 // import './objects'
-import './arrays'
+// import './arrays'
+import './boxed'
 
 const appState = observable({
   timer:0,
