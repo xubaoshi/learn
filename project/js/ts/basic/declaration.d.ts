@@ -235,4 +235,14 @@ declare module 'bar' {
 }
 
 // ========================== 声明文件中依赖 ==================================
+
+// 除了可以在声明文件中通过 import 导入另一个声明文件中的类型之外，还有一个语法也可以用来导入另一个声明文件，那就是三斜线指令
+/// <reference types="jquery" />
+declare function foo3(options: JQuery6.AjaxSettings): string
+// node 场景
+/// <reference types="node"/>
+// export function foo(p: NodeJS.Process): string
+
 // ========================== 自动生成声明文件 ==================================
+
+// 如果库的源码本身就是由 ts 写的，那么在使用 tsc 脚本将 ts 编译为 js 的时候，添加 declaration 选项，就可以同时也生成 .d.ts 声明文件了
