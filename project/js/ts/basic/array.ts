@@ -4,8 +4,8 @@
 let fibobacci: number[] = [1, 2, 3, 4]
 
 // 不允许其他类型出现
-// let fiboacci1: number[] = [1, '2', 3] // error
-// fibobacci.push('3') // error
+let fiboacci1: number[] = [1, '2', 3] // error
+fibobacci.push('3') // error
 
 // 数组泛型
 let fiboacci2: Array<number> = [1, 2, 3, 4]
@@ -19,7 +19,7 @@ let fiboacci3: NumberArray = [1, 2, 3]
 // 类数组
 function sum() {
   // 函数内部 arguments 不是数组类型 类数组
-  // let args: number[] = arguments; // error
+  let args: number[] = arguments; // error
 
   // tyep 1
   let args1: {

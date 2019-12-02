@@ -75,7 +75,7 @@ declare namespace JQuery6 {
 }
 // 声明合并
 declare function JQuery7(selector: string): any
-declare namespace JQuery7 {；
+declare namespace JQuery7 {
   function ajax(url: string, settings?: any): void
 }
 
