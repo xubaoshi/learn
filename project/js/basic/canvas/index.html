@@ -1,53 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>canvas demo</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        #drawing {
-            width: 200px;
-            height: 200px;
-            border: 1px solid #666;
-        }
-
-        img {
-            width: 200px;
-            height: 200px;
-            border: 1px solid #666;
-        }
-    </style>
-</head>
-
-<body>
+  <body>
     <canvas id="drawing">A drawing of something.</canvas>
-    <script>
-        window.onload = function () {
-            var drawing = document.getElementById('drawing');
-            if (drawing.getContext) {
-
-                // 1. var context = drawing.getContext('2d');
-                // 2. img
-                var context = drawing.getContext('2d');
-                context.fillStyle = '#ff0000';
-                context.fillRect(10, 10, 50, 50);
-                context.fillStyle = 'rgba(0,0,255,0.5)';
-                context.fillRect(30, 30, 50, 50);
-                context.strokeStyle = '#ff0000';
-                context.strokeRect(50, 50, 50, 50);
-                context.strokeStyle = 'rgba(0,0,255,0.5)';
-                context.strokeRect(70, 70, 50, 50);
-
-
-                var imgURI = drawing.toDataURL('image/png');
-                var image = document.createElement('img');
-                image.src = imgURI;
-                document.body.appendChild(image);
-            }
-        }
-    </script>
-</body>
-
+    <script src="./index.js"></script>
+  </body>
 </html>
