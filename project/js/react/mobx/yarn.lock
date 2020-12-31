@@ -1353,8 +1353,9 @@ csso@~2.3.1:
     clap "^1.0.9"
     source-map "^0.5.3"
 
-"csstree@github:cgiffard/CSSTree#inline-comments":
+csstree@cgiffard/CSSTree#inline-comments:
   version "0.0.2"
+  uid ec76d846211aeda71a49ba32f1519572ef643afa
   resolved "https://codeload.github.com/cgiffard/CSSTree/tar.gz/ec76d846211aeda71a49ba32f1519572ef643afa"
 
 dashdash@^1.12.0:
@@ -4080,8 +4081,8 @@ upath@^1.0.0:
   resolved "http://registry.npm.taobao.org/upath/download/upath-1.0.4.tgz#ee2321ba0a786c50973db043a50b7bcba822361d"
 
 urijs@^1.16.1:
-  version "1.19.1"
-  resolved "http://registry.npm.taobao.org/urijs/download/urijs-1.19.1.tgz#5b0ff530c0cbde8386f6342235ba5ca6e995d25a"
+  version "1.19.5"
+  resolved "https://registry.yarnpkg.com/urijs/-/urijs-1.19.5.tgz#119683ab4b2fb0bd637e5ea6dd9117bcac68d3e4"
 
 urix@^0.1.0:
   version "0.1.0"
